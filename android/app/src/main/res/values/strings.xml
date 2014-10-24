@@ -2,7 +2,7 @@
 <resources>
 
     <string name="app_name">android</string>
-    <string name="hello_world">Hello world!</string>
+    <string name="hello_world">Hello world from the android branch!!!</string>
     <string name="action_settings">Settings</string>
 
 </resources>
