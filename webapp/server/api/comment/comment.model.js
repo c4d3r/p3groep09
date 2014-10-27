@@ -9,3 +9,5 @@ var CommentSchema = new Schema({
     createdOn: {type: Date},
     createdBy: {type: Schema.ObjectId, ref: "GebruikerSchema"}
 });
+
+module.exports = mongoose.model('Comment', CommentSchema);

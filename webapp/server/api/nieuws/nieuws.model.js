@@ -9,3 +9,5 @@ var NieuwsSchema = new Schema({
     createdOn: {type: Timestamp},
     createdBy: {type: Schema.ObjectId, ref: "GebruikerSchema"}
 });
+
+module.exports = mongoose.model('Nieuws', NieuwsSchema);

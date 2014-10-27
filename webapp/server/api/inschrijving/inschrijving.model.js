@@ -18,3 +18,5 @@ var InschrijvingSchema = new Schema({
     gebruiker: [{type: Schema.ObjectId, ref: "GebruikerSchema"}],
     activiteit: {type: Schema.ObjectId, ref: "ActiviteitSchema"}
 });
+
+module.exports = mongoose.model('Inschrijving', InschrijvingSchema);

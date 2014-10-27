@@ -17,3 +17,5 @@ var KampSchema = new Schema({
     vervoer: {type: String},
     inschrijvingen: [{type: Schema.ObjectId, ref: "InschrijvingSchema"}]
 });
+
+module.exports = mongoose.model('Kamp', KampSchema);

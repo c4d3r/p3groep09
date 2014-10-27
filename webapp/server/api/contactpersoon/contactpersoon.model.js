@@ -15,3 +15,5 @@ var ContactpersoonSchema = new Schema({
     straat: {type: String},
     nood: {type: Boolean}
 });
+
+module.exports = mongoose.model('Contactpersoon', ContactpersoonSchema);

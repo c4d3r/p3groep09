@@ -14,3 +14,5 @@ var ActiviteitSchema = new Schema({
     comments: [{type: Schema.ObjectId, ref: "CommentSchema"}],
     createdOn: {type: Timestamp, Default: Date.now}
 });
+
+module.exports = mongoose.model('Activiteit', ActiviteitSchema);

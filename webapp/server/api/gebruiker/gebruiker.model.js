@@ -43,7 +43,7 @@ GebruikerSchema
 
 // Validate empty password
 GebruikerSchema
-    .path('hashedPassword')
+    .path('hashedWachtwoord')
     .validate(function(hashedPassword) {
         if (authTypes.indexOf(this.provider) !== -1) return true;
         return hashedPassword.length;
@@ -120,4 +120,4 @@ GebruikerSchema.methods = {
     }
 };
 
-module.exports = mongoose.model('User', GebruikerSchema);
+module.exports = mongoose.model('Gebruiker', GebruikerSchema);
