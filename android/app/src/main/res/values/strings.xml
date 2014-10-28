@@ -5,4 +5,14 @@
     <string name="hello_world">Hello world from the android branch!!!</string>
     <string name="action_settings">Settings</string>
 
+    <!-- UC Inloggen -->
+    <string name="login_loginButton_text">Login</string>
+    <string name="login_registreerButton_text">Registereren</string>
+    <string name="login_emailTextfield_hint">e-mail</string>
+    <string name="login_forgotPasswordText">Wachtwoord vergeten?</string>
+    <string name="login_passwordTextfield_hint">paswoord</string>
+    <string name="log_loginFailedText">Inloggen mislukt</string>
+    <string name="login_email_send_text">Een e-mail werd verzonden</string>
+    <string name="login_email_sendButton_text">Zend mij een e-mail</string>
+
 </resources>

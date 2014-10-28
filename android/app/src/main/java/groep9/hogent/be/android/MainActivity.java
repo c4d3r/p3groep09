@@ -1,17 +1,26 @@
 package groep9.hogent.be.android;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 
+import groep9.hogent.be.android.Inloggen.LoginActivity;
+import groep9.hogent.be.android.Inloggen.LoginEmailActivity;
 
-public class MyActivity extends Activity {
-
+/**
+ * Created by Dries on 28/10/2014.
+ */
+public class MainActivity extends Activity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_my);
+
+        Intent intent = new Intent(this, LoginActivity.class);
+        startActivity(intent);
+
     }
 
 
