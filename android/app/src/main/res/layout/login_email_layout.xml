@@ -7,10 +7,13 @@
     android:layout_height="wrap_content"
     >
     <!-- menu -->
-    <fragment android:name="groep9.hogent.be.android.Menu.MenuFragment"
+    <LinearLayout
+        android:id="@+id/login_email_menu"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_gravity="top"/>
+        android:layout_height="wrap_content"
+        android:layout_gravity="top"
+        >
+        </LinearLayout>
 
     <!-- inputfields -->
 

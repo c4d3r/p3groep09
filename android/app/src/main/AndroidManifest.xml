@@ -18,6 +18,12 @@
         </activity>
         <activity android:name=".Inloggen.LoginActivity" />
         <activity android:name=".Inloggen.LoginEmailActivity" />
+        <activity android:name=".Nieuws_Bekijken.NieuwsActivity" />
+        <activity android:name=".Registreren.RegistrerenActivity" />
+        <activity android:name=".Vakantie_Weergeven.VakantieWeergevenActivity" />
+        <activity android:name=".Joetz_Contacteren.JoetzContacterenActivity" />
+        <activity android:name=".Profile.ProfileActivity" />
+        <activity android:name=".Settings.SettingsActivity" />
     </application>
 
 </manifest>
