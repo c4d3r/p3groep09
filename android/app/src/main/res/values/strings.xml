@@ -2,7 +2,43 @@
 <resources>
 
     <string name="app_name">android</string>
-    <string name="hello_world">Hello world!</string>
+    <string name="hello_world">Hello world from the android branch!!!</string>
     <string name="action_settings">Settings</string>
+
+    <!-- UC Inloggen -->
+    <string name="login_loginButton_text">Login</string>
+    <string name="login_registreerButton_text">Registereren</string>
+    <string name="login_emailTextfield_hint">e-mail</string>
+    <string name="login_forgotPasswordText">Wachtwoord vergeten?</string>
+    <string name="login_passwordTextfield_hint">paswoord</string>
+    <string name="log_loginFailedText">Inloggen mislukt</string>
+    <string name="login_email_send_text">Een e-mail werd verzonden</string>
+    <string name="login_email_sendButton_text">Zend mij een e-mail</string>
+
+    <!-- UC Registreren -->
+    <string name="registreren_nextButton_text">Volgende</string>
+    <string name="registreren_voornaamTextfield_hint">Voornaam</string>
+    <string name="registreren_naamTextfield_hint">Naam</string>
+    <string name="registreren_emailTextfield_hint">Emailadres</string>
+    <string name="registreren_wachtwoordTextfield_hint">Wachtwoord</string>
+    <string name="registreren_wachtwoordBevestigenTextfield_hint">Bevestig wachtwoord</string>
+    <string name="login_loginFailedText">Inloggen mislukt.</string>
+    <string name="registreren_voornaam_errorText">Voornaam verplicht in te vullen</string>
+    <string name="registreren_naam_errorText">Naam verplicht in te vullen</string>
+    <string name="registreren_email_errorText">Email ERROR</string>
+    <string name="registreren_wachtwoord_errorText">Wachtwoord ERROR</string>
+    <string name="registreren_wachtwoordBevestigen_errorText">Wachtwoorden moeten overeenkomen</string>
+    <string name="registreren_instructionsText">Gelieve onderstaande gegevens in te vullen:</string>
+    <string name="registreren_optional_instructionsText">Optioneel: vul onderstaande gegevens in om toekomstige inschrijvingen te vergemakkelijken</string>
+    <string name="registreren_straatTextfield_hint">Straat</string>
+    <string name="registreren_busTextfield_hint">Bus</string>
+    <string name="registreren_huisnummerTextfield_hint">Huisnummer</string>
+    <string name="registreren_postcodeTextfield_hint">Postcode</string>
+    <string name="registreren_stadTextfield_hint">Stad</string>
+    <string name="registreren_postcode_errorText">Ongeldige postcode</string>
+    <string name="registreren_woonplaats_errorText">Woonplaats ERROR</string>
+    <string name="registreren_telefoonTextfield_hint">Gsmnummer of vaste telefoon</string>
+    <string name="registreren_telefoon_errorText">Ongeldig telefoonnummer</string>
+    <string name="registreren_registrerenButton_text">Registreren</string>
 
 </resources>

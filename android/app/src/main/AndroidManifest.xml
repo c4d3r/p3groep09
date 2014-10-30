@@ -8,7 +8,7 @@
         android:label="@string/app_name"
         android:theme="@style/AppTheme" >
         <activity
-            android:name=".MyActivity"
+            android:name=".MainActivity"
             android:label="@string/app_name" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -16,6 +16,16 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".Inloggen.LoginActivity" />
+        <activity android:name=".Inloggen.LoginEmailActivity" />
+        <activity android:name=".Nieuws_Bekijken.NieuwsActivity" />
+        <activity android:name=".Registreren.RegistrerenActivity" />
+        <activity android:name=".Vakantie_Weergeven.VakantieWeergevenActivity" />
+        <activity android:name=".Joetz_Contacteren.JoetzContacterenActivity" />
+        <activity android:name=".Profile.ProfileActivity" />
+        <activity android:name=".Settings.SettingsActivity" />
+        <activity android:name=".Bekijken_Activiteiten.BekijkenActiviteitenActivity" />
+        <activity android:name=".Registreren.RegistrerenOptionalActivity" />
     </application>
 
 </manifest>
