@@ -24,6 +24,7 @@
         <activity android:name=".Joetz_Contacteren.JoetzContacterenActivity" />
         <activity android:name=".Profile.ProfileActivity" />
         <activity android:name=".Settings.SettingsActivity" />
+        <activity android:name=".Bekijken_Activiteiten.BekijkenActiviteitenActivity" />
     </application>
 
 </manifest>

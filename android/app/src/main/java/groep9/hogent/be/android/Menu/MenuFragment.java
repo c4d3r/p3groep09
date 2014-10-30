@@ -14,6 +14,7 @@ import android.widget.TextView;
 
 import org.w3c.dom.Text;
 
+import groep9.hogent.be.android.Bekijken_Activiteiten.BekijkenActiviteitenActivity;
 import groep9.hogent.be.android.Joetz_Contacteren.JoetzContacterenActivity;
 import groep9.hogent.be.android.Nieuws_Bekijken.NieuwsActivity;
 import groep9.hogent.be.android.Profile.ProfileActivity;
@@ -31,6 +32,7 @@ public class MenuFragment extends Fragment {
 
     private ImageView nieuwsButton;
     private ImageView vakantieButton;
+    private ImageView activiteitButton;
     private ImageView contactButton;
     private ImageView profileButton;
     private ImageView settingsButton;
@@ -51,6 +53,12 @@ public class MenuFragment extends Fragment {
         vakantieButton.setOnClickListener(new View.OnClickListener(){
             public void onClick(View v){
                 vakantieWeergeven(v);
+            }
+        });
+        activiteitButton = (ImageView) root.findViewById(R.id.menu_activityTabImage);
+        activiteitButton.setOnClickListener(new View.OnClickListener(){
+            public void onClick(View v){
+                activiteitWeergeven(v);
             }
         });
         contactButton = (ImageView) root.findViewById(R.id.menu_contactTabImage);
@@ -85,27 +93,44 @@ public class MenuFragment extends Fragment {
     }
 
     private void nieuwsBekijken(View v){
-        Intent intent = new Intent(getActivity(), NieuwsActivity.class);
-        getActivity().startActivity(intent);
+        if(!getActivity().getClass().equals(NieuwsActivity.class)) {
+            Intent intent = new Intent(getActivity(), NieuwsActivity.class);
+            getActivity().startActivity(intent);
+        }
     }
 
     private void joetzContacteren(View v){
-        Intent intent = new Intent(getActivity(), JoetzContacterenActivity.class);
-        getActivity().startActivity(intent);
+        if(!getActivity().getClass().equals(JoetzContacterenActivity.class)) {
+            Intent intent = new Intent(getActivity(), JoetzContacterenActivity.class);
+            getActivity().startActivity(intent);
+        }
     }
 
     private void vakantieWeergeven(View v){
-        Intent intent = new Intent(getActivity(), VakantieWeergevenActivity.class);
-        getActivity().startActivity(intent);
+        if(!getActivity().getClass().equals(VakantieWeergevenActivity.class)) {
+            Intent intent = new Intent(getActivity(), VakantieWeergevenActivity.class);
+            getActivity().startActivity(intent);
+        }
     }
 
     private void profiel(View v){
-        Intent intent = new Intent(getActivity(), ProfileActivity.class);
-        getActivity().startActivity(intent);
+        if(!getActivity().getClass().equals(ProfileActivity.class)) {
+            Intent intent = new Intent(getActivity(), ProfileActivity.class);
+            getActivity().startActivity(intent);
+        }
     }
 
     private void settings(View v){
-        Intent intent = new Intent(getActivity(), SettingsActivity.class);
-        getActivity().startActivity(intent);
+        if(!getActivity().getClass().equals(SettingsActivity.class)) {
+            Intent intent = new Intent(getActivity(), SettingsActivity.class);
+            getActivity().startActivity(intent);
+        }
+    }
+
+    private void activiteitWeergeven(View v){
+        if(!getActivity().getClass().equals(NieuwsActivity.class)) {
+            Intent intent = new Intent(getActivity(), BekijkenActiviteitenActivity.class);
+            getActivity().startActivity(intent);
+        }
     }
 }
