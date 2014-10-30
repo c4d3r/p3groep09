@@ -24,19 +24,23 @@
         android:layout_gravity="center_horizontal"
         android:layout_marginTop="@dimen/activity_vertical_margin">
         <TextView
+            android:id="@+id/login_mailSentText"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:padding="8dp"
             android:background="#8508a602"
             android:text="@string/login_email_send_text"
+            android:visibility="visible"
             android:textAlignment="center" />
     <TextView
+        android:id="@+id/login_errorText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/log_loginFailedText"
+        android:text="@string/login_loginFailedText"
         android:textColor="#FF0000"
         android:layout_gravity="center"
+        android:visibility="visible"
         />
     <EditText
         android:id="@+id/login_emailTextfield"

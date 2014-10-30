@@ -8,22 +8,23 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
+import groep9.hogent.be.android.Inloggen.LoginActivity;
 import groep9.hogent.be.android.Menu.MenuFragment;
 import groep9.hogent.be.android.R;
 
 /**
  * Created by Dries on 30/10/2014.
  */
-public class RegistrerenActivity extends Activity {
+public class RegistrerenOptionalActivity extends Activity {
     private final String TITLE = "Registreren";
 
-    private Button nextButton;
+    private Button registerButton;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        setContentView(R.layout.registreren_layout);
+        setContentView(R.layout.registreren_optional_layout);
 
         FragmentManager fm = getFragmentManager();
         FragmentTransaction ft = getFragmentManager().beginTransaction();
@@ -31,17 +32,17 @@ public class RegistrerenActivity extends Activity {
         ft.commit();
 
         //Init views
-        nextButton = (Button) findViewById(R.id.registreren_nextButton);
-        nextButton.setOnClickListener(new View.OnClickListener() {
+        registerButton = (Button) findViewById(R.id.registreren_registrerenButton);
+        registerButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                nextView(view);
+                registreren(view);
             }
         });
     }
 
-    private void nextView(View v){
-        Intent intent = new Intent(this,RegistrerenOptionalActivity.class);
+    private void registreren(View v){
+        Intent intent = new Intent(this, LoginActivity.class);
         startActivity(intent);
     }
 }
