@@ -4,10 +4,10 @@
 var mongoose = require('mongoose')
 , Schema = mongoose.Schema;
 
-var NieuwsSchema = new Schema({
+var NieuwsitemSchema = new Schema({
     text: {type: String},
     createdOn: {type: Timestamp},
     createdBy: {type: Schema.ObjectId, ref: "GebruikerSchema"}
 });
 
-module.exports = mongoose.model('Nieuws', NieuwsSchema);
+module.exports = mongoose.model('Nieuwsitem', NieuwsitemSchema);

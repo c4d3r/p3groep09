@@ -10,6 +10,12 @@ module.exports = function(app) {
 
   // Insert routes below
   app.use('/api/gebruikers', require('./api/gebruiker'));
+  app.use('/api/kampen', require('./api/kamp'));
+  app.use('/api/inschrijvingen', require('./api/inschrijving'));
+  app.use('/api/activiteiten', require('./api/activiteit'));
+  app.use('/api/comments', require('./api/comment'));
+  app.use('/api/contactpersonen', require('./api/contactpersoon'));
+  app.use('/api/nieuwsitems', require('./api/nieuwsitem'));
 
   app.use('/auth', require('./auth'));
   
