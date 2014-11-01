@@ -15,4 +15,12 @@ var ActiviteitSchema = new Schema({
     createdOn: {type: Date, Default: Date.now}
 });
 
+Schema.path('beschrijving').required(true, 'Beschrijving mag niet null zijn');
+Schema.path('contact').required(true, 'Contact mag niet null zijn');
+Schema.path('eindDatum').required(true, 'Einddatum mag niet leeg zijn');
+Schema.path('locatie').required(true, 'Locatie mag niet leeg zijn');
+Schema.path('naam').required(true, 'Naam mag niet leeg zijn');
+Schema.path('startDatum').required(true, 'Startdatum mag niet leeg zijn');
+Schema.path('createdOn').required(true, 'CreateOn mag niet leeg zijn');
+
 module.exports = mongoose.model('Activiteit', ActiviteitSchema);
