@@ -6,7 +6,7 @@ var mongoose = require('mongoose')
 
 var NieuwsitemSchema = new Schema({
     text: {type: String},
-    createdOn: {type: Timestamp},
+    createdOn: {type: Date},
     createdBy: {type: Schema.ObjectId, ref: "GebruikerSchema"}
 });
 

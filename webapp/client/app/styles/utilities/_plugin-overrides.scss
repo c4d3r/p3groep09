@@ -1,0 +1,56 @@
+.nav-collapse {
+    li.logo {
+        display:none;
+    }
+}
+@media all and (min-width: $bp-large) {
+    .nav-collapse {
+        ul {
+            text-align:center;
+        }
+
+        li {
+            display:inline-block;
+            width: auto;
+
+            &.logo {
+                display: inline-block;
+            }
+        }
+    }
+}
+
+@media all and (max-width: $bp-large) {
+    .nav-toggle {
+        -webkit-tap-highlight-color: rgba(0,0,0,0);
+        -webkit-touch-callout: none;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        -o-user-select: none;
+        user-select: none;
+        width: 70px;
+        height: 55px;
+        text-indent: -9999px;
+        overflow: hidden;
+        display: block;
+        box-sizing: border-box;
+        position: relative;
+        font-size: 25pt;
+
+        &:before {
+            content: "";
+            position: absolute;
+            top: 0.5em;
+            left: 0.5em;
+            width: 0.85em;
+            height: 0.125em;
+            border-top: 0.375em double $red;
+            border-bottom: 0.115em solid $red;
+        }
+
+        &:after {
+            @include clearfix();
+        }
+    }
+}

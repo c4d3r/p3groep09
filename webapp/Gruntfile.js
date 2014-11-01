@@ -475,7 +475,7 @@ module.exports = function (grunt) {
           compass: false
         },
         files: {
-          '.tmp/app/app.css' : '<%= yeoman.client %>/app/app.scss'
+          '.tmp/app/styles/app.css' : '<%= yeoman.client %>/app/styles/app.scss'
         }
       }
     },
@@ -509,7 +509,7 @@ module.exports = function (grunt) {
       sass: {
         options: {
           transform: function(filePath) {
-            filePath = filePath.replace('/client/app/', '');
+            filePath = filePath.replace('/client/app/styles/', '');
             filePath = filePath.replace('/client/components/', '');
             return '@import \'' + filePath + '\';';
           },
@@ -517,9 +517,9 @@ module.exports = function (grunt) {
           endtag: '// endinjector'
         },
         files: {
-          '<%= yeoman.client %>/app/app.scss': [
+          '<%= yeoman.client %>/app/styles/app.scss': [
             '<%= yeoman.client %>/{app,components}/**/*.{scss,sass}',
-            '!<%= yeoman.client %>/app/app.{scss,sass}'
+            '!<%= yeoman.client %>/app/styles/app.{scss,sass}'
           ]
         }
       },

@@ -5,7 +5,7 @@ var mongoose = require('mongoose')
     , Schema = mongoose.Schema;
 
 var KampSchema = new Schema({
-    korting: {type: Double},
+    korting: {type: Number},
     beschrijving: {type: String},
     contact: {type: String},
     eindDatum: {type: Date},
@@ -13,7 +13,7 @@ var KampSchema = new Schema({
     leeftijdsCatDoelgroep: {type: String},
     locatie: {type: String},
     naam: {type: String},
-    prijs: {type: Double},
+    prijs: {type: Number},
     vervoer: {type: String},
     inschrijvingen: [{type: Schema.ObjectId, ref: "InschrijvingSchema"}]
 });

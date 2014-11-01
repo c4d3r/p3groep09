@@ -7,12 +7,12 @@ var mongoose = require('mongoose')
 var ActiviteitSchema = new Schema({
     beschrijving: {type: String},
     contact: {type: Schema.ObjectId, ref: "GebruikerSchema"},
-    eindDatum: {type: Timestamp},
+    eindDatum: {type: Date},
     locatie: {type: String},
     naam: {type: String},
-    startDatum: {type: Timestamp},
+    startDatum: {type: Date},
     comments: [{type: Schema.ObjectId, ref: "CommentSchema"}],
-    createdOn: {type: Timestamp, Default: Date.now}
+    createdOn: {type: Date, Default: Date.now}
 });
 
 module.exports = mongoose.model('Activiteit', ActiviteitSchema);

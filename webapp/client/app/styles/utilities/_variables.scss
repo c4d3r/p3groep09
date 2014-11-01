@@ -1,0 +1,22 @@
+@import 'http://fonts.googleapis.com/css?family=Oswald:400,700';
+
+$orange: orange;
+$yellow: #FFDD53;
+$primary-color:white;
+$blue: blue;
+$red: #D53547;
+$white: white;
+
+// breakpoints and tweakpoints
+// it's better to have em breakpoints, you shouldn't focus on popular devices but ALL devices
+// tweakpoints:
+$bp-small : 20em; //(320px)
+$bp-small-2 : 30em; //(480px)
+$bp-small-3 : 37.5em; //(600px)
+$bp-med : 48em; //(768px)
+$bp-med-2 : 56.25em; //(900px)
+$bp-large : 63.75em; //(1020px)
+$bp-large-2 : 81.25em; //(1300px)
+
+$wrapper: $bp-large;
+$nav-height: 100px;
