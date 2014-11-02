@@ -1,1 +1,0 @@
-mongod --dbpath D:\Users\Maxim\Dropbox\Documents\School\HoGent\3TIN\Project3-Groep09\project\database
