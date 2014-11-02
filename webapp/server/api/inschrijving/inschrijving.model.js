@@ -19,16 +19,16 @@ var InschrijvingSchema = new Schema({
     activiteit: {type: Schema.ObjectId, ref: "ActiviteitSchema"}
 });
 
-Schema.path('aansluitingsNummer').required(true, 'Aansluitingsnummer mag niet leeg zijn');
-Schema.path('codeGerechtigde').required(true, 'Code Gerechtigde mag niet leeg zijn');
-Schema.path('geboorteDatum').required(true, 'Geboorte datum mag niet null zijn');
-Schema.path('gemeente').required(true, 'Gemeente mag niet leeg zijn');
-Schema.path('postcode').required(true, 'Postcode mag niet leeg zijn');
-Schema.path('rijksregisterNummer').required(true, 'Rijksregisternummer mag niet leeg zijn');
-Schema.path('straat').required(true, 'Straat mag niet leeg zijn');
-Schema.path('telefoonNummer').required(true, 'Telefoonnummer mag niet leeg zijn');
-Schema.path('gebruiker').required(true, 'Gebruiker mag niet null zijn');
-Schema.path('activiteit').required(true, 'Activiteit mag niet null zijn');
+InschrijvingSchema.path('aansluitingsNummer').required(true, 'Aansluitingsnummer mag niet leeg zijn');
+InschrijvingSchema.path('codeGerechtigde').required(true, 'Code Gerechtigde mag niet leeg zijn');
+InschrijvingSchema.path('geboorteDatum').required(true, 'Geboorte datum mag niet null zijn');
+InschrijvingSchema.path('gemeente').required(true, 'Gemeente mag niet leeg zijn');
+InschrijvingSchema.path('postcode').required(true, 'Postcode mag niet leeg zijn');
+InschrijvingSchema.path('rijksregisterNummer').required(true, 'Rijksregisternummer mag niet leeg zijn');
+InschrijvingSchema.path('straat').required(true, 'Straat mag niet leeg zijn');
+InschrijvingSchema.path('telefoonNummer').required(true, 'Telefoonnummer mag niet leeg zijn');
+InschrijvingSchema.path('gebruiker').required(true, 'Gebruiker mag niet null zijn');
+InschrijvingSchema.path('activiteit').required(true, 'Activiteit mag niet null zijn');
 
 
 module.exports = mongoose.model('Inschrijving', InschrijvingSchema);

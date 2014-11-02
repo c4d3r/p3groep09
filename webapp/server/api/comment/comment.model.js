@@ -10,6 +10,6 @@ var CommentSchema = new Schema({
     createdBy: {type: Schema.ObjectId, ref: "GebruikerSchema"}
 });
 
-Schema.path('text').required(true, 'Text mag niet leeg zijn');
+CommentSchema.path('text').required(true, 'Text mag niet leeg zijn');
 
 module.exports = mongoose.model('Comment', CommentSchema);
