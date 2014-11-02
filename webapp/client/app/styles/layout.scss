@@ -137,12 +137,23 @@ header {
     }
 }
 
-#content {
+.container {
     background: #fff;
-    min-height: 40em;
-    padding: 10px 10px 161px 10px;
+    padding:10px;
     box-sizing:border-box;
     margin: 5px auto;
+
+    & + .container {
+        margin-top:10px;
+    }
+}
+
+#content {
+    min-height: 40em;
+}
+
+#main-warpper {
+    padding: 10px 10px 161px 10px;
 }
 @media all and (min-width: $bp-large) {
     #content:after {

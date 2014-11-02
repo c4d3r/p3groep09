@@ -1,4 +1,3 @@
-
 <!doctype html>
   <head>
     <meta charset="utf-8">
@@ -20,7 +19,6 @@
     <!-- endbuild -->
   </head>
   <body ng-app="webappApp">
-
     <header>
         <nav class="nav-collapse wrapper">
             <ul>
@@ -35,11 +33,18 @@
         </nav>
     </header>
 
-    <div class="wrapper" id="content">
-        <div ng-show="isLoggedIn()">TEST</div>
-        <section id="main">
-            <div ui-view=""></div>
-        </section>
+    <div class="wrapper" id="main-wrapper" ng-controller="NavbarCtrl">
+
+        <div class="container" ng-show="isLoggedIn()">
+            <span ng-show="isLoggedIn()">Welcome back {{ getCurrentUser().email }}</span>
+            <a href="/" ng-click="logout()" style="float:right;"><i class="fa fa-sign-out"></i> Logout</a>
+        </div>
+
+        <div id="content" class="container">
+            <section id="main">
+                <div ui-view=""></div>
+            </section>
+        </div>
     </div>
 
     <footer>
@@ -89,6 +94,7 @@
       <script src="app/account/signup/signup.controller.js"></script>
       <script src="app/admin/admin.controller.js"></script>
       <script src="app/admin/admin.js"></script>
+      <script src="app/controllers/account.js"></script>
       <script src="app/controllers/login.js"></script>
       <script src="app/main/main.controller.js"></script>
       <script src="app/main/main.js"></script>

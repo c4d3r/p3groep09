@@ -42,20 +42,6 @@ exports.create = function(req, res) {
     });
 };
 
-// Updates an existing thing in the DB.
-exports.update = function(req, res) {
-    if(req.body._id) { delete req.body._id; }
-    Gebruiker.findById(req.params.id, function (err, thing) {
-        if (err) { return handleError(res, err); }
-        if(!thing) { return res.send(404); }
-        var updated = _.merge(thing, req.body);
-        updated.save(function (err) {
-            if (err) { return handleError(res, err); }
-            return res.json(200, thing);
-        });
-    });
-};
-
 // Deletes a thing from the DB.
 exports.destroy = function(req, res) {
     Gebruiker.findById(req.params.id, function (err, thing) {
@@ -66,6 +52,48 @@ exports.destroy = function(req, res) {
             return res.send(204);
         });
     });
+};
+
+/**
+ * Get my info
+ */
+exports.me = function(req, res, next) {
+    var userId = req.user._id;
+    Gebruiker.findOne({
+        _id: userId
+    }, '-salt -hashedPassword', function(err, user) { // don't ever give out the password or salt
+        if (err) return next(err);
+        if (!user) return res.json(401);
+        res.json(user);
+    });
+};
+
+/**
+ * Change a users password
+ */
+exports.changePassword = function(req, res, next) {
+    var userId = req.user._id;
+    var oldPass = String(req.body.oldPassword);
+    var newPass = String(req.body.newPassword);
+
+    Gebruiker.findById(userId, function (err, user) {
+        if(user.authenticate(oldPass)) {
+            user.password = newPass;
+            user.save(function(err) {
+                if (err) return validationError(res, err);
+                res.send(200);
+            });
+        } else {
+            res.send(403);
+        }
+    });
+};
+
+/**
+ * Authentication callback
+ */
+exports.authCallback = function(req, res, next) {
+    res.redirect('/');
 };
 
 function handleError(res, err) {

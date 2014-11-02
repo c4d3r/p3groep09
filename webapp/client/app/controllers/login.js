@@ -6,8 +6,6 @@ angular.module('webappApp')
     $scope.errors = {};
 
     $scope.login = function(form) {
-        console.log("TEST");
-        console.log(form);
       $scope.submitted = true;
 
       if(form.$valid) {
