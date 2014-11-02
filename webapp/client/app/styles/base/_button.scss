@@ -1,0 +1,51 @@
+@mixin buttonColor($background, $border, $color) {
+    background: $background;
+    border-color: $border;
+    &:hover {
+        color:$color;
+    }
+}
+.btn {
+    border: 2px solid $gray;
+    color: $white;
+    padding:10px 15px;
+    background:$gray;
+    display:inline-block;
+    font-size:10pt;
+    border-radius:5px;
+    line-height: 15px;
+    cursor:pointer;
+    -webkit-transition: all 250ms;
+    -moz-transition: all 250ms;
+    -ms-transition: all 250ms;
+    -o-transition: all 250ms;
+    transition: all 250ms;
+
+    &:hover {
+        background-color: transparent;
+        color: rgb(47, 47, 47);
+    }
+
+    &:focus {
+        outline:0;
+    }
+}
+
+.btn-green {
+    @include buttonColor($green, $green, $green);
+}
+.btn-red {
+    @include buttonColor($red, $red, $red);
+}
+.btn-orange {
+    @include buttonColor($orange, $orange, $orange);
+}
+.btn-purple {
+    @include buttonColor($purple, $purple, $purple);
+}
+.btn-blue {
+    @include buttonColor($blue, $blue, $blue);
+}
+.btn-yellow {
+    @include buttonColor($yellow, $yellow, $yellow);
+}

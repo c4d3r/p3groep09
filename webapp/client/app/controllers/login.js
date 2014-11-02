@@ -6,12 +6,14 @@ angular.module('webappApp')
     $scope.errors = {};
 
     $scope.login = function(form) {
+        console.log("TEST");
+        console.log(form);
       $scope.submitted = true;
 
       if(form.$valid) {
         Auth.login({
           email: $scope.user.email,
-          password: $scope.user.password
+          wachtwoord: $scope.user.wachtwoord
         })
         .then( function() {
           // Logged in, redirect to home

@@ -5,7 +5,7 @@ angular.module('webappApp')
     $stateProvider
       .state('login', {
         url: '/login',
-        templateUrl: 'app/account/login/login.html',
+        templateUrl: 'app/views/security/login.html',
         controller: 'LoginCtrl'
       })
       .state('signup', {

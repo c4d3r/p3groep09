@@ -1,0 +1,47 @@
+.form {
+
+
+
+}
+
+.form-group {
+    label {
+        font-size: 10pt;
+    }
+
+    input[type="text"], input[type="password"], input[type="email"], textarea {
+        display: block;
+        width: 100%;
+        padding: 10px 10px;
+        box-sizing: border-box;
+        border-radius: 5px;
+        border: 1px solid $gray;
+        color:$gray;
+
+        &:focus {
+            color:$black;
+            outline:none;
+            border-color:$black;
+        }
+    }
+
+    & + .form-group {
+        margin-top:10px;
+    }
+}
+
+.has-error > .help-block {
+    &:first-child, &:nth-child(2) {
+        border: 1px solid $red;
+        color:$white;
+        background:$red;
+        padding: 10px;
+        font-size:10pt;
+        margin:0;
+    }
+
+
+    & + p {
+        margin-top:5px;
+    }
+}

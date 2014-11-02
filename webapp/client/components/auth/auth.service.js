@@ -22,7 +22,7 @@ angular.module('webappApp')
 
         $http.post('/auth/local', {
           email: user.email,
-          password: user.password
+          wachtwoord: user.wachtwoord
         }).
         success(function(data) {
           $cookieStore.put('token', data.token);

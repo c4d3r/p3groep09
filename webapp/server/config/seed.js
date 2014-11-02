@@ -35,13 +35,13 @@ Gebruiker.find({}).remove(function() {
     provider: 'local',
     name: 'Test User',
     email: 'test@test.com',
-    password: 'test'
+    wachtwoord: 'test'
   }, {
     provider: 'local',
-    role: 'admin',
+    role: 'ROLE_ADMIN',
     name: 'Admin',
     email: 'admin@admin.com',
-    password: 'admin'
+    wachtwoord: 'admin'
   }, function() {
       console.log('finished populating users');
     }

@@ -24,14 +24,14 @@ var GebruikerSchema = new Schema({
 
 //password is gehasht
 GebruikerSchema
-    .virtual('password')
-    .set(function(password) {
-        this._password = password;
+    .virtual('wachtwoord')
+    .set(function(wachtwoord) {
+        this._wachtwoord = wachtwoord;
         this.salt = this.makeSalt();
-        this.hashedWachtwoord = this.encryptPassword(password);
+        this.hashedWachtwoord = this.encryptPassword(wachtwoord);
     })
     .get(function() {
-        return this._password;
+        return this._wachtwoord;
     });
 // Validate empty email
 GebruikerSchema
