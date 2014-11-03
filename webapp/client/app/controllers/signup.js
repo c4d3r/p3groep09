@@ -10,9 +10,10 @@ angular.module('webappApp')
 
       if(form.$valid) {
         Auth.createUser({
-          name: $scope.user.name,
+          naam: $scope.user.naam,
           email: $scope.user.email,
-          password: $scope.user.password
+          voornaam: $scope.user.voornaam,
+          wachtwoord: $scope.user.wachtwoord
         })
         .then( function() {
           // Account created, redirect to home

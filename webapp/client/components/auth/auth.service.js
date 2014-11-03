@@ -133,7 +133,7 @@ angular.module('webappApp')
        * @return {Boolean}
        */
       isAdmin: function() {
-        return currentUser.role === 'admin';
+        return currentUser.role === 'ROLE_ADMIN';
       },
 
       /**

@@ -10,7 +10,7 @@ angular.module('webappApp')
       })
       .state('signup', {
         url: '/signup',
-        templateUrl: 'app/account/signup/signup.html',
+        templateUrl: 'app/views/security/signup.html',
         controller: 'SignupCtrl'
       })
       .state('settings', {

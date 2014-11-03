@@ -17,11 +17,15 @@ var Gebruiker = require('./gebruiker.model')
     , jwt = require('jsonwebtoken')
     , _ = require('lodash');
 
+var validationError = function(res, err) {
+    return res.json(422, err);
+};
+
 // Get list of things
 exports.index = function(req, res) {
-    Gebruiker.find(function (err, things) {
-        if(err) { return handleError(res, err); }
-        return res.json(200, things);
+    Gebruiker.find({}, '-salt -hashedPassword', function (err, users) {
+        if(err) return res.send(500, err);
+        res.json(200, users);
     });
 };
 
@@ -36,21 +40,24 @@ exports.show = function(req, res) {
 
 // Creates a new thing in the DB.
 exports.create = function(req, res) {
-    Gebruiker.create(req.body, function(err, thing) {
-        if(err) { return handleError(res, err); }
-        return res.json(201, thing);
+    var newUser = new Gebruiker(req.body);
+    newUser.provider = 'local';
+    newUser.role = 'ROLE_USER';
+    newUser.save(function(err, user) {
+        if (err) return validationError(res, err);
+        var token = jwt.sign({_id: user._id }, config.secrets.session, { expiresInMinutes: 60*5 });
+        res.json({ token: token });
     });
 };
 
-// Deletes a thing from the DB.
+/**
+ * Deletes a user
+ * restriction: 'admin'
+ */
 exports.destroy = function(req, res) {
-    Gebruiker.findById(req.params.id, function (err, thing) {
-        if(err) { return handleError(res, err); }
-        if(!thing) { return res.send(404); }
-        thing.remove(function(err) {
-            if(err) { return handleError(res, err); }
-            return res.send(204);
-        });
+    User.findByIdAndRemove(req.params.id, function(err, user) {
+        if(err) return res.send(500, err);
+        return res.send(204);
     });
 };
 

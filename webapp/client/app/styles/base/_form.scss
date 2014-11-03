@@ -28,6 +28,15 @@
     & + .form-group {
         margin-top:10px;
     }
+
+    .ng-valid {
+        border-color: $green !important;
+        transition: border-color 500ms;
+    }
+    .ng-touched.ng-invalid {
+        border-color:$red !important;
+        transition: border-color 500ms;
+    }
 }
 
 .has-error > .help-block {
@@ -44,4 +53,7 @@
     & + p {
         margin-top:5px;
     }
+
+
 }
+
