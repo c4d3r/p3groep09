@@ -7,6 +7,7 @@
 
 //var Thing = require('../api/thing/thing.model');
 var Gebruiker = require('../api/gebruiker/gebruiker.model');
+var Kamp = require('../api/kamp/kamp.model');
 
 /*Thing.find({}).remove(function() {
   Thing.create({
@@ -46,4 +47,21 @@ Gebruiker.find({}).remove(function() {
       console.log('finished populating users');
     }
   );
+});
+
+Kamp.find({}).remove(function(){
+    Kamp.create({
+       aansluitingsNummer: 1,
+       contact: 'Jeff',
+        //einddatum: '2012-11-04T14:51:06.157Z',
+        //startdatum:'2012-12-04T14:51:06.157Z',
+        leeftijdsCatDoelgroep: '3 tot 9',
+        locatie:'Rapture',
+        naam:'Trip to the bottom of the sea',
+        prijs:100,
+        vervoer: 'Jetplain'
+    }, function(){
+            console.log('Kampen zijn gevult')
+        }
+    );
 });
