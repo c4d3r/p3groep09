@@ -1,0 +1,6 @@
+<section ng-repeat="kamp in Kampen">
+    <div>
+        <h2><a href="/kampen/{{ kamp._id }}">{{ kamp.naam }}</a></h2>
+        <p ng-bind-html="kamp.beschrijving"></p>
+    </div>
+</section>

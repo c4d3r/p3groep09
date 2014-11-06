@@ -29,6 +29,11 @@ angular.module('webappApp')
         controller: 'SettingsCtrl',
         authenticate: true
       })
+      .state('kamp', {
+              url: '/kampen',
+              templateUrl: 'app/views/kampen/kampen.html',
+              controller: 'KampenCtrl'
+            })
       .state('admin', {
         url: '/admin',
         templateUrl: 'app/admin/admin.html',
