@@ -17,16 +17,17 @@ html, body {
     font-family: 'Open Sans', sans-serif;
 }
 body {
-    border:none;
-    background:white;
-    position: relative;
+  border:none;
+  background:white;
+  position: relative;
+  height:auto;
 }
 @media all and (min-width: $bp-large) {
     body {
         background-color: #f3f3f3;
         background-repeat: no-repeat,repeat;
         background-position: center 60px,0 0;
-        min-height: 868px;
+        min-height: 100%;
     }
 }
 
@@ -138,31 +139,32 @@ header {
 }
 
 .container {
-    background: #fff;
-    padding:10px;
-    box-sizing:border-box;
-    margin: 5px auto;
+  background: #fff;
+  padding:10px;
+  box-sizing:border-box;
+  margin: 5px auto;
 
-    & + .container {
-        margin-top:10px;
-    }
+  & + .container {
+      margin-top:10px;
+  }
 }
 
 #content {
-   min-height: 10em;
- }
+  padding-bottom: 161px;
+}
 
-#main-warpper {
-    padding: 10px 10px 161px 10px;
+#main-wrapper {
+  padding: 10px 10px 161px 10px;
 }
 @media all and (min-width: $bp-large) {
-    #content:after {
-        @include clearfix();
-    }
+  #content:after {
+    @include clearfix();
+  }
 }
 
 #main {
-    width: 100%;
-    box-sizing: border-box;
-    margin-bottom: 10px;
+  width: 100%;
+  box-sizing: border-box;
+  margin-bottom: 10px;
+  padding:10px;
 }

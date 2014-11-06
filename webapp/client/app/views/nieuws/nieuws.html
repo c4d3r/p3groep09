@@ -1,0 +1,11 @@
+<article ng-repeat="post in nieuwsItems">
+  <time datetime="{{ post.createdOn | date : 'yyyy-M-dd' }}" class="icon">
+    <strong>{{ post.createdOn | date : 'MMM' }}</strong>
+    <span>{{ post.createdOn | date : 'dd' }}</span>
+  </time>
+  <div class="article-holder">
+    <h2><a href="/nieuws/{{ post._id }}">{{ post.title }}</a></h2>
+    <span class="subtitle">gepost door <span class="color-red">{{ post.createdBy.voornaam }} {{ post.createdBy.naam }}</span> op {{ post.createdOn | date : 'fullDate' }}</span>
+    <p ng-bind-html="post.text"></p>
+  </div>
+</article>

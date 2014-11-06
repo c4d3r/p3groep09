@@ -1,10 +1,14 @@
 $fa-font-path: "/bower_components/font-awesome/fonts";
 @import 'font-awesome/scss/font-awesome';
 
+@import 'utilities/fonts.scss';
+
 @import 'utilities/variables.scss';
 
 @import 'layout.scss';
 
+@import 'base/colors.scss';
+@import 'base/nieuws.scss';
 @import 'base/footer.scss';
 @import 'base/page.scss';
 @import 'base/form.scss';

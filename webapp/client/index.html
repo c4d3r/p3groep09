@@ -25,7 +25,7 @@
                 <li><a href="#">Vakanties</a></li>
                 <li><a href="#">Vormingen</a></li>
                 <li><a href="#">Gezondheid</a></li>
-                <li class="logo"><a href="#"><img src="/assets/images/joetz.png" alt="Joetz logo"/></a></li>
+                <li class="logo"><a href="/"><img src="/assets/images/joetz.png" alt="Joetz logo"/></a></li>
                 <li><a href="#">Nieuws</a></li>
                 <li><a href="#">Inclusie</a></li>
                 <li><a href="#">JOETZ.fun</a></li>
@@ -40,32 +40,32 @@
             <a href="/" ng-click="logout()" style="float:right;"><i class="fa fa-sign-out"></i> Logout</a>
         </div>
 
-        <div id="content" class="container">
-            <section id="main">
+        <div id="content">
+            <section id="main" class="container">
                 <div ui-view=""></div>
             </section>
         </div>
-    </div>
 
-    <footer>
-        <div class="wrapper">
+        <footer>
+          <div class="wrapper" id="footer-holder">
             <div id="footer-copyright">
-                <img src="/assets/images/joetz.png" class="footer-logo" alt="Logo joetz"/>
-                <p class="footer-copyright">All Rights Reserved 2014 &copy; Joetz</p>
+              <img src="/assets/images/joetz.png" class="footer-logo" alt="Logo joetz"/>
+              <p class="footer-copyright">All Rights Reserved 2014 &copy; Joetz</p>
             </div>
 
             <nav id="footer-links">
-                <ul>
-                    <li><a href="#">Vakanties</a></li>
-                    <li><a href="#">Vormingen</a></li>
-                    <li><a href="#">Gezondheid</a></li>
-                    <li><a href="#">Nieuws</a></li>
-                    <li><a href="#">Inclusie</a></li>
-                    <li><a href="#">JOETZ.fun</a></li>
-                </ul>
-            </div>
-        </div>
-    </footer>
+              <ul>
+                <li><a href="#">Vakanties</a></li>
+                <li><a href="#">Vormingen</a></li>
+                <li><a href="#">Gezondheid</a></li>
+                <li><a href="#">Nieuws</a></li>
+                <li><a href="#">Inclusie</a></li>
+                <li><a href="#">JOETZ.fun</a></li>
+              </ul>
+            </nav>
+          </div>
+        </footer>
+    </div>
 
     <!--[if lt IE 9]>
     <script src="bower_components/es5-shim/es5-shim.js"></script>
@@ -89,15 +89,15 @@
     <!-- build:js({.tmp,client}) app/app.js -->
     <script src="app/app.js"></script>
       <!-- injector:js -->
-      <script src="app/account/account.js"></script>
       <script src="app/account/settings/settings.controller.js"></script>
       <script src="app/admin/admin.controller.js"></script>
-      <script src="app/admin/admin.js"></script>
       <script src="app/controllers/account.js"></script>
       <script src="app/controllers/login.js"></script>
+      <script src="app/controllers/nieuws.js"></script>
+      <script src="app/controllers/nieuwsview.js"></script>
       <script src="app/controllers/signup.js"></script>
-      <script src="app/main/main.controller.js"></script>
-      <script src="app/main/main.js"></script>
+      <script src="app/routes.js"></script>
+      <script src="app/services/nieuwsitems.js"></script>
       <script src="components/auth/auth.service.js"></script>
       <script src="components/auth/user.service.js"></script>
       <script src="components/mongoose-error/mongoose-error.directive.js"></script>

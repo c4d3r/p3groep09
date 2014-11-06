@@ -14,19 +14,29 @@ var Nieuwsitem = require('./nieuwsitem.model');
 
 // Get list of nieuwsitems
 exports.index = function(req, res) {
-  Nieuwsitem.find(function (err, nieuwsitems) {
-    if(err) { return handleError(res, err); }
-    return res.json(200, nieuwsitems);
-  });
+  Nieuwsitem
+    .find()
+    .sort({createdOn: -1})
+    .populate({path: 'createdBy', select: '-salt -hashedWachtwoord'})
+    .limit(5)
+    .exec(function (err, nieuwsitems) {
+      if(err) { return handleError(res, err); }
+      return res.json(200, nieuwsitems);
+    });
 };
 
 // Get a single nieuwsitem
 exports.show = function(req, res) {
-  Nieuwsitem.findById(req.params.id, function (err, nieuwsitem) {
-    if(err) { return handleError(res, err); }
-    if(!nieuwsitem) { return res.send(404); }
-    return res.json(nieuwsitem);
-  });
+  Nieuwsitem
+    .findById(req.params.id)
+    .sort({createdOn: -1})
+    .populate({path: 'createdBy', select: '-salt -hashedWachtwoord'})
+    .limit(5)
+    .exec(function (err, nieuwsitem) {
+      if(err) { return handleError(res, err); }
+      if(!nieuwsitem) { return res.send(404); }
+      return res.json(200, nieuwsitem);
+    });
 };
 
 // Creates a new nieuwsitem in the DB.

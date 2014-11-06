@@ -5,9 +5,11 @@ var mongoose = require('mongoose')
 , Schema = mongoose.Schema;
 
 var NieuwsitemSchema = new Schema({
-    text: {type: String},
-    createdOn: {type: Date},
-    createdBy: {type: Schema.ObjectId, ref: "GebruikerSchema"}
+    text: {type: String, required: false, default: ""},
+    image: {type: String, required: false},
+    title: {type: String, required: false, default: ""},
+    createdOn: {type: Date, required: true, default: Date.now},
+    createdBy: {type: Schema.ObjectId, ref: "Gebruiker"}
 });
 
 module.exports = mongoose.model('Nieuwsitem', NieuwsitemSchema);
