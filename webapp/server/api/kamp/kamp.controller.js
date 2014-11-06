@@ -14,7 +14,9 @@ var Kamp = require('./kamp.model');
 
 // Get list of kampen
 exports.index = function(req, res) {
-  Kamp.find(function (err, kampen) {
+  Kamp
+  .find()
+  .exec(function (err, kampen) {
     if(err) { return handleError(res, err); }
     return res.json(200, kampen);
   });

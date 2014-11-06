@@ -15,7 +15,7 @@ var KampSchema = new Schema({
     naam: {type: String},
     prijs: {type: Number},
     vervoer: {type: String},
-    inschrijvingen: [{type: Schema.ObjectId, ref: "InschrijvingSchema"}]
+    //inschrijvingen: [{type: Schema.ObjectId, ref: "InschrijvingSchema"}]
 });
 
 KampSchema.path('beschrijving').required(true, "Beschrijving mag niet leeg zijn");

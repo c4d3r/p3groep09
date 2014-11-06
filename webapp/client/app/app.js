@@ -8,7 +8,8 @@ angular.module('webappApp', [
 ])
   .config(function ($stateProvider, $urlRouterProvider, $locationProvider, $httpProvider) {
     $urlRouterProvider
-      .otherwise('/');
+         .otherwise('/');
+
 
     $locationProvider.html5Mode(true);
     $httpProvider.interceptors.push('authInterceptor');

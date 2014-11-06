@@ -5,7 +5,7 @@
 
 'use strict';
 
-//var Thing = require('../api/thing/thing.model');
+
 var Gebruiker = require('../api/gebruiker/gebruiker.model')
   , Kamp = require('../api/kamp/kamp.model')
   , NieuwsItem = require('../api/nieuwsitem/nieuwsitem.model');
@@ -48,7 +48,14 @@ Gebruiker.find({}).remove(function() {
     name: 'Admin',
     email: 'admin@admin.com',
     wachtwoord: 'admin'
-  }, function() {
+  },
+  {
+    provider: 'local',
+    name: 'Roy Hollanders',
+    email: 'roy_9852@hotmail.com',
+    wachtwoord: 'Test123'
+  }
+     ,function() {
       console.log('finished populating users');
 
       // Ah async
@@ -69,7 +76,7 @@ function populateNieuws() {
           "We staan aan het begin van een nieuw werkjaar waarin zoals steeds vrede en verdraagzaamheid twee essentiële pijlers zijn in de werking van Joetz. Vooral tijdens de Internationale Week van de Vrede willen we deze topics extra benadrukken. Inclusie, verdraagzaamheid en aandacht voor minderheden zijn thema’s die al in meerdere Joetz-campagnes aan bod zijn gekomen. Aan de hand van reizen en infomomenten, proberen we om verdraagzaamheid en solidariteit zoveel mogelijk te promoten." +
           "Er zijn echter veel kinderen in andere delen van de wereld die op dagelijkse basis geconfronteerd worden met geweld en oorlog. Om duidelijk te maken dat er ook aan hen gedacht wordt, organiseert Joetz de actie ‘Knuffel voor een Truffel’. Op 24 september zullen tientallen monitoren en vrijwilligers van Joetz verkleed als knuffeldieren naar het Muntplein in Brussel stappen waar ze onderweg gratis knuffels uitdelen aan voorbijgangers. Ze krijgen in ruil voor de knuffel een lekkere truffel. Met deze ludieke actie wil Joetz duidelijk maken dat verdraagzaamheid en vrede twee kerneigenschappen zijn van een gezonde maatschappij waarin jongeren en kinderen zich kunnen ontplooien." +
           "Waarom dan precies knuffelen?" +
-          "willen met deze actie benadrukken dat het voor kinderen en jongeren heel gezond is om dagelijks iemand te knuffelen. Uit wetenschappelijk onderzoek is zelfs gebleken dat kin¬deren die tijdens de eerste zes jaar niet genoeg werden geknuffeld, lichamelijke of geestelijke achter-stand kunnen oplopen. Knuffelen heeft een positieve invloed op het immuunsysteem, vermindert stress, helpt tegen slapeloos¬heid en blijkt te helpen tegen depressie”, legt Sofie De Bisschop van Joetz vzw uit.",
+          "willen met deze actie benadrukken dat het voor kinderen en jongeren heel gezond is om dagelijks iemand te knuffelen. Uit wetenschappelijk onderzoek is zelfs gebleken dat kin¬deren die tijdens de eerste zes jaar niet genoeg werden geknuffeld, lichamelijke of geestelijke achter-stand kunnen oplopen. Knuffelen heeft een positieve invloed op het immuunsysteem, vermindert stress, helpt tegen slapeloos¬heid en blijkt te helpen tegen depressie�?, legt Sofie De Bisschop van Joetz vzw uit.",
           createdBy: gebruiker,
           createdOn: new Date(2014, 9, 22)
         },
@@ -102,27 +109,56 @@ function populateNieuws() {
           createdBy: gebruiker,
           createdOn: new Date(2014, 7, 25)
         }, function() {
-          console.log("popoulated nieuwsitems");
+          console.log("populated nieuwsitems");
         }
       )
     });
   });
 }
 
+function populateKampen(){
+    Kamp.find({}).remove(function(){
 
-Kamp.find({}).remove(function(){
-    Kamp.create({
-       aansluitingsNummer: 1,
-       contact: 'Jeff',
-        //einddatum: '2012-11-04T14:51:06.157Z',
-        //startdatum:'2012-12-04T14:51:06.157Z',
-        leeftijdsCatDoelgroep: '3 tot 9',
-        locatie:'Rapture',
-        naam:'Trip to the bottom of the sea',
-        prijs:100,
-        vervoer: 'Jetplain'
-    }, function(){
-            console.log('Kampen zijn gevult')
+        Kamp.create(
+        {
+           contact: "Jeff",
+            einddatum: new Date(2014, 7, 25),
+            startdatum:new Date(2014, 5, 25),
+            leeftijdsCatDoelgroep: "3 tot 9",
+            locatie:"Rapture",
+            naam:"Trip to the bottom of the sea",
+            prijs:100,
+            vervoer: "Jetplane",
+            korting:10
+            //inschrijvingen: null
+        },
+        {
+                   contact: "Test",
+                    einddatum: new Date(2014, 7, 25),
+                    startdatum:new Date(2014, 5, 25),
+                    leeftijdsCatDoelgroep: "3 tot 9",
+                    locatie:"Spa",
+                    naam:"Wateravontuur  in Spa",
+                    prijs:300,
+                    vervoer: "Bus",
+                    korting:10
+                   // inschrijvingen: null
+        },
+                   contact: "Roy",
+                   einddatum: new Date(2014, 7, 25),
+                   startdatum:new Date(2014, 5, 25),
+                    leeftijdsCatDoelgroep: "3 tot 9",
+                    locatie:"Zwarte woud",
+                    naam:"Bosactiviteiten",
+                    prijs:200,
+                    vervoer: "Bus",
+                    korting:10
+                    //inschrijvingen: null
         }
-    );
-});
+        , function(){
+                console.log('populated kampen')
+            }
+        )
+    });
+}
+
