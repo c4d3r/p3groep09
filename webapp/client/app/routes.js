@@ -18,6 +18,11 @@ angular.module('webappApp')
         templateUrl: 'app/views/security/login.html',
         controller: 'LoginCtrl'
       })
+      .state('inschrijving', {
+        url: "/inschrijven",
+        templateUrl: "app/views/inschrijven/inschrijven.html",
+        controller: "InschrijvingCtrl"
+      })
       .state('signup', {
         url: '/signup',
         templateUrl: 'app/views/security/signup.html',
