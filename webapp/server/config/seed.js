@@ -59,7 +59,9 @@ Gebruiker.find({}).remove(function () {
             console.log('finished populating users');
 
             // Ah async
+            populateKampen();
             populateNieuws();
+
         }
     );
 });
@@ -118,9 +120,9 @@ function populateNieuws() {
 
 function populateKampen() {
     Kamp.find({}).remove(function () {
-
             Kamp.create(
                 {
+                    beschrijving: 'Intressant',
                     contact: "Jeff",
                     einddatum: new Date(2014, 7, 25),
                     startdatum: new Date(2014, 5, 25),
@@ -133,6 +135,7 @@ function populateKampen() {
                     //inschrijvingen: null
                 },
                 {
+                    beschrijving: 'Intressant',
                     contact: "Test",
                     einddatum: new Date(2014, 7, 25),
                     startdatum: new Date(2014, 5, 25),
@@ -145,6 +148,7 @@ function populateKampen() {
                     // inschrijvingen: null
                 },
                 {
+                    beschrijving: 'Intressant',
                     contact: "Roy",
                     einddatum: new Date(2014, 7, 25),
                     startdatum: new Date(2014, 5, 25),
