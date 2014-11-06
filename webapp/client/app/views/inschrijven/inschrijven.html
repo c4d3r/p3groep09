@@ -87,82 +87,89 @@
 
     <h3>Adres</h3>
     <div class="form-group">
-      <input type="checkbox" name="adres_zelfde" id="adres_zelfde">Is het adres van de deelnemer hetzelfde als dat van de betalende ouder?
+      <input type="checkbox" name="adres_zelfde" id="adres_zelfde" ng-model="adres_zelfde" ng-change="methods.adresZelfdeAlsOuder(adres_zelfde)">Is het adres van de deelnemer hetzelfde als dat van de betalende ouder?
     </div>
-    <div class="form-group">
-      <label for="straat">Straat</label>
-      <input type="text" id="straat" name="straat" ng-model="model.adresDeelnemer.straat"/>
-    </div>
-    <div class="form-group">
-      <label for="huisnummer">Huisnummer</label>
-      <input type="text" id="huisnummer" name="huisnummer" ng-model="model.adresDeelnemer.huisnummer"/>
-    </div>
-    <div class="form-group">
-      <label for="bus">Bus</label>
-      <input type="text" id="bus" name="bus" ng-model="model.adresDeelnemer.bus"/>
-    </div>
-    <div class="form-group">
-      <label for="gemeente">Gemeente</label>
-      <input type="text" id="gemeente" name="gemeente" ng-model="model.adresDeelnemer.gemeente"/>
-    </div>
-    <div class="form-group">
-      <label for="postcode">Postcode</label>
-      <input type="text" id="postcode" name="postcode" ng-model="model.adresDeelnemer.postcode"/>
-    </div>
-    <div class="form-group">
-      <label for="telefoon">Telefoon of GSM nummer</label>
-      <input type="text" id="telefoon" name="telefoon" ng-model="model.adresDeelnemer.telefoonNummer"/>
-    </div>
-    <div class="form-group">
-      <input type="submit" wz-next value="Volgende" class="btn btn-blue"/>
+
+    <div ng-hide="adres_zelfde">
+      <div class="form-group">
+        <label for="straat">Straat</label>
+        <input type="text" id="straat" name="straat" ng-model="model.adresDeelnemer.straat"/>
+      </div>
+      <div class="form-group">
+        <label for="huisnummer">Huisnummer</label>
+        <input type="text" id="huisnummer" name="huisnummer" ng-model="model.adresDeelnemer.huisnummer"/>
+      </div>
+      <div class="form-group">
+        <label for="bus">Bus</label>
+        <input type="text" id="bus" name="bus" ng-model="model.adresDeelnemer.bus"/>
+      </div>
+      <div class="form-group">
+        <label for="gemeente">Gemeente</label>
+        <input type="text" id="gemeente" name="gemeente" ng-model="model.adresDeelnemer.gemeente"/>
+      </div>
+      <div class="form-group">
+        <label for="postcode">Postcode</label>
+        <input type="text" id="postcode" name="postcode" ng-model="model.adresDeelnemer.postcode"/>
+      </div>
+      <div class="form-group">
+        <label for="telefoon">Telefoon of GSM nummer</label>
+        <input type="text" id="telefoon" name="telefoon" ng-model="model.adresDeelnemer.telefoonNummer"/>
+      </div>
+      <div class="form-group">
+        <input type="submit" wz-next value="Volgende" class="btn btn-blue"/>
+      </div>
     </div>
   </wz-step>
 
   <wz-step title="4. Contactpersoon" class="wz-step">
     <h1>Contactpersoon</h1>
     <div class="form-group">
-      <input type="checkbox" name="contactpersoon_zelfde" id="contactpersoon_zelfde">Is de contacpersoon ook de betalende ouder?
+      <input type="checkbox" name="contactpersoon_zelfde" id="contactpersoon_zelfde" ng-model="contactpersoon_zelfde" ng-change="methods.contactpersoonZelfdeOuder(contactpersoon_zelfde)">Is de contacpersoon ook de betalende ouder?
     </div>
-    <div class="form-group">
-      <label for="contactpersoon_rijksregisternummer">Rijksregisternummer</label>
-      <input type="text" id="contactpersoon_rijksregisternummer" name="contactpersoon_rijksregisternummer"/>
-    </div>
-    <div class="form-group">
-      <label for="contactpersoon_voornaam">Voornaam</label>
-      <input type="text" id="contactpersoon_voornaam" name="contactpersoon_voornaam"/>
-    </div>
-    <div class="form-group">
-      <label for="contactpersoon_naam">Naam</label>
-      <input type="text" id="contactpersoon_naam" name="contactpersoon_naam"/>
-    </div>
-    <div class="form-group">
-      <label for="contactpersoon_straat">Straat</label>
-      <input type="text" id="contactpersoon_straat" name="contactpersoon_straat"/>
-    </div>
-    <div class="form-group">
-      <label for="contactpersoon_huisnummer">Huisnummer</label>
-      <input type="text" id="contactpersoon_huisnummer" name="contactpersoon_huisnummer"/>
-    </div>
-    <div class="form-group">
-      <label for="contactpersoon_bus">Bus</label>
-      <input type="text" id="contactpersoon_bus" name="contactpersoon_bus"/>
-    </div>
-    <div class="form-group">
-      <label for="contactpersoon_gemeente">Gemeente</label>
-      <input type="text" id="contactpersoon_gemeente" name="contactpersoon_emeente"/>
-    </div>
-    <div class="form-group">
-      <label for="contactpersoon_postcode">Postcode</label>
-      <input type="text" id="contactpersoon_postcode" name="contactpersoon_postcode"/>
-    </div>
-    <div class="form-group">
-      <label for="contactpersoon_telefoon">Telefoon of GSM nummer</label>
-      <input type="text" id="contactpersoon_telefoon" name="contactpersoon_telefoon"/>
+
+    <div ng-hide="contactpersoon_zelfde" class="animate-hide" style="margin-bottom:10px;">
+     <div class="form-group">
+        <label for="contactpersoon_rijksregisternummer">Rijksregisternummer</label>
+        <input type="text" id="contactpersoon_rijksregisternummer" name="contactpersoon_rijksregisternummer" ng-model="model.contactPersoon.rijksregisterNummer"/>
+      </div>
+      <div class="form-group">
+        <label for="contactpersoon_voornaam">Voornaam</label>
+        <input type="text" id="contactpersoon_voornaam" name="contactpersoon_voornaam" ng-model="model.contactPersoon.voornaam"/>
+      </div>
+      <div class="form-group">
+        <label for="contactpersoon_naam">Naam</label>
+        <input type="text" id="contactpersoon_naam" name="contactpersoon_naam" ng-model="model.contactPersoon.naam"/>
+      </div>
+      <div class="form-group">
+        <label for="contactpersoon_straat">Straat</label>
+        <input type="text" id="contactpersoon_straat" name="contactpersoon_straat" ng-model="model.contactPersoon.straat"/>
+      </div>
+      <div class="form-group">
+        <label for="contactpersoon_huisnummer">Huisnummer</label>
+        <input type="text" id="contactpersoon_huisnummer" name="contactpersoon_huisnummer" ng-model="model.contactPersoon.huisnummer">
+      </div>
+      <div class="form-group">
+        <label for="contactpersoon_bus">Bus</label>
+        <input type="text" id="contactpersoon_bus" name="contactpersoon_bus" ng-model="model.contactPersoon.bus"/>
+      </div>
+      <div class="form-group">
+        <label for="contactpersoon_gemeente">Gemeente</label>
+        <input type="text" id="contactpersoon_gemeente" name="contactpersoon_gemeente" ng-model="model.contactPersoon.gemeente"/>
+      </div>
+      <div class="form-group">
+        <label for="contactpersoon_postcode">Postcode</label>
+        <input type="text" id="contactpersoon_postcode" name="contactpersoon_postcode" ng-model="model.contactPersoon.postcode"/>
+      </div>
+      <div class="form-group">
+        <label for="contactpersoon_telefoon">Telefoon of GSM nummer</label>
+        <input type="text" id="contactpersoon_telefoon" name="contactpersoon_telefoon" ng-model="model.contactPersoon.telefoonNummer"/>
+      </div>
     </div>
 
     <div class="form-group">
       <input type="submit" wz-next value="Volgende" class="btn btn-blue"/>
     </div>
+
   </wz-step>
 
   <wz-step title="5. Noodpersonen" class="wz-step">
@@ -207,7 +214,7 @@
     </div>
 
     <div class="form-group">
-      <input type="submit" wz-next="setMode(true)" Value="BeÃ«indig" class="btn btn-green"/>
+      <input type="submit" wz-next="setMode(true)" ng-click="methods.createInschrijving()" Value="Voltooi inschrijving" class="btn btn-green"/>
     </div>
   </wz-step>
 </wizard>

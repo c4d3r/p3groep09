@@ -31,6 +31,7 @@ exports.show = function(req, res) {
 
 // Creates a new inschrijving in the DB.
 exports.create = function(req, res) {
+  console.log(req.body);
   Inschrijving.create(req.body, function(err, inschrijving) {
     if(err) { return handleError(res, err); }
     return res.json(201, inschrijving);
