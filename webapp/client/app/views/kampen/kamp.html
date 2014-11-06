@@ -1,0 +1,44 @@
+<section>
+    <div class="article-holder">
+        <h2>{{ kamp.naam }}</h2>
+
+        <p ng-bind-html="kamp.beschrijving"></p>
+        <p>
+            Locatie:
+            <br/>
+             {{kamp.locatie}}
+        </p>
+        <p>
+            Periode:
+            <br/>
+            {{kamp.startDatum | date : 'fullDate'}} - {{kamp.eindDatum | date : 'fullDate'}}
+        </p>
+        <p>
+            Vervoer:
+            <br/>
+            {{kamp.vervoer}}
+        </p>
+        <p>
+            Leeftijds Categorie:
+            <br/>
+            {{kamp.leeftijdsCatDoelgroep}}
+        </p>
+        <p>
+            Prijs:
+            <br/>
+            €{{kamp.prijs}}
+        </p>
+        <p>
+            Korting:
+            <br/>
+            €{{kamp.korting}}
+        </p>
+        <p>
+            Contact:
+            <br/>
+            {{kamp.contact}}
+        </p>
+
+
+    </div>
+</section>
