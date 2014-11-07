@@ -19,7 +19,7 @@ var GebruikerSchema = new Schema({
     hashedWachtwoord: String,
     provider: String,
     salt: String,
-    inschrijvingen: [{type: Schema.ObjectId, ref: "GebruikerSchema"}]
+    inschrijvingen: [{type: Schema.ObjectId, ref: "Inschrijving"}]
 });
 
 //password is gehasht
