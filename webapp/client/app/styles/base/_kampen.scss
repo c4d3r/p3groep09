@@ -1,6 +1,6 @@
 section {
-  position:relative;
-  padding:20px;
+  position: relative;
+  padding: 20px;
 
   .article-holder {
     margin: 0 15px;
@@ -11,10 +11,10 @@ section {
     margin: 0;
 
     a {
-      color:black;
+      color: black;
 
       &:hover {
-        color:$red;
+        color: $red;
       }
     }
   }
@@ -27,11 +27,30 @@ section {
     font-size: 10pt;
     text-align: justify;
   }
+  #leftside {
+    float: left;
+    border: solid;
+    border-width: thin;
+    width: 25%;
+    height: 200px;
+
+  }
+
+  #rightside {
+    float: right;
+
+  }
+
+  #buttonheading {
+    top:0;
+    width: 100%;
+    border: solid thin;
+    margin-bottom: 20px;
+  }
 }
 
 @media all and (min-width: $bp-large) {
-  time.icon
-  {
+  time.icon {
     font-size: 10pt;
     display: block;
     position: relative;

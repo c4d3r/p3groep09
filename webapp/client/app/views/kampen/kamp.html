@@ -1,38 +1,56 @@
 <section>
     <div>
+
+
+        <div>
+            <div>
+                {{kamp.leeftijdsCatDoelgroep}} Jaar
+            </div>
+        </div>
+
+        <div>
+            {{kamp.startDatum | date : 'fullDate'}} - {{kamp.eindDatum | date : 'fullDate'}}
+        </div>
+
+
         <h2>{{ kamp.naam }}</h2>
 
         <p ng-bind-html="kamp.beschrijving"></p>
-        <p>
-            <h3>Locatie:</h3>
 
-             {{kamp.locatie}}
-        </p>
         <p>
-        <h3>Periode:</h3>
-            {{kamp.startDatum | date : 'fullDate'}} - {{kamp.eindDatum | date : 'fullDate'}}
+
+        <h3>Locatie:</h3>
+        {{kamp.locatie}}
         </p>
+
+
         <p>
+
         <h3>Vervoer:</h3>
-            {{kamp.vervoer}}
-        </p>
-        <p>
-        <h3>Leeftijds categorie:</h3>
-            {{kamp.leeftijdsCatDoelgroep}}
-        </p>
-        <p>
-        <h3>Prijs:</h3>
-            €{{kamp.prijs}}
-        </p>
-        <p>
-        <h3>Korting:</h3>
-            €{{kamp.korting}}
-        </p>
-        <p>
-        <h3>Contact:</h3>
-            {{kamp.contact}}
+        {{kamp.vervoer}}
         </p>
 
-        <button ng-click="inschrijven(kamp.id)" class="btn btn-green">Inschrijven</button>
+
+        <p>
+
+        <h3>Prijs:</h3>
+        €{{kamp.prijs}}
+        </p>
+
+        <p>
+
+        <h3>Korting:</h3>
+        €{{kamp.korting}}
+        </p>
+
+        <p>
+
+        <h3>Contact:</h3>
+        {{kamp.contact}}
+        </p>
+
+        <div>
+            <button ng-click="inschrijven(kamp.id)" class="btn btn-blue">Inschrijven</button>
+        </div>
     </div>
 </section>
