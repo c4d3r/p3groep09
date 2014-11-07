@@ -3,7 +3,7 @@
  */
 
 var mongoose = require('mongoose')
-    ,schema = mongoose.Schema;
+    ,Schema = mongoose.Schema;
 
 var CategorieSchema = new Schema({
         naam: {type:String},

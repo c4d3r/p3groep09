@@ -16,6 +16,8 @@ module.exports = function(app) {
   app.use('/api/comments', require('./api/comment'));
   app.use('/api/contactpersonen', require('./api/contactpersoon'));
   app.use('/api/nieuwsitems', require('./api/nieuwsitem'));
+  //Nog in commentaar, deze geeft een fout bij het serven
+  // app.use('/api/categories', require('./api/categorie'));
 
   app.use('/auth', require('./auth'));
   
