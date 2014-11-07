@@ -19,7 +19,7 @@ angular.module('webappApp')
         controller: 'LoginCtrl'
       })
       .state('inschrijving', {
-        url: "/inschrijven",
+        url: "/kampen/:id/inschrijven",
         templateUrl: "app/views/inschrijven/inschrijven.html",
         controller: "InschrijvingCtrl"
       })
@@ -35,15 +35,15 @@ angular.module('webappApp')
         authenticate: true
       })
       .state('kamp', {
-              url: '/kampen',
-              templateUrl: 'app/views/kampen/kampen.html',
-              controller: 'KampenCtrl'
-            })
+        url: '/kampen',
+        templateUrl: 'app/views/kampen/kampen.html',
+        controller: 'KampenCtrl'
+        })
       .state('kamp_detail', {
-                    url: '/kampen/:id',
-                    templateUrl: 'app/views/kampen/kamp.html',
-                    controller: 'KampDetailCtrl'
-                  })
+        url: '/kampen/:id',
+        templateUrl: 'app/views/kampen/kamp.html',
+        controller: 'KampDetailCtrl'
+        })
       .state('admin', {
         url: '/admin',
         templateUrl: 'app/admin/admin.html',

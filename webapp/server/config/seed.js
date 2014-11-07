@@ -122,7 +122,7 @@ function populateKampen() {
     Kamp.find({}).remove(function () {
             Kamp.create(
                 {
-                    beschrijving: 'Intressant',
+                    beschrijving: 'Beschrijving van het kamp',
                     contact: "Jeff",
                     einddatum: new Date(2014, 7, 25),
                     startdatum: new Date(2014, 5, 25),
@@ -135,7 +135,7 @@ function populateKampen() {
                     //inschrijvingen: null
                 },
                 {
-                    beschrijving: 'Intressant',
+                    beschrijving: 'Beschrijving van het kamp',
                     contact: "Test",
                     einddatum: new Date(2014, 7, 25),
                     startdatum: new Date(2014, 5, 25),
@@ -148,7 +148,7 @@ function populateKampen() {
                     // inschrijvingen: null
                 },
                 {
-                    beschrijving: 'Intressant',
+                    beschrijving: 'Beschrijving van het kamp',
                     contact: "Roy",
                     einddatum: new Date(2014, 7, 25),
                     startdatum: new Date(2014, 5, 25),

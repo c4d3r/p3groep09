@@ -1,44 +1,38 @@
 <section>
-    <div class="article-holder">
+    <div>
         <h2>{{ kamp.naam }}</h2>
 
         <p ng-bind-html="kamp.beschrijving"></p>
         <p>
-            Locatie:
-            <br/>
+            <h3>Locatie:</h3>
+
              {{kamp.locatie}}
         </p>
         <p>
-            Periode:
-            <br/>
+        <h3>Periode:</h3>
             {{kamp.startDatum | date : 'fullDate'}} - {{kamp.eindDatum | date : 'fullDate'}}
         </p>
         <p>
-            Vervoer:
-            <br/>
+        <h3>Vervoer:</h3>
             {{kamp.vervoer}}
         </p>
         <p>
-            Leeftijds Categorie:
-            <br/>
+        <h3>Leeftijds categorie:</h3>
             {{kamp.leeftijdsCatDoelgroep}}
         </p>
         <p>
-            Prijs:
-            <br/>
+        <h3>Prijs:</h3>
             €{{kamp.prijs}}
         </p>
         <p>
-            Korting:
-            <br/>
+        <h3>Korting:</h3>
             €{{kamp.korting}}
         </p>
         <p>
-            Contact:
-            <br/>
+        <h3>Contact:</h3>
             {{kamp.contact}}
         </p>
 
-
+        <button ng-click="inschrijven(kamp.id)">Inschrijven</button>
     </div>
 </section>
