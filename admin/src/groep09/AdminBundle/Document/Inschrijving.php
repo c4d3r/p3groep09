@@ -6,7 +6,7 @@
  * Time: 08:53
  */
 
-namespace Groep09\AdminBundle\Entity;
+namespace Groep09\AdminBundle\Document;
 
 
 class Inschrijving {

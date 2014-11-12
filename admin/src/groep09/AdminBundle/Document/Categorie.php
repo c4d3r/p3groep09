@@ -6,7 +6,7 @@
  * Time: 08:54
  */
 
-namespace Groep09\AdminBundle\Entity;
+namespace Groep09\AdminBundle\Document;
 
 
 class Categorie {
