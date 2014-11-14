@@ -45,7 +45,8 @@ var InschrijvingSchema = new Schema({
   ],
   extraInformatie: {type: String},
   toevoeging: {type: String},
-  gebruiker: [{type: Schema.ObjectId, ref: "Gebruiker"}],
+  gebruiker: {type: Schema.ObjectId, ref: "Gebruiker"},
+  kamp: {type: Schema.ObjectId, ref: "Kamp"},
   activiteit: {type: Schema.ObjectId, ref: "Activiteit"}
 });
 
@@ -62,5 +63,28 @@ var InschrijvingSchema = new Schema({
  InschrijvingSchema.path('gebruiker').required(true, 'Gebruiker mag niet null zijn');
  InschrijvingSchema.path('activiteit').required(true, 'Activiteit mag niet null zijn');     */
 
+//post save hook
+InschrijvingSchema
+    .post('save', function(inschrijving){
+        
+        Kamp.findOne({_id: inschrijving.kamp}, function(kamp) {
+            kamp.addInschrijving(inschrijving);
+
+            kamp.save(function(err){
+                console.log(err);
+            });
+        });
+
+        Gebruiker.findOne({_id: inschrijving.gebruiker}, function(gebruiker) {
+            gebruiker.addInschrijving(inschrijving);
+
+            gebruiker.save(function(err){
+                console.log(err);
+            });
+        })
+
+        /
+
+    })
 
 module.exports = mongoose.model('Inschrijving', InschrijvingSchema);

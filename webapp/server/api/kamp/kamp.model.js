@@ -15,7 +15,7 @@ var KampSchema = new Schema({
     naam: {type: String},
     prijs: {type: Number},
     vervoer: {type: String}
-    //inschrijvingen: [{type: Schema.ObjectId, ref: "InschrijvingSchema"}],
+    inschrijvingen: [{type: Schema.ObjectId, ref: "InschrijvingSchema"}],
     //categorie: {type: Schema.ObjectId, ref: "CategorieSchema"}
 });
 
@@ -28,5 +28,11 @@ KampSchema.path('locatie').required(true, "Locatie mag niet leeg zijn");
 KampSchema.path('naam').required(true, "Naam mag niet leeg zijn");
 KampSchema.path('prijs').required(true, "Prijs mag niet leeg zijn");
 KampSchema.path('vervoer').required(true, "Vervoer mag niet leeg zijn");
+
+KampSchema.methods = {
+    addInschrijving: function(inschrijving) {
+        this.inschrijvingen.push(inschrijving);
+    }
+}
 
 module.exports = mongoose.model('Kamp', KampSchema);

@@ -96,6 +96,10 @@ GebruikerSchema.methods = {
         return this.encryptPassword(plainText) === this.hashedWachtwoord;
     },
 
+    addInschrijving: function(inschrijving) {
+        this.inschrijvingen.push(inschrijving);
+    }
+
     /**
      * Make salt
      *
