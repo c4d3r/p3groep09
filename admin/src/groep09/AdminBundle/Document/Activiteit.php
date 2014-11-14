@@ -8,7 +8,23 @@
 
 namespace Groep09\AdminBundle\Document;
 
+/** @Document */
+class Activiteit
+{
+    private $beschrijving;
 
-class Activiteit {
+    private $contact;
 
+    private $eindDatum;
+
+    private $locatie;
+
+    private $naam;
+
+    private $startDatum;
+
+    /** @ReferenceMany(targetDocument="Comment") */
+    private $comments;
+
+    private $createdOn;
 } 

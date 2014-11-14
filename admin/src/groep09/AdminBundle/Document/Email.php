@@ -9,6 +9,11 @@
 namespace Groep09\AdminBundle\Entity;
 
 
-class Email {
+class Email
+{
+    private $sendBy;
 
+    private $sendDate;
+
+    private $text;
 } 

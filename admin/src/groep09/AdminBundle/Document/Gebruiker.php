@@ -9,6 +9,22 @@
 namespace Groep09\AdminBundle\Document;
 
 
-class Gebruiker {
+class Gebruiker
+{
+    private $email;
 
+    private $naam;
+
+    private $voornaam;
+
+    private $role;
+
+    private $hashedWachtwoord;
+
+    private $provider;
+
+    private $salt;
+
+    /** @ReferenceOMany(targetDocument="Inschrijving") */
+    private $inschrijvingen;
 } 

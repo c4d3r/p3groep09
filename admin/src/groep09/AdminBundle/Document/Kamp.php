@@ -9,6 +9,28 @@
 namespace Groep09\AdminBundle\Document;
 
 
-class Kamp {
+class Kamp
+{
+    private $korting;
 
+    private $beschrijving;
+
+    private $contact;
+
+    private $eindDatum;
+
+    private $startDatum;
+
+    private $leeftijdsCatDoelgroep;
+
+    private $locatie;
+
+    private $naam;
+
+    private $prijs;
+
+    private $vervoer;
+
+    /** @ReferenceMany(targetDocument="Inschrijving") */
+    private $inschrijvingen;
 } 

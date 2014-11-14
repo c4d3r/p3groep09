@@ -9,6 +9,11 @@
 namespace Groep09\AdminBundle\Document;
 
 
-class Categorie {
+class Categorie
+{
+    private $naam;
 
+    private $beginDatum;
+
+    private $eindDatum;
 } 

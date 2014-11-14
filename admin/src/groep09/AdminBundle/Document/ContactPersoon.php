@@ -9,6 +9,23 @@
 namespace Groep09\AdminBundle\Document;
 
 
-class ContactPersoon {
+class ContactPersoon
+{
+    private $bus;
 
+    private $gemeente;
+
+    private $gsm;
+
+    private $naam;
+
+    private $voornaam;
+
+    private $postcode;
+
+    private $rijksregisterNumer;
+
+    private $straat;
+
+    private $nood;
 } 

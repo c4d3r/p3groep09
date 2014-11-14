@@ -9,6 +9,16 @@
 namespace Groep09\AdminBundle\Document;
 
 
-class NieuwsItem {
+class NieuwsItem
+{
+    private $text;
 
+    private $image;
+
+    private $title;
+
+    private $createdOn;
+
+    /** @ReferenceOne(targetDocument="Gebruiker") */
+    private $createdBy;
 } 

@@ -9,6 +9,12 @@
 namespace Groep09\AdminBundle\Document;
 
 
-class Comment {
+class Comment
+{
+    private $text;
 
+    private $createdOn;
+
+    /** @ReferenceOne(targetDocument="Gebruiker") */
+    private $createdBy;
 } 
