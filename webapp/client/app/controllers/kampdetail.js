@@ -8,8 +8,10 @@ angular.module('webappApp')
     $scope.kamp = Kampen.show($stateParams);
 
 
-    $scope.inschrijven = function ($id) {
-     $location.path('/kampen/' + $id + "/inschrijven");
+
+
+    $scope.inschrijven = function () {
+     $location.path('/kampen/' + $stateParams.id + "/inschrijven");
     }
 
   });

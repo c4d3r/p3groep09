@@ -8,6 +8,9 @@
 
 var Gebruiker = require('../api/gebruiker/gebruiker.model')
     , Kamp = require('../api/kamp/kamp.model')
+    , Inschrijving = require('../api/inschrijving/inschrijving.model')
+    , Activiteit = require('../api/activiteit/activiteit.model')
+    , Comment = require('../api/comment/comment.model')
     , NieuwsItem = require('../api/nieuwsitem/nieuwsitem.model');
 
 
@@ -54,6 +57,13 @@ Gebruiker.find({}).remove(function () {
             name: 'Roy Hollanders',
             email: 'roy_9852@hotmail.com',
             wachtwoord: 'Test123'
+        },
+        {
+            provider: 'local',
+            name: 'Moni Tor',
+            role: 'ROLE_MONITOR',
+            email: 'monitor@joetz.com',
+            wachtwoord: 'monitor1'
         }
         , function () {
             console.log('finished populating users');
@@ -61,6 +71,9 @@ Gebruiker.find({}).remove(function () {
             // Ah async
             populateKampen();
             populateNieuws();
+            populateComments;
+            populateActiviteiten();
+            //populateInschrijvingen();
 
         }
     );
@@ -117,9 +130,57 @@ function populateNieuws() {
         });
     });
 }
+function populateActiviteiten() {
+    Gebruiker.findOne({email: "Monitor@Joetz.com"}, function (err, gebruiker) {
+    Comment.find(function (err, comments){
+        Activiteit.find({}).remove(function() {
+                    Activiteit.create(
+                                 {
+                                     beschrijving: "Test",
+                                     contact: gebruiker,
+                                     eindDatum: new Date(2014, 12, 16),
+                                     locatie: "Dromenland",
+                                     naam: "Slapen",
+                                     startDatum: new Date(2014, 12, 15),
+                                     comments: comments,
+                                     createdOn: new Date(2014,9,5)
+                                 }
+                     , function () {
+                        console.log('populated activiteiten')
+                       }
+                    )
+                })
+    })
+
+    });
+}
+
+function populateComments() {
+    Gebruiker.findOne({email: "Monitor@Joetz.com"}, function (err, gebruiker) {
+        Comment.find({}).remove(function() {
+            Comment.create(
+                         {
+                          text: "Lekker slapen!",
+                          createdOn: new Date(2014, 9 ,5),
+                          createdBy: gebruiker
+                         },
+                         {
+                         text: "Snoezen!",
+                         createdOn: new Date(2014, 9 ,6),
+                         createdBy: gebruiker
+                                                  }
+             , function () {
+                console.log('populated comments')
+               }
+            )
+        })
+    });
+}
+
 
 function populateKampen() {
     Kamp.find({}).remove(function () {
+
             Kamp.create(
                 {
                     beschrijving: 'Beschrijving van het kamp',
@@ -164,6 +225,71 @@ function populateKampen() {
                     console.log('populated kampen')
                 }
             )
+        }
+    )
+    ;
+}
+
+function populateInschrijvingen() {
+    Inschrijving.find({}).remove(function () {
+         Gebruiker.findOne({email: "roy_9852@hotmail.com"}, function (err, gebruiker){
+
+            Kamp.findOne({naam:"Bosactiviteiten"}, function (err, kamp){
+
+                            Inschrijving.create(
+                                            {
+                                                lidMutualiteit: false,
+                                                  persoonTenLaste: {
+                                                    aansluitingsNummer: "1234565789",
+                                                    codeGerechtigde: "1234"
+                                                  },
+                                                  tweedeOuder: {
+                                                    aansluitingsNummer: "541562156"
+                                                  },
+                                                  contactPersoon: gebruiker,
+                                                  betalendeOuder: {
+                                                    rijksregisterNummer: "165485162198",
+                                                    voornaam: "Bob",
+                                                    naam: "BobSon",
+                                                    straat: "straat",
+                                                    huisnummer: "1",
+                                                    bus: "2",
+                                                    gemeente: "testegem",
+                                                    postcode: "4567",
+                                                    telefoonNummer: "123456"
+                                                  },
+                                                  rijksregisterNummer: "1232456",
+                                                  voornaam: "test",
+                                                  naam: "testson",
+                                                  geboorteDatum: new Date(2005, 5, 25),
+                                                  adresDeelnemer: {
+                                                    straat: "straat",
+                                                    huisnummer: "1",
+                                                    bus: "2",
+                                                    gemeente: "testegem",
+                                                    postcode: "4567"
+                                                  },
+                                                  noodPersonen: [
+                                                    {
+                                                      voornaam: "nood",
+                                                      naam: "noodson",
+                                                      telefoonNummer: "123456789"
+                                                    }
+                                                  ],
+                                                  extraInformatie: "bla",
+                                                  toevoeging: "Test",
+                                                  gebruiker: gebruiker,
+                                                  kamp: kamp
+                                            }
+
+                                            , function () {
+                                                console.log('populated inschrijvingen')
+                                            }
+                                        )
+                        })
+         });
+
+
         }
     )
     ;

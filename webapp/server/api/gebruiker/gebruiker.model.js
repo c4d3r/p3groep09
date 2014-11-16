@@ -98,7 +98,7 @@ GebruikerSchema.methods = {
 
     addInschrijving: function(inschrijving) {
         this.inschrijvingen.push(inschrijving);
-    }
+    },
 
     /**
      * Make salt

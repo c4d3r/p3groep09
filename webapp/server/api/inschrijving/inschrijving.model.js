@@ -46,8 +46,7 @@ var InschrijvingSchema = new Schema({
   extraInformatie: {type: String},
   toevoeging: {type: String},
   gebruiker: {type: Schema.ObjectId, ref: "Gebruiker"},
-  kamp: {type: Schema.ObjectId, ref: "Kamp"},
-  activiteit: {type: Schema.ObjectId, ref: "Activiteit"}
+  kamp: {type: Schema.ObjectId, ref: "Kamp"}
 });
 
 //TODO: Aanmaken virtual voor als adres deelnemer = adres contactpersoon
@@ -81,10 +80,7 @@ InschrijvingSchema
             gebruiker.save(function(err){
                 console.log(err);
             });
-        })
-
-        /
-
-    })
+        });
+    });
 
 module.exports = mongoose.model('Inschrijving', InschrijvingSchema);

@@ -44,6 +44,11 @@ angular.module('webappApp')
         templateUrl: 'app/views/kampen/kamp.html',
         controller: 'KampDetailCtrl'
         })
+      .state('mijn_kampen', {
+        url: '/mijn_kampen/',
+        templateUrl: 'app/views/kampen/ingeschrevenkampen.html',
+        controller: 'AccountCtrl'
+        })
       .state('admin', {
         url: '/admin',
         templateUrl: 'app/admin/admin.html',

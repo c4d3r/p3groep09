@@ -14,8 +14,8 @@ var KampSchema = new Schema({
     locatie: {type: String},
     naam: {type: String},
     prijs: {type: Number},
-    vervoer: {type: String}
-    inschrijvingen: [{type: Schema.ObjectId, ref: "InschrijvingSchema"}],
+    vervoer: {type: String},
+    inschrijvingen: [{type: Schema.ObjectId, ref: "InschrijvingSchema"}]
     //categorie: {type: Schema.ObjectId, ref: "CategorieSchema"}
 });
 
@@ -33,6 +33,6 @@ KampSchema.methods = {
     addInschrijving: function(inschrijving) {
         this.inschrijvingen.push(inschrijving);
     }
-}
+};
 
 module.exports = mongoose.model('Kamp', KampSchema);
