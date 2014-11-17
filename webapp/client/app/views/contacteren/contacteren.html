@@ -1,0 +1,32 @@
+<div class="page">
+    <h1 class="page-header">Contacteer Joetz</h1>
+
+    <div class="page-content">
+        <form class="form" name="form" ng-submit="contact(form)" novalidate>
+            <div class="form-group">
+                <label>Onderwerp</label>
+                <input type="text" name="onderwerp" class="form-control" ng-model="email.subject" required>
+            </div>
+
+            <div class="form-group">
+                <label>Inhoud</label>
+                <input type="text" name="tekst" class="form-control" ng-model="email.text" required>
+            </div>
+
+            <div class="form-group has-error">
+                <p class="help-block" ng-show="form.onderwerp.$error.required && submitted">
+                    Gelieven een onderwerp op te geven.
+                </p>
+                <p class="help-block" ng-show="form.tekst.$error.required && submitted">
+                    Gelieven uw mail een inhoud te geven.
+                </p>
+
+                <p class="help-block">{{ errors.other }}</p>
+            </div>
+
+            <div style="margin-top: 10px;">
+                <button class="btn btn-green" type="submit">Verstuur</button>
+            </div>
+        </form>
+    </div>
+</div>
