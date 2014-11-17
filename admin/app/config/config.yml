@@ -4,7 +4,7 @@ imports:
 
 framework:
     #esi:             ~
-    #translator:      { fallback: "%locale%" }
+    translator:      ~
     secret:          "%secret%"
     router:
         resource: "%kernel.root_dir%/config/routing.yml"
@@ -71,7 +71,8 @@ doctrine_mongodb:
     default_database: webapp-dev
     document_managers:
         default:
-            auto_mapping: true
+            mappings:
+                Groep09AdminBundle: ~
 
 # Swiftmailer Configuration
 swiftmailer:

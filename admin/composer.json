@@ -20,7 +20,7 @@
         "sensio/distribution-bundle": "~3.0",
         "sensio/framework-extra-bundle": "~3.0",
         "incenteev/composer-parameter-handler": "~2.0",
-        "sonata-project/admin-bundle": "dev-master",
+        "sonata-project/admin-bundle": "~2.3",
         "sonata-project/doctrine-mongodb-admin-bundle": "dev-master"
     },
     "require-dev": {

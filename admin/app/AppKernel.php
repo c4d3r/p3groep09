@@ -31,6 +31,9 @@ class AppKernel extends Kernel
 
             // Then add SonataAdminBundle
             new Sonata\AdminBundle\SonataAdminBundle(),
+
+            //our bundles
+            new Groep09\AdminBundle\Groep09AdminBundle(),
         );
 
         if (in_array($this->getEnvironment(), array('dev', 'test'))) {

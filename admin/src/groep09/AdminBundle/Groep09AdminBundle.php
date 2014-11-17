@@ -9,6 +9,14 @@
 namespace Groep09\AdminBundle;
 
 
-class Groep09AdminBundle {
+use Groep09\AdminBundle\DependencyInjection\Groep09AdminBundleExtension;
+use Symfony\Component\DependencyInjection\ContainerBuilder;
+use Symfony\Component\HttpKernel\Bundle\Bundle;
 
+class Groep09AdminBundle extends Bundle
+{
+    public function getContainerExtension()
+    {
+        return new Groep09AdminBundleExtension();
+    }
 } 

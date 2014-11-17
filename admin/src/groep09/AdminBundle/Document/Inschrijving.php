@@ -5,107 +5,142 @@
  * Date: 12/11/2014
  * Time: 08:53
  */
-
 namespace Groep09\AdminBundle\Document;
 
 
+use Doctrine\ODM\MongoDB\Mapping\Annotations as ODM;
+
+/** @ODM\Document */
 class Inschrijving
 {
+    /** @ODM\Id */
+    private $id;
+
+    /** @ODM\Boolean */
     private $lidMutualiteit;
 
-    /** @EmbedOne(targetDocument="PersoonTenLaste") */
+    /** @ODM\EmbedOne(targetDocument="PersoonTenLaste") */
     private $persoonTenLaste;
 
-    /** @EmbedOne(targetDocument="TweedeOuder") */
+    /** @ODM\EmbedOne(targetDocument="TweedeOuder") */
     private $tweedeOuder;
 
+    /** @ODM\ReferenceOne(targetDocument="ContactPersoon") */
     private $contactPersoon;
 
-    /** @EmbedOne(targetDocument="BetalendeOuder") */
+    /** @ODM\EmbedOne(targetDocument="BetalendeOuder") */
     private $betalendeOuder;
 
+    /** @ODM\String */
     private $rijksregisterNummer;
 
+    /** @ODM\String */
     private $voornaam;
 
+    /** @ODM\String */
     private $naam;
 
+    /** @ODM\Date */
     private $geboorteDatum;
 
-    /** @EmbedOne(targetDocument="AdresDeelnemer") */
+    /** @ODM\EmbedOne(targetDocument="AdresDeelnemer") */
     private $adresDeelnemer;
 
-    /** @EmbedMany(targetDocument="NoodPersoon") */
+    /** @ODM\EmbedMany(targetDocument="NoodPersoon") */
     private $noodPersonen = array();
 
+    /** @ODM\String */
     private $extraInformatie;
 
+    /** @ODM\String */
     private $toevoeging;
 
-    /** @ReferenceOne(targetDocument="Gebruiker") */
+    /** ODM\ReferenceOne(targetDocument="Gebruiker") */
     private $gebruiker;
 
 
-    /** @ReferenceOne(targetDocument="Kamp") */
+    /** @ODM\ReferenceOne(targetDocument="Kamp") */
     private $kamp;
 
-    /** @ReferenceOne(targetDocument="Activiteit") */
+    /** @ODM\ReferenceOne(targetDocument="Activiteit") */
     private $activiteit;
 
 }
 
-/** @EmbeddedDocument */
+/** @ODM\EmbeddedDocument */
 class Address
 {
+    /** @ODM\String */
     private $aansluitingsNummer;
 
+    /** @ODM\String */
     private $codeGerechtigde;
 }
 
-/** @EmbeddedDocument */
+/** @ODM\EmbeddedDocument */
 class TweedeOuder {
+
+    /** @ODM\String */
     private $aansluitingsNummer;
 }
 
-/** @EmbeddedDocument */
+/** @ODM\EmbeddedDocument */
 class BetalendeOuder {
+    /** @ODM\String */
     private $rijksregisterNummer;
 
+    /** @ODM\String */
     private $voornaam;
 
+    /** @ODM\String */
     private $naam;
 
+    /** @ODM\String */
     private $straat;
 
+    /** @ODM\String */
     private $huisnummer;
 
+    /** @ODM\String */
     private $bus;
 
+    /** @ODM\String */
     private $gemeente;
 
+    /** @ODM\String */
     private $postcode;
 
+    /** @ODM\String */
     private $telefoonNummer;
 }
 
-/** @EmbeddedDocument */
+/** @ODM\EmbeddedDocument */
 class AdresDeelnemer {
+
+    /** @ODM\String */
     private $straat;
 
+    /** @ODM\String */
     private $huisnummer;
 
+    /** @ODM\String */
     private $bus;
 
+    /** @ODM\String */
     private $gemeente;
 
+    /** @ODM\String */
     private $postcode;
 }
 
-/** @EmbeddedDocument */
+/** @ODM\EmbeddedDocument */
 class NoodPersoon{
+    /** @ODM\String */
     private $voornaam;
 
+    /** @ODM\String */
     private $naam;
 
+    /** @ODM\String */
     private $telefoonNummer;
 }

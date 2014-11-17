@@ -1,0 +1,9 @@
+services:
+    sonata.admin.gebruiker:
+        class: Groep09\AdminBundle\Admin\GebruikerAdmin
+        tags:
+            - { name: sonata.admin, manager_type: doctrine_mongodb, group: "Content", label: "Gebruikers" }
+        arguments:
+            - ~
+            - Groep09\AdminBundle\Document\Gebruiker
+            - ~

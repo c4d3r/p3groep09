@@ -10,3 +10,4 @@ npm-debug.log
 StartDB.bat
 StartServer.bat
 database/
+bower_components/
