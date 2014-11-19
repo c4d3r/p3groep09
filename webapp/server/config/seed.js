@@ -231,67 +231,60 @@ function populateKampen() {
 }
 
 function populateInschrijvingen() {
-    Inschrijving.find({}).remove(function () {
-         Gebruiker.findOne({email: "roy_9852@hotmail.com"}, function (err, gebruiker){
-
-            Kamp.findOne({naam:"Bosactiviteiten"}, function (err, kamp){
-
-                            Inschrijving.create(
-                                            {
-                                                lidMutualiteit: false,
-                                                  persoonTenLaste: {
-                                                    aansluitingsNummer: "1234565789",
-                                                    codeGerechtigde: "1234"
-                                                  },
-                                                  tweedeOuder: {
-                                                    aansluitingsNummer: "541562156"
-                                                  },
-                                                  contactPersoon: gebruiker,
-                                                  betalendeOuder: {
-                                                    rijksregisterNummer: "165485162198",
-                                                    voornaam: "Bob",
-                                                    naam: "BobSon",
-                                                    straat: "straat",
-                                                    huisnummer: "1",
-                                                    bus: "2",
-                                                    gemeente: "testegem",
-                                                    postcode: "4567",
-                                                    telefoonNummer: "123456"
-                                                  },
-                                                  rijksregisterNummer: "1232456",
-                                                  voornaam: "test",
-                                                  naam: "testson",
-                                                  geboorteDatum: new Date(2005, 5, 25),
-                                                  adresDeelnemer: {
-                                                    straat: "straat",
-                                                    huisnummer: "1",
-                                                    bus: "2",
-                                                    gemeente: "testegem",
-                                                    postcode: "4567"
-                                                  },
-                                                  noodPersonen: [
-                                                    {
-                                                      voornaam: "nood",
-                                                      naam: "noodson",
-                                                      telefoonNummer: "123456789"
-                                                    }
-                                                  ],
-                                                  extraInformatie: "bla",
-                                                  toevoeging: "Test",
-                                                  gebruiker: gebruiker,
-                                                  kamp: kamp
-                                            }
-
-                                            , function () {
-                                                console.log('populated inschrijvingen')
-                                            }
-                                        )
-                        })
-         });
-
-
-        }
-    )
-    ;
+    Gebruiker.findOne({email: "roy_9852@hotmail.com"}, function (err, gebruiker){
+        Kamp.findOne({naam:"Trip to the bottom of the sea"}, function (err, kamp){
+            Inschrijving.find({}).remove(function () {
+                Inschrijving.create(
+                {
+                    lidMutualiteit: false,
+                    persoonTenLaste: {
+                        aansluitingsNummer: "1234565789",
+                        codeGerechtigde: "1234"
+                },
+                    tweedeOuder: {
+                        aansluitingsNummer: "541562156"
+                },
+                    contactPersoon: gebruiker,
+                    betalendeOuder: {
+                        rijksregisterNummer: "165485162198",
+                        voornaam: "Bob",
+                        naam: "BobSon",
+                        straat: "straat",
+                        huisnummer: "1",
+                        bus: "2",
+                        gemeente: "testegem",
+                        postcode: "4567",
+                        telefoonNummer: "123456"
+                },
+                    rijksregisterNummer: "1232456",
+                    voornaam: "test",
+                    naam: "testson",
+                    geboorteDatum: new Date(2005, 5, 25),
+                    adresDeelnemer: {
+                        straat: "straat",
+                        huisnummer: "1",
+                        bus: "2",
+                        gemeente: "testegem",
+                        postcode: "4567"
+                },
+                    noodPersonen: [
+                    {
+                        voornaam: "nood",
+                        naam: "noodson",
+                        telefoonNummer: "123456789"
+                    }
+                    ],
+                    extraInformatie: "bla",
+                    toevoeging: "Test",
+                    gebruiker: gebruiker,
+                    kamp: kamp
+                }
+                , function () {
+                  console.log('populated inschrijvingen')
+                  }
+                )
+            })
+        })
+    });
 }
 
