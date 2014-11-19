@@ -7,11 +7,11 @@
 
 
 var Gebruiker = require('../api/gebruiker/gebruiker.model')
-    , Kamp = require('../api/kamp/kamp.model')
     , Inschrijving = require('../api/inschrijving/inschrijving.model')
     , Activiteit = require('../api/activiteit/activiteit.model')
     , Comment = require('../api/comment/comment.model')
-    , NieuwsItem = require('../api/nieuwsitem/nieuwsitem.model');
+    , NieuwsItem = require('../api/nieuwsitem/nieuwsitem.model')
+    , Kamp = require('../api/kamp/kamp.model');
 
 
 /*Thing.find({}).remove(function() {
@@ -73,7 +73,7 @@ Gebruiker.find({}).remove(function () {
             populateNieuws();
             populateComments;
             populateActiviteiten();
-            //populateInschrijvingen();
+            populateInschrijvingen();
 
         }
     );
@@ -231,9 +231,9 @@ function populateKampen() {
 }
 
 function populateInschrijvingen() {
-    Gebruiker.findOne({email: "roy_9852@hotmail.com"}, function (err, gebruiker){
-        Kamp.findOne({naam:"Trip to the bottom of the sea"}, function (err, kamp){
             Inschrijving.find({}).remove(function () {
+                Gebruiker.findOne({email: "roy_9852@hotmail.com"}, function (err, gebruiker){
+                    Kamp.find({}, function (err, kamp){
                 Inschrijving.create(
                 {
                     lidMutualiteit: false,
@@ -283,8 +283,8 @@ function populateInschrijvingen() {
                   console.log('populated inschrijvingen')
                   }
                 )
+                 })
+               });
             })
-        })
-    });
 }
 

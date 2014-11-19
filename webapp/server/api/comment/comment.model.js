@@ -7,7 +7,7 @@ var mongoose = require('mongoose')
 var CommentSchema = new Schema({
     text: {type: String},
     createdOn: {type: Date},
-    createdBy: {type: Schema.ObjectId, ref: "GebruikerSchema"}
+    createdBy: {type: Schema.ObjectId, ref: "Gebruiker"}
 });
 
 CommentSchema.path('text').required(true, 'Text mag niet leeg zijn');
