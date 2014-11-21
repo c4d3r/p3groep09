@@ -131,9 +131,9 @@ function populateNieuws() {
     });
 }
 function populateActiviteiten() {
-    Gebruiker.findOne({email: "Monitor@Joetz.com"}, function (err, gebruiker) {
-    Comment.find(function (err, comments){
-        Activiteit.find({}).remove(function() {
+    Activiteit.find({}).remove(function() {
+        Gebruiker.findOne({email: "Monitor@Joetz.com"}, function (err, gebruiker) {
+            Comment.find(function (err, comments){
                     Activiteit.create(
                                  {
                                      beschrijving: "Test",
@@ -149,15 +149,14 @@ function populateActiviteiten() {
                         console.log('populated activiteiten')
                        }
                     )
-                })
-    })
-
-    });
+            })
+        });
+   })
 }
 
 function populateComments() {
-    Gebruiker.findOne({email: "Monitor@Joetz.com"}, function (err, gebruiker) {
-        Comment.find({}).remove(function() {
+    Comment.find({}).remove(function() {
+        Gebruiker.findOne({email: "Monitor@Joetz.com"}, function (err, gebruiker) {
             Comment.create(
                          {
                           text: "Lekker slapen!",
@@ -168,13 +167,13 @@ function populateComments() {
                          text: "Snoezen!",
                          createdOn: new Date(2014, 9 ,6),
                          createdBy: gebruiker
-                                                  }
+                         }
              , function () {
                 console.log('populated comments')
                }
             )
-        })
-    });
+        });
+    })
 }
 
 
@@ -233,7 +232,7 @@ function populateKampen() {
 function populateInschrijvingen() {
             Inschrijving.find({}).remove(function () {
                 Gebruiker.findOne({email: "roy_9852@hotmail.com"}, function (err, gebruiker){
-                    Kamp.find({}, function (err, kamp){
+                    Kamp.findOne({naam: "Bosactiviteiten"}, function (err, kamp){
                 Inschrijving.create(
                 {
                     lidMutualiteit: false,

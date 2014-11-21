@@ -2,7 +2,9 @@
  * Created by Maxim on 27/10/2014.
  */
 var mongoose = require('mongoose')
-  , Schema = mongoose.Schema;
+  , Schema = mongoose.Schema
+  , Kamp = require('../kamp/kamp.model')
+  , Gebruiker = require('../gebruiker/gebruiker.model');
 
 var InschrijvingSchema = new Schema({
   lidMutualiteit: {type: Boolean, default: false},
@@ -66,19 +68,18 @@ var InschrijvingSchema = new Schema({
 InschrijvingSchema
     .post('save', function(inschrijving){
         
-        Kamp.findOne({_id: inschrijving.kamp}, function(kamp) {
+        Kamp.findOne({_id: inschrijving.kamp}, function(err, kamp) {
             kamp.addInschrijving(inschrijving);
-
             kamp.save(function(err){
-                console.log(err);
+                if(err !== null) console.log(err);
             });
         });
 
-        Gebruiker.findOne({_id: inschrijving.gebruiker}, function(gebruiker) {
+        Gebruiker.findOne({_id: inschrijving.gebruiker}, function(err, gebruiker) {
             gebruiker.addInschrijving(inschrijving);
 
             gebruiker.save(function(err){
-                console.log(err);
+                if(err !== null) console.log(err);
             });
         });
     });
