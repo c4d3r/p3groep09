@@ -12,7 +12,8 @@ var Gebruiker = require('../api/gebruiker/gebruiker.model')
     , Comment = require('../api/comment/comment.model')
     , NieuwsItem = require('../api/nieuwsitem/nieuwsitem.model')
     , Kamp = require('../api/kamp/kamp.model')
-    , Email = require('../api/email/email.model');
+    , Email = require('../api/email/email.model')
+    , Categorie = require('../api/categorie/categorie.model');
 
 
 /*Thing.find({}).remove(function() {
@@ -73,13 +74,13 @@ Gebruiker.find({}).remove(function () {
             console.log('finished populating users');
 
             // Ah async
+            populateCategories();
             populateKampen();
             populateNieuws();
             populateComments;
             populateActiviteiten();
             populateInschrijvingen();
             populateEmails();
-
         }
     );
 });
@@ -304,6 +305,23 @@ function populateEmails() {
                 , function () {
                     console.log('populated email')
                 });
+        });
+    });
+}
+
+function populateCategories(){
+    Categorie.find({}).remove(function(){
+        Categorie.create({
+            naam: "Waterpret"
+        },{
+            naam: "Avontuur"
+        },{
+            naam: "Sport"
+        },{
+            naam: "Exploratie"
+        },
+        function(){
+            console.log('populated categorie')
         });
     });
 }

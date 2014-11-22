@@ -17,7 +17,7 @@ module.exports = function(app) {
   app.use('/api/contactpersonen', require('./api/contactpersoon'));
   app.use('/api/nieuwsitems', require('./api/nieuwsitem'));
   //Nog in commentaar, deze geeft een fout bij het serven
-  //app.use('/api/categories', require('./api/categorie'));
+  app.use('/api/categories', require('./api/categorie'));
   app.use('/api/emails', require('./api/email'));
 
   app.use('/auth', require('./auth'));

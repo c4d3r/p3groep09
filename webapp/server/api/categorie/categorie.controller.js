@@ -17,10 +17,10 @@ exports.index = function(reg, res){
 
 //Een vakantiecategorie weergeven
 exports.show = function(reg, res){
-  Categorie.findById(reg.param.id, function(err, categories){
+  Categorie.findById(reg.param.id, function(err, categorie){
      if(err){return handleError(res, err);}
-     if(!categories){res.send(404);}
-     return res.json(categories);
+     if(!categorie){res.send(404);}
+     return res.json(categorie);
   });
 };
 
