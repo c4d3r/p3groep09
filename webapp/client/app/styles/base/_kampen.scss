@@ -48,6 +48,12 @@ section {
     margin-bottom: 20px;
   }
 }
+.zoeken {
+    font-family: "ansonregular", sans-serif;
+    font-size: 16pt;
+
+    float: right;
+}
 
 @media all and (min-width: $bp-large) {
   time.icon {

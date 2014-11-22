@@ -56,12 +56,15 @@ Gebruiker.find({}).remove(function () {
         {
             provider: 'local',
             name: 'Roy Hollanders',
+            naam: 'Hollanders',
+            voornaam: 'Roy',
             email: 'roy_9852@hotmail.com',
             wachtwoord: 'Test123'
         },
         {
             provider: 'local',
-            name: 'Moni Tor',
+            naam: 'Moni',
+            voornaam: 'Tor',
             role: 'ROLE_MONITOR',
             email: 'monitor@joetz.com',
             wachtwoord: 'monitor1'

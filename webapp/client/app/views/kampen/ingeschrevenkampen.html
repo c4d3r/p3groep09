@@ -1,6 +1,6 @@
-<section ng-repeat="inschrijving in getCurrentUser().inschrijvingen">
+<section ng-repeat="kamp in kampen">
     <div class="article-holder">
-        <h2><a href="/mijn_kampen/{{ inschrijving.kamp._id }}">{{ inschrijving.kamp.naam }}</a></h2>
-        <p ng-bind-html="inschrijving.kamp.beschrijving"></p>
+        <h2><a href="/mijn_kampen/{{ kamp._id }}">{{ kamp.naam }}</a></h2>
+        <p ng-bind-html="kamp.beschrijving"></p>
     </div>
 </section>
