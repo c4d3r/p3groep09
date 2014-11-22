@@ -77,7 +77,6 @@ InschrijvingSchema
 
         Gebruiker.findOne({_id: inschrijving.gebruiker}, function(err, gebruiker) {
             gebruiker.addInschrijving(inschrijving);
-
             gebruiker.save(function(err){
                 if(err !== null) console.log(err);
             });

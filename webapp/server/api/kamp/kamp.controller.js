@@ -24,11 +24,13 @@ exports.index = function(req, res) {
 
 // Get a single kamp
 exports.show = function(req, res) {
-  Kamp.findById(req.params.id, function (err, kamp) {
+  Kamp
+  .findById(req.params.id, function (err, kamp) {
     if(err) { return handleError(res, err); }
     if(!kamp) { return res.send(404); }
     return res.json(kamp);
-  });
+  })
+  .populate('inschrijvingen');
 };
 
 // Creates a new kamp in the DB.

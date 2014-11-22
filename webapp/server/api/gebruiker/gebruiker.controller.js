@@ -66,13 +66,15 @@ exports.destroy = function(req, res) {
  */
 exports.me = function(req, res, next) {
     var userId = req.user._id;
-    Gebruiker.findOne({
+    Gebruiker
+    .findOne({
         _id: userId
     }, '-salt -hashedWachtwoord', function(err, user) { // don't ever give out the password or salt
         if (err) return next(err);
         if (!user) return res.json(401);
         res.json(user);
-    });
+    })
+    .populate('inschrijvingen');
 };
 
 /**

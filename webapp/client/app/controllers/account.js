@@ -6,23 +6,19 @@ angular.module('webappApp')
         $scope.isAdmin = Auth.isAdmin;
         $scope.getCurrentUser = Auth.getCurrentUser;
 
+        var i = $scope.getCurrentUser.inschrijvingen;
 
-        var inschrijvingen = Inschrijven.index();
-        var kampen = Kampen.index();
 
-        inschrijvingen.forEach(function(inschrijving){
-            if(inschrijving.gebruiker === $scope.getCurrentUser)
-                {
-                    var _inschrijving = inschrijving;
-                    kampen.forEach(function(kamp){
-                        if(_inschrijving.kamp === kamp)
-                        {
-                            $scope.kampen.push(kamp);
-                        }
-                    });
-                    _inschrijving = null;
-                }
-            });
+        i.forEach(function(inschrijving)
+        {
+            //$scope.inschrijvingen.push(Inschrijven.show(inschrijving));
+            $scope.kampen.push(Kampen.show(inschrijving.kamp));
+        });
+
+
+
+
+
 
         $scope.logout = function() {
             Auth.logout();
@@ -33,7 +29,4 @@ angular.module('webappApp')
         $scope.isActive = function(route) {
             return route === $location.path();
         };
-
-
-
     });

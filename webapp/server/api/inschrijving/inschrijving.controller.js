@@ -22,11 +22,14 @@ exports.index = function(req, res) {
 
 // Get a single inschrijving
 exports.show = function(req, res) {
-  Inschrijving.findById(req.params.id, function (err, inschrijving) {
+  Inschrijving
+  .findById(req.params.id, function (err, inschrijving) {
     if(err) { return handleError(res, err); }
     if(!inschrijving) { return res.send(404); }
     return res.json(inschrijving);
-  });
+  })
+  .populate('gebruiker')
+  .populate('kamp');
 };
 
 // Creates a new inschrijving in the DB.
