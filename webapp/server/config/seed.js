@@ -78,7 +78,7 @@ Gebruiker.find({}).remove(function () {
             populateComments;
             populateActiviteiten();
             populateInschrijvingen();
-            //populateEmails();
+            populateEmails();
 
         }
     );

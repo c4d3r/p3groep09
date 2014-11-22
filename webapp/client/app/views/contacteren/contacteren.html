@@ -10,7 +10,7 @@
 
             <div class="form-group">
                 <label>Inhoud</label>
-                <input type="text" name="tekst" class="form-control" ng-model="email.text" required>
+                <textarea id="tekst" name="tekst" class="form-control" ng-model="email.text" required/>
             </div>
 
             <div class="form-group has-error">
@@ -25,7 +25,7 @@
             </div>
 
             <div style="margin-top: 10px;">
-                <button class="btn btn-green" type="submit">Verstuur</button>
+                <button class="btn btn-green" ng-click="methods.createEmail" type="submit">Verstuur</button>
             </div>
         </form>
     </div>

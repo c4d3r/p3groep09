@@ -20,11 +20,6 @@ var smtpTransporter = nodemailer.createTransport("SMTP", {
     }
 });
 
-smtpTransporter.sendMail({
-    from: "joetz.projecten3@gmail.com",
-    to: "joetz.projecten3@gmail.com"
-})
-
 // Connect to database
 mongoose.connect(config.mongo.uri, config.mongo.options);
 
