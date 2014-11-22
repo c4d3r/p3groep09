@@ -11,7 +11,8 @@ var Gebruiker = require('../api/gebruiker/gebruiker.model')
     , Activiteit = require('../api/activiteit/activiteit.model')
     , Comment = require('../api/comment/comment.model')
     , NieuwsItem = require('../api/nieuwsitem/nieuwsitem.model')
-    , Kamp = require('../api/kamp/kamp.model');
+    , Kamp = require('../api/kamp/kamp.model')
+    , Email = require('../api/email/email.model');
 
 
 /*Thing.find({}).remove(function() {
@@ -74,6 +75,7 @@ Gebruiker.find({}).remove(function () {
             populateComments;
             populateActiviteiten();
             populateInschrijvingen();
+            //populateEmails();
 
         }
     );
@@ -131,46 +133,46 @@ function populateNieuws() {
     });
 }
 function populateActiviteiten() {
-    Activiteit.find({}).remove(function() {
+    Activiteit.find({}).remove(function () {
         Gebruiker.findOne({email: "Monitor@Joetz.com"}, function (err, gebruiker) {
-            Comment.find(function (err, comments){
-                    Activiteit.create(
-                                 {
-                                     beschrijving: "Test",
-                                     contact: gebruiker,
-                                     eindDatum: new Date(2014, 12, 16),
-                                     locatie: "Dromenland",
-                                     naam: "Slapen",
-                                     startDatum: new Date(2014, 12, 15),
-                                     comments: comments,
-                                     createdOn: new Date(2014,9,5)
-                                 }
-                     , function () {
+            Comment.find(function (err, comments) {
+                Activiteit.create(
+                    {
+                        beschrijving: "Test",
+                        contact: gebruiker,
+                        eindDatum: new Date(2014, 12, 16),
+                        locatie: "Dromenland",
+                        naam: "Slapen",
+                        startDatum: new Date(2014, 12, 15),
+                        comments: comments,
+                        createdOn: new Date(2014, 9, 5)
+                    }
+                    , function () {
                         console.log('populated activiteiten')
-                       }
-                    )
+                    }
+                )
             })
         });
-   })
+    })
 }
 
 function populateComments() {
-    Comment.find({}).remove(function() {
+    Comment.find({}).remove(function () {
         Gebruiker.findOne({email: "Monitor@Joetz.com"}, function (err, gebruiker) {
             Comment.create(
-                         {
-                          text: "Lekker slapen!",
-                          createdOn: new Date(2014, 9 ,5),
-                          createdBy: gebruiker
-                         },
-                         {
-                         text: "Snoezen!",
-                         createdOn: new Date(2014, 9 ,6),
-                         createdBy: gebruiker
-                         }
-             , function () {
-                console.log('populated comments')
-               }
+                {
+                    text: "Lekker slapen!",
+                    createdOn: new Date(2014, 9, 5),
+                    createdBy: gebruiker
+                },
+                {
+                    text: "Snoezen!",
+                    createdOn: new Date(2014, 9, 6),
+                    createdBy: gebruiker
+                }
+                , function () {
+                    console.log('populated comments')
+                }
             )
         });
     })
@@ -230,60 +232,75 @@ function populateKampen() {
 }
 
 function populateInschrijvingen() {
-            Inschrijving.find({}).remove(function () {
-                Gebruiker.findOne({email: "roy_9852@hotmail.com"}, function (err, gebruiker){
-                    Kamp.findOne({naam: "Bosactiviteiten"}, function (err, kamp){
+    Inschrijving.find({}).remove(function () {
+        Gebruiker.findOne({email: "roy_9852@hotmail.com"}, function (err, gebruiker) {
+            Kamp.findOne({naam: "Bosactiviteiten"}, function (err, kamp) {
                 Inschrijving.create(
-                {
-                    lidMutualiteit: false,
-                    persoonTenLaste: {
-                        aansluitingsNummer: "1234565789",
-                        codeGerechtigde: "1234"
-                },
-                    tweedeOuder: {
-                        aansluitingsNummer: "541562156"
-                },
-                    contactPersoon: gebruiker,
-                    betalendeOuder: {
-                        rijksregisterNummer: "165485162198",
-                        voornaam: "Bob",
-                        naam: "BobSon",
-                        straat: "straat",
-                        huisnummer: "1",
-                        bus: "2",
-                        gemeente: "testegem",
-                        postcode: "4567",
-                        telefoonNummer: "123456"
-                },
-                    rijksregisterNummer: "1232456",
-                    voornaam: "test",
-                    naam: "testson",
-                    geboorteDatum: new Date(2005, 5, 25),
-                    adresDeelnemer: {
-                        straat: "straat",
-                        huisnummer: "1",
-                        bus: "2",
-                        gemeente: "testegem",
-                        postcode: "4567"
-                },
-                    noodPersonen: [
                     {
-                        voornaam: "nood",
-                        naam: "noodson",
-                        telefoonNummer: "123456789"
+                        lidMutualiteit: false,
+                        persoonTenLaste: {
+                            aansluitingsNummer: "1234565789",
+                            codeGerechtigde: "1234"
+                        },
+                        tweedeOuder: {
+                            aansluitingsNummer: "541562156"
+                        },
+                        contactPersoon: gebruiker,
+                        betalendeOuder: {
+                            rijksregisterNummer: "165485162198",
+                            voornaam: "Bob",
+                            naam: "BobSon",
+                            straat: "straat",
+                            huisnummer: "1",
+                            bus: "2",
+                            gemeente: "testegem",
+                            postcode: "4567",
+                            telefoonNummer: "123456"
+                        },
+                        rijksregisterNummer: "1232456",
+                        voornaam: "test",
+                        naam: "testson",
+                        geboorteDatum: new Date(2005, 5, 25),
+                        adresDeelnemer: {
+                            straat: "straat",
+                            huisnummer: "1",
+                            bus: "2",
+                            gemeente: "testegem",
+                            postcode: "4567"
+                        },
+                        noodPersonen: [
+                            {
+                                voornaam: "nood",
+                                naam: "noodson",
+                                telefoonNummer: "123456789"
+                            }
+                        ],
+                        extraInformatie: "bla",
+                        toevoeging: "Test",
+                        gebruiker: gebruiker,
+                        kamp: kamp
                     }
-                    ],
-                    extraInformatie: "bla",
-                    toevoeging: "Test",
-                    gebruiker: gebruiker,
-                    kamp: kamp
+                    , function () {
+                        console.log('populated inschrijvingen')
+                    }
+                )
+            })
+        });
+    })
+}
+
+function populateEmails() {
+    Email.find({}).remove(function () {
+        Gebruiker.findOne({email: "test@test.com"}, function (err, gebruiker) {
+            Email.create({
+                    sendDate: new Date(2014, 11, 22),
+                    subject: "Aanvraag voor meer kampen",
+                    text: "Zou het mogelijk zijn om enventueel meer kampen toe te voegen aan uw selectie van kampen"
                 }
                 , function () {
-                  console.log('populated inschrijvingen')
-                  }
-                )
-                 })
-               });
-            })
+                    console.log('populated email')
+                });
+        });
+    });
 }
 
