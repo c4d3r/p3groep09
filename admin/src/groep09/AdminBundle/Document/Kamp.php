@@ -40,7 +40,7 @@ class Kamp
     /** @ODM\String */
     private $naam;
 
-    /** @ODM\Int */
+    /** @ODM\Float */
     private $prijs;
 
     /** @ODM\String */

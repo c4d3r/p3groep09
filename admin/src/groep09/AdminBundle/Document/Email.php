@@ -5,7 +5,7 @@
  * Date: 12/11/2014
  * Time: 08:55
  */
-namespace Groep09\AdminBundle\Entity;
+namespace Groep09\AdminBundle\Document;
 
 
 use Doctrine\ODM\MongoDB\Mapping\Annotations as ODM;

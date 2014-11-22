@@ -36,7 +36,7 @@
     <div class="wrapper" id="main-wrapper" ng-controller="NavbarCtrl">
 
         <div class="container" ng-show="isLoggedIn()">
-            <span ng-show="isLoggedIn()">Welcome back, {{getCurrentUser().voornaam  + " " +  getCurrentUser().naam  }}</span>
+            <span ng-show="isLoggedIn()">Welcome back {{ getCurrentUser().email }}</span>
             <a href="/" ng-click="logout()" style="float:right;"><i class="fa fa-sign-out"></i> Logout</a>
         </div>
 
@@ -93,8 +93,7 @@
       <script src="app/account/settings/settings.controller.js"></script>
       <script src="app/admin/admin.controller.js"></script>
       <script src="app/controllers/account.js"></script>
-      <script src="app/controllers/contact.js"></script>
-      <script src="app/controllers/ingeschrevenkampen.js"></script>
+      <script src="app/controllers/email.js"></script>
       <script src="app/controllers/inschrijven.js"></script>
       <script src="app/controllers/kampdetail.js"></script>
       <script src="app/controllers/kampen.js"></script>

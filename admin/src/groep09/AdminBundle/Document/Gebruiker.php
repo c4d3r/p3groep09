@@ -32,7 +32,7 @@ class Gebruiker
     private $hashedWachtwoord;
 
     /** @ODM\String */
-    private $provider;
+    private $provider = "local";
 
     /** @ODM\String */
     private $salt;
@@ -176,12 +176,18 @@ class Gebruiker
         return $this->inschrijvingen;
     }
 
+
     /**
      * @param mixed $inschrijvingen
      */
     public function setInschrijvingen($inschrijvingen)
     {
         $this->inschrijvingen = $inschrijvingen;
+    }
+
+    public function __toString()
+    {
+        return sprintf("%s %s", $this->voornaam, $this->naam);
     }
 
 

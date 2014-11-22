@@ -7,3 +7,51 @@ services:
             - ~
             - Groep09\AdminBundle\Document\Gebruiker
             - ~
+    sonata.admin.activiteit:
+        class: Groep09\AdminBundle\Admin\ActiviteitAdmin
+        tags:
+            - { name: sonata.admin, manager_type: doctrine_mongodb, group: "Content", label: "Activiteiten" }
+        arguments:
+            - ~
+            - Groep09\AdminBundle\Document\Activiteit
+            - ~
+    sonata.admin.categorie:
+        class: Groep09\AdminBundle\Admin\CategorieAdmin
+        tags:
+            - { name: sonata.admin, manager_type: doctrine_mongodb, group: "Content", label: "Categorie" }
+        arguments:
+            - ~
+            - Groep09\AdminBundle\Document\Categorie
+            - ~
+    sonata.admin.contactpersoon:
+        class: Groep09\AdminBundle\Admin\ContactPersoonAdmin
+        tags:
+            - { name: sonata.admin, manager_type: doctrine_mongodb, group: "Content", label: "Contactpersonen" }
+        arguments:
+            - ~
+            - Groep09\AdminBundle\Document\ContactPersoon
+            - ~
+    sonata.admin.email:
+        class: Groep09\AdminBundle\Admin\EmailAdmin
+        tags:
+            - { name: sonata.admin, manager_type: doctrine_mongodb, group: "Content", label: "Emails" }
+        arguments:
+            - ~
+            - Groep09\AdminBundle\Document\Email
+            - ~
+    sonata.admin.kamp:
+        class: Groep09\AdminBundle\Admin\KampAdmin
+        tags:
+            - { name: sonata.admin, manager_type: doctrine_mongodb, group: "Content", label: "Kampen" }
+        arguments:
+            - ~
+            - Groep09\AdminBundle\Document\Kamp
+            - ~
+    sonata.admin.nieuws_item:
+        class: Groep09\AdminBundle\Admin\NieuwsItemAdmin
+        tags:
+            - { name: sonata.admin, manager_type: doctrine_mongodb, group: "Content", label: "Nieuws Items" }
+        arguments:
+            - ~
+            - Groep09\AdminBundle\Document\NieuwsItem
+            - ~

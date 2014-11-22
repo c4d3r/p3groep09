@@ -35,7 +35,7 @@ class ContactPersoon
     private $postcode;
 
     /** @ODM\String */
-    private $rijksregisterNumer;
+    private $rijksregisterNummer;
 
     /** @ODM\String */
     private $straat;
@@ -158,17 +158,17 @@ class ContactPersoon
     /**
      * @return mixed
      */
-    public function getRijksregisterNumer()
+    public function getRijksregisterNummer()
     {
-        return $this->rijksregisterNumer;
+        return $this->rijksregisterNummer;
     }
 
     /**
      * @param mixed $rijksregisterNumer
      */
-    public function setRijksregisterNumer($rijksregisterNumer)
+    public function setRijksregisterNummer($rijksregisterNummer)
     {
-        $this->rijksregisterNumer = $rijksregisterNumer;
+        $this->rijksregisterNummer = $rijksregisterNummer;
     }
 
     /**
