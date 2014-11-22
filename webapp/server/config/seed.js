@@ -296,6 +296,7 @@ function populateEmails() {
     Email.find({}).remove(function () {
         Gebruiker.findOne({email: "test@test.com"}, function (err, gebruiker) {
             Email.create({
+                    sendBy: gebruiker,
                     sendDate: new Date(2014, 11, 22),
                     subject: "Aanvraag voor meer kampen",
                     text: "Zou het mogelijk zijn om enventueel meer kampen toe te voegen aan uw selectie van kampen"
