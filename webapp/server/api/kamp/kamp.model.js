@@ -10,11 +10,14 @@ var KampSchema = new Schema({
     contact: {type: String},
     eindDatum: {type: Date},
     startDatum: {type: Date},
-    leeftijdsCatDoelgroep: {type: String},
+    leeftijdsCatDoelgroep: {type: String}, //TODO: te verwijderen doelgroep is beter
+    doelgroepen: [{type: Number}],
     locatie: {type: String},
     naam: {type: String},
     prijs: {type: Number},
     vervoer: {type: String},
+    promoAfbeelding: {type: String},
+    afbeeldingen: [{type: String}],
     inschrijvingen: [{type: Schema.ObjectId, ref: "Inschrijving"}]
     //categorie: {type: Schema.ObjectId, ref: "Categorie"}
 });

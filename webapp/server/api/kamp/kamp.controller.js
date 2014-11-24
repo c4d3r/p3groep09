@@ -68,8 +68,26 @@ exports.destroy = function(req, res) {
 };
 
 exports.findBySeizoen = function(req, res) {
-  var seizoen = req.params.selectedSeizoen; //date object
-  console.log(seizoen);
+
+  var seizoenen = {
+    zomer: new Date(new Date().getFullYear() + 1, 5, 21),
+    herfst: new Date(new Date().getFullYear() + 1, 8, 21),
+    winter: new Date(new Date().getFullYear() + 1, 11, 21),
+    lente: new Date(new Date().getFullYear() + 1, 2, 21)
+  };
+
+  var selectedSeizoen = req.query.selectedSeizoen;
+  var startSeizoen = seizoenen[selectedSeizoen]; //date object
+  var eindSeizoen = seizoenen[(selectedSeizoen === "zomer" ? "herfst" : selectedSeizoen === "herfst" ? "winter" : selectedSeizoen === "winter" ? "lente" : "zomer")];
+
+  console.log(startSeizoen);
+  console.log(eindSeizoen);
+
+  //Mongodb werkt met ISODates
+  Kamp.find({"startDatum": {$gte: startSeizoen, $lt: eindSeizoen}}, function(err, result){
+    if(err){ return handleError(res, err); }
+    return res.json(200, result);
+  });
 };
 
 function handleError(res, err) {

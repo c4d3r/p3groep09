@@ -6,8 +6,8 @@ var controller = require('./kamp.controller');
 var router = express.Router();
 
 router.get('/', controller.index);
+router.get('/seizoen', controller.findBySeizoen);
 router.get('/:id', controller.show);
-router.get('/findBySeizoen/:seizoen', controller.findBySeizoen)
 router.post('/', controller.create);
 router.put('/:id', controller.update);
 router.patch('/:id', controller.update);

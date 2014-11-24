@@ -185,7 +185,6 @@ function populateComments() {
 
 function populateKampen() {
     Kamp.find({}).remove(function () {
-
             Kamp.create(
                 {
                     beschrijving: 'Beschrijving van het kamp',
@@ -225,6 +224,50 @@ function populateKampen() {
                     vervoer: "Bus",
                     korting: 10
                     //inschrijvingen: null
+                },
+
+                //DATUM ATTENTION: ISODAte --> maand begint vanaf 0!
+                {
+                  naam: "Krk, here we come!",
+                  beschrijving: 'Wie droomt er nu niet van Kroatië? Geniet mee van een heerlijke vakantie op het zonnige eiland Krk!',
+                  contact: "???",
+                  startDatum: new Date(2015, 6, 28, 0, 0, 0),
+                  eindDatum: new Date(2015, 7, 6, 0, 0, 0),
+                  leeftijdsCatDoelgroep: "15 - 18",
+                  doelgroepen: [15, 16, 17, 18],
+                  locatie: "Krk (Kroatië)",
+                  prijs: 535,
+                  vervoer: "Bus",
+                  korting: 0,
+                  promoAfbeelding: "zomer/kroatie.jpg"
+                },
+                {
+                  naam: "Sun & Fun Spanje",
+                  beschrijving: 'Zon, zee, strand en … actie. Is stilzitten niet jouw ding? Onze dagen onder de zon worden gevuld met geweldige activiteiten als watertrekking, laser-shooting, vlottentocht, een bootcruise, een dag in een waterpretpark, een uitstapje naar Barcelona en nog zoveel meer. Om dan van de leuke avondactiviteiten en een heuse poolparty nog maar te zwijgen.',
+                  contact: "???",
+                  startDatum: new Date(2015, 7, 16, 0, 0, 0),
+                  eindDatum: new Date(2015, 7, 27, 0, 0, 0),
+                  leeftijdsCatDoelgroep: "12 - 15",
+                  doelgroepen: [12, 13, 14, 15],
+                  locatie: "Empuriabrava, Spanje",
+                  prijs: 585,
+                  vervoer: "Bus",
+                  korting: 0,
+                  promoAfbeelding: "zomer/spanje.jpg"
+                },
+                {
+                  naam: "Balaton-fun",
+                  beschrijving: 'We verblijven in het dorpje Révfülöp, aan de noordelijke kust van het Ballatonmeer. We zullen tijdens onze vakantie niet alleen lekker badderen in deze ‘Hongaarse zee’, om en rond zijn nog ontelbare leuke activiteiten. Wat dacht je van een bezoekje aan het prachtige Boedapest? Of een fietstocht om de omgeving te verkennen? Wat we ook doen, de JOETZ-animatoren maken er een geweldig verblijf van!',
+                  contact: "???",
+                  startDatum: new Date(2015, 7, 17, 0, 0, 0),
+                  eindDatum: new Date(2015, 7, 28, 0, 0, 0),
+                  leeftijdsCatDoelgroep: "16 - 18",
+                  doelgroepen: [16, 17, 18],
+                  locatie: "Balatonmeer (Hongarije)",
+                  prijs: 475,
+                  vervoer: "Bus",
+                  korting: 0,
+                  promoAfbeelding: "zomer/hongarije.jpg"
                 }
                 , function () {
                     console.log('populated kampen')
