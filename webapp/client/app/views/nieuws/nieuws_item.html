@@ -1,11 +1,13 @@
-<article>
-  <time datetime="{{ nieuwsItem.createdOn | date : 'yyyy-M-dd' }}" class="icon">
-    <strong>{{ nieuwsItem.createdOn | date : 'MMM' }}</strong>
-    <span>{{ nieuwsItem.createdOn | date : 'dd' }}</span>
-  </time>
-  <div class="article-holder">
-    <h2>{{ nieuwsItem.title }}</h2>
-    <span class="subtitle">gepost door <span class="color-red">{{ nieuwsItem.createdBy.voornaam }} {{ nieuwsItem.createdBy.naam }}</span> op {{ nieuwsItem.createdOn | date : 'fullDate' }}</span>
-    <p ng-bind-html="nieuwsItem.text"></p>
-  </div>
-</article>
+<div class="container">
+  <article>
+    <time datetime="{{ nieuwsItem.createdOn | date : 'yyyy-M-dd' }}" class="icon">
+      <strong>{{ nieuwsItem.createdOn | date : 'MMM' }}</strong>
+      <span>{{ nieuwsItem.createdOn | date : 'dd' }}</span>
+    </time>
+    <div class="article-holder">
+      <h2>{{ nieuwsItem.title }}</h2>
+      <span class="subtitle">gepost door <span class="color-red">{{ nieuwsItem.createdBy.voornaam }} {{ nieuwsItem.createdBy.naam }}</span> op {{ nieuwsItem.createdOn | date : 'fullDate' }}</span>
+      <p ng-bind-html="nieuwsItem.text"></p>
+    </div>
+  </article>
+</div>

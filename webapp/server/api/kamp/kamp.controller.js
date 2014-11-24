@@ -67,6 +67,11 @@ exports.destroy = function(req, res) {
   });
 };
 
+exports.findBySeizoen = function(req, res) {
+  var seizoen = req.params.selectedSeizoen; //date object
+  console.log(seizoen);
+};
+
 function handleError(res, err) {
   return res.send(500, err);
 }
