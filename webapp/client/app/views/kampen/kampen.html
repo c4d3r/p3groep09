@@ -2,12 +2,11 @@
   <div>
       Zoeken: <input ng-model="query">
   </div>
-  <section ng-repeat="kamp in kampen | filter:query">
-      <div class="article-holder">
-
+  <section>
+      <article class="article-holder" ng-repeat="kamp in kampen | filter:query">
           <h2><a href="/kampen/{{ kamp._id }}">{{ kamp.naam }}</a></h2>
           <p ng-bind-html="kamp.beschrijving"></p>
           <p ng-bind-html="kamp.locatie"></p>
-      </div>
+      </article>
   </section>
 </div>
