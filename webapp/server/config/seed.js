@@ -186,46 +186,6 @@ function populateComments() {
 function populateKampen() {
     Kamp.find({}).remove(function () {
             Kamp.create(
-                {
-                    beschrijving: 'Beschrijving van het kamp',
-                    contact: "Jeff",
-                    einddatum: new Date(2014, 7, 25),
-                    startdatum: new Date(2014, 5, 25),
-                    leeftijdsCatDoelgroep: "3 tot 9",
-                    locatie: "Rapture",
-                    naam: "Trip to the bottom of the sea",
-                    prijs: 100,
-                    vervoer: "Jetplane",
-                    korting: 10
-                    //inschrijvingen: null
-                },
-                {
-                    beschrijving: 'Beschrijving van het kamp',
-                    contact: "Test",
-                    einddatum: new Date(2014, 7, 25),
-                    startdatum: new Date(2014, 5, 25),
-                    leeftijdsCatDoelgroep: "3 tot 9",
-                    locatie: "Spa",
-                    naam: "Wateravontuur  in Spa",
-                    prijs: 300,
-                    vervoer: "Bus",
-                    korting: 10
-                    // inschrijvingen: null
-                },
-                {
-                    beschrijving: 'Beschrijving van het kamp',
-                    contact: "Roy",
-                    einddatum: new Date(2014, 7, 25),
-                    startdatum: new Date(2014, 5, 25),
-                    leeftijdsCatDoelgroep: "3 tot 9",
-                    locatie: "Zwarte woud",
-                    naam: "Bosactiviteiten",
-                    prijs: 200,
-                    vervoer: "Bus",
-                    korting: 10
-                    //inschrijvingen: null
-                },
-
                 //DATUM ATTENTION: ISODAte --> maand begint vanaf 0!
                 {
                   naam: "Krk, here we come!",
@@ -268,6 +228,20 @@ function populateKampen() {
                   vervoer: "Bus",
                   korting: 0,
                   promoAfbeelding: "zomer/hongarije.jpg"
+                },
+                {
+                naam: "Ski en fun",
+                beschrijving: 'Begrijp je er geen jota van? Geen nood, in elk niveaugroepje skiet een monitor van JOETZ mee. Die helpt je over de taalbarrière en de Oostenrijkse skimonitor leert je vlekkeloos langs elk pisteobstakel laveren. De lunchpauzes nemen we in het hotel dat vlakbij de skipiste ligt. Praktisch toch!? De JOETZ-monitors garanderen leuke après-ski en avondactiviteiten.',
+                contact: "???",
+                startDatum: new Date(2014, 11, 19, 0, 0, 0),
+                eindDatum: new Date(2014, 11, 27, 0, 0, 0),
+                leeftijdsCatDoelgroep: "10 - 14",
+                doelgroepen: [10, 11, 12, 13, 14],
+                locatie: "Maria Alm, Oostenrijk",
+                prijs: 785,
+                vervoer: "Bus",
+                korting: 0,
+                promoAfbeelding: "winter/oostenrijk.jpg"
                 }
                 , function () {
                     console.log('populated kampen')
@@ -281,7 +255,7 @@ function populateKampen() {
 function populateInschrijvingen() {
     Inschrijving.find({}).remove(function () {
         Gebruiker.findOne({email: "roy_9852@hotmail.com"}, function (err, gebruiker) {
-            Kamp.findOne({naam: "Bosactiviteiten"}, function (err, kamp) {
+            Kamp.findOne({naam: "Krk, here we come!"}, function (err, kamp) {
                 Inschrijving.create(
                     {
                         lidMutualiteit: false,
