@@ -11,7 +11,7 @@ var mongoose = require('mongoose'),
 var ContactSchema = new Schema({
     sendBy: {type: Schema.ObjectId, ref: 'Gebruiker'},
     sendDate: {type: Date},
-    onderwerp:{type: String},
+    onderwerp: {type: String},
     bericht: {type: String}
 });
 

@@ -4,14 +4,14 @@
 
       <div class="page-content">
           <form class="form" name="form" ng-submit="contact(form)" novalidate>
-              <div class="form-group" ng-class="form.onderwerp.$error.required && submitted">
+              <div class="form-group" >
                   <label>Onderwerp</label>
-                  <input type="text" name="onderwerp" class="form-control" ng-model="email.onderwerp" required>
+                  <input type="text" name="onderwerp" class="form-control" ng-model="contact.onderwerp" required>
               </div>
 
-              <div class="form-group">
+              <div class="form-group" >
                   <label>Inhoud</label>
-                  <textarea id="bericht" name="bericht" class="form-control" ng-model="email.bericht" required/>
+                  <textarea id="bericht" name="bericht" class="form-control" ng-model="contact.bericht" required/>
               </div>
 
               <div class="form-group has-error">

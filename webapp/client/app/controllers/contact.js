@@ -5,10 +5,27 @@
 
 angular.module('webappApp')
     .controller('ContactCtrl', function ($scope, Contact) {
-        Contact.create($scope.model, function (props) {
-            console.log(props)
-        });
 
+        $scope.contact = function (form) {
+            $scope.submitted = true;
+            console.log();
+            if (form.$valid) {
+                Contact.create({
+                    onderwerp: $scope.contact.onderwerp,
+                    bericht: $scope.contact.bericht,
+                    sendDate: Date.now()
+                    //sendBy: $scope.user
+                });
+                smtpTransporter.sendMail({
+                    from: "joetz.projecten3@gmail.com",
+                    to: "joetz.projecten3@gmail.com",
+                    subject: $scope.contact.onderwerp,
+                    text: $scope.contact.bericht
+                });
+            }
+        };
 
     });
+
+
 
