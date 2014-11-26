@@ -297,7 +297,7 @@ function populateKampen() {
                     prijs: 535,
                     vervoer: "Bus",
                     korting: 0,
-                    promoAfbeelding: "winter/kroatie.jpg"
+                    promoAfbeelding: "zomer/kroatie.jpg"
                 },
                 {
                     naam: "Balaton-pret",
@@ -311,7 +311,7 @@ function populateKampen() {
                     prijs: 475,
                     vervoer: "Bus",
                     korting: 0,
-                    promoAfbeelding: "winter/hongarije.jpg"
+                    promoAfbeelding: "zomer/hongarije.jpg"
                 },
                 {
                     naam: "Boekenwurmen & Speelvogels",
@@ -326,7 +326,7 @@ function populateKampen() {
                     //prijsleden: 135
                     vervoer: "Eigen vervoer",
                     korting: 0,
-                    promoAfbeelding: "winter/hongarije.jpg"
+                    promoAfbeelding: "zomer/hongarije.jpg"
                 },
                 {
                     naam: "Word je blaas de baas - i.s.m. UZ Gent",
@@ -341,7 +341,7 @@ function populateKampen() {
                     //prijsleden: 250
                     vervoer: "Eigen vervoer",
                     korting: 0,
-                    promoAfbeelding: "winter/hongarije.jpg"
+                    promoAfbeelding: "zomer/hongarije.jpg"
                 },
                 {
                     naam: "Paasbe(e)st",
@@ -356,7 +356,7 @@ function populateKampen() {
                     //prijsleden: 250
                     vervoer: "Eigen vervoer",
                     korting: 0,
-                    promoAfbeelding: "winter/hongarije.jpg"
+                    promoAfbeelding: "zomer/hongarije.jpg"
                 },
                 {
                     naam: "Van nix tot mix - i.s.m. Mix-IT",
@@ -371,7 +371,7 @@ function populateKampen() {
                     //prijsleden: 200
                     vervoer: "Eigen vervoer",
                     korting: 10,
-                    promoAfbeelding: "winter/hongarije.jpg"
+                    promoAfbeelding: "zomer/hongarije.jpg"
                 },
                 {
                     naam: "#welkombijJOETZ",
@@ -386,7 +386,7 @@ function populateKampen() {
                     //prijsleden: 50
                     vervoer: "Eigen vervoer",
                     korting: 10,
-                    promoAfbeelding: "winter/hongarije.jpg"
+                    promoAfbeelding: "zomer/hongarije.jpg"
                 },
                 {
                     naam: "#JOETZiserookvoordekleinsten",
@@ -401,7 +401,7 @@ function populateKampen() {
                     //prijsleden: 50
                     vervoer: "Eigen vervoer",
                     korting: 10,
-                    promoAfbeelding: "winter/hongarije.jpg"
+                    promoAfbeelding: "zomer/hongarije.jpg"
                 },
                 {
                     naam: "Move 2 the beat",
@@ -416,7 +416,7 @@ function populateKampen() {
                     //prijsleden: 140
                     vervoer: "Eigen vervoer",
                     korting: 35,
-                    promoAfbeelding: "winter/hongarije.jpg"
+                    promoAfbeelding: "zomer/hongarije.jpg"
                 },
                 {
                     naam: "Sp(r)ookjes",
@@ -431,7 +431,7 @@ function populateKampen() {
                     //prijsleden: 135
                     vervoer: "Eigen vervoer",
                     korting: 30,
-                    promoAfbeelding: "winter/hongarije.jpg"
+                    promoAfbeelding: "zomer/hongarije.jpg"
                 },
                 {
                     naam: "100% Content",
@@ -446,7 +446,7 @@ function populateKampen() {
                     //prijsleden: 135
                     vervoer: "Eigen vervoer",
                     korting: 30,
-                    promoAfbeelding: "winter/hongarije.jpg"
+                    promoAfbeelding: "zomer/hongarije.jpg"
                 },
                 function () {
                     console.log('populated kampen')

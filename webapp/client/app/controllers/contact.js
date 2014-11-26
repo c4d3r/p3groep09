@@ -11,11 +11,6 @@ angular.module('webappApp')
             }
 
         }
-        smtpTransporter.sendMail({
-            from: "joetz.projecten3@gmail.com",
-            to: "joetz.projecten3@gmail.com",
-            subject: $scope.onderwerp,
-            text: $scope.tekst
-        })
+
     });
 
