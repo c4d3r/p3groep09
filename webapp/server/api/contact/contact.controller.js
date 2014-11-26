@@ -5,53 +5,53 @@
 'use strict'
 
 var _ = require('lodash');
-var Email = require('./email.model');
+var Contact = require('./contact.model');
 
 // Get list of emails
 exports.index = function(req, res) {
-    Email.find(function (err, emails) {
+    Contact.find(function (err, contacts) {
         if(err) { return handleError(res, err); }
-        return res.json(200, emails);
+        return res.json(200, contacts);
     });
 };
 
 // Get a single email
 exports.show = function(req, res) {
-    Email.findById(req.params.id, function (err, email) {
+    Contact.findById(req.params.id, function (err, contact) {
         if(err) { return handleError(res, err); }
-        if(!email) { return res.send(404); }
-        return res.json(email);
+        if(!contact) { return res.send(404); }
+        return res.json(contact);
     });
 };
 
 // Creates a new email in the DB.
 exports.create = function(req, res) {
-    Email.create(req.body, function(err, email) {
+    Contact.create(req.body, function(err, contact) {
         if(err) { return handleError(res, err); }
-        return res.json(201, email);
+        return res.json(201, contact);
     });
 };
 
 // Updates an existing email in the DB.
 exports.update = function(req, res) {
     if(req.body._id) { delete req.body._id; }
-    Email.findById(req.params.id, function (err, email) {
+    Contact.findById(req.params.id, function (err, contact) {
         if (err) { return handleError(res, err); }
-        if(!email) { return res.send(404); }
-        var updated = _.merge(email, req.body);
+        if(!contact) { return res.send(404); }
+        var updated = _.merge(contact, req.body);
         updated.save(function (err) {
             if (err) { return handleError(res, err); }
-            return res.json(200, email);
+            return res.json(200, contact);
         });
     });
 };
 
 // Deletes a email from the DB.
 exports.destroy = function(req, res) {
-    Email.findById(req.params.id, function (err, email) {
+    Contact.findById(req.params.id, function (err, contact) {
         if(err) { return handleError(res, err); }
-        if(!email) { return res.send(404); }
-        email.remove(function(err) {
+        if(!contact) { return res.send(404); }
+        contact.remove(function(err) {
             if(err) { return handleError(res, err); }
             return res.send(204);
         });

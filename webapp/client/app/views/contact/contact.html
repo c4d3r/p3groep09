@@ -4,29 +4,29 @@
 
       <div class="page-content">
           <form class="form" name="form" ng-submit="contact(form)" novalidate>
-              <div class="form-group">
+              <div class="form-group" ng-class="form.onderwerp.$error.required && submitted">
                   <label>Onderwerp</label>
-                  <input type="text" name="onderwerp" class="form-control" ng-model="email.subject" required>
+                  <input type="text" name="onderwerp" class="form-control" ng-model="email.onderwerp" required>
               </div>
 
               <div class="form-group">
                   <label>Inhoud</label>
-                  <textarea id="tekst" name="tekst" class="form-control" ng-model="email.text" required/>
+                  <textarea id="bericht" name="bericht" class="form-control" ng-model="email.bericht" required/>
               </div>
 
-              <!--<div class="form-group has-error">
+              <div class="form-group has-error">
                   <p class="help-block" ng-show="form.onderwerp.$error.required && submitted">
                       Gelieven een onderwerp op te geven.
                   </p>
-                  <p class="help-block" ng-show="form.tekst.$error.required && submitted">
+                  <p class="help-block" ng-show="form.bericht.$error.required && submitted">
                       Gelieven uw mail een inhoud te geven.
                   </p>
 
                   <p class="help-block">{{ errors.other }}</p>
-              </div>-->
+              </div>
 
               <div style="margin-top: 10px;">
-                  <button class="btn btn-green" ng-click="methods.createEmail" type="submit">Verstuur</button>
+                  <button class="btn btn-green" type="submit">Verstuur</button>
               </div>
           </form>
       </div>

@@ -12,7 +12,7 @@ var Gebruiker = require('../api/gebruiker/gebruiker.model')
     , Comment = require('../api/comment/comment.model')
     , NieuwsItem = require('../api/nieuwsitem/nieuwsitem.model')
     , Kamp = require('../api/kamp/kamp.model')
-    , Email = require('../api/email/email.model')
+    , Contact = require('../api/contact/contact.model')
     , Categorie = require('../api/categorie/categorie.model');
 
 
@@ -80,7 +80,7 @@ Gebruiker.find({}).remove(function () {
             populateComments;
             populateActiviteiten();
             populateInschrijvingen();
-            populateEmails();
+            populateContacts();
         }
     );
 });
@@ -515,17 +515,17 @@ function populateInschrijvingen() {
     })
 }
 
-function populateEmails() {
-    Email.find({}).remove(function () {
+function populateContacts() {
+    Contact.find({}).remove(function () {
         Gebruiker.findOne({email: "test@test.com"}, function (err, gebruiker) {
-            Email.create({
+            Contact.create({
                     sendBy: gebruiker,
                     sendDate: new Date(2014, 11, 22),
-                    subject: "Aanvraag voor meer kampen",
-                    text: "Zou het mogelijk zijn om enventueel meer kampen toe te voegen aan uw selectie van kampen"
+                    onderwerp: "Aanvraag voor meer kampen",
+                    bericht: "Zou het mogelijk zijn om enventueel meer kampen toe te voegen aan uw selectie van kampen"
                 }
                 , function () {
-                    console.log('populated email')
+                    console.log('populated contact')
                 });
         });
     });

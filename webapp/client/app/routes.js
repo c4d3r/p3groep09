@@ -72,9 +72,10 @@ angular.module('webappApp')
       controller: 'AdminCtrl'
     })
 
+    /** CONTACTEREN **/
     .state('contact', {
-      url: '/contacteren',
-      templateUrl: 'app/views/contacteren/contacteren.html',
+      url: '/contact',
+      templateUrl: 'app/views/contact/contact.html',
       controller: 'ContactCtrl'
     })
 

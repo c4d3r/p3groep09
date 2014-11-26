@@ -10,15 +10,7 @@ process.env.NODE_ENV = process.env.NODE_ENV || 'development';
 var express = require('express');
 var mongoose = require('mongoose');
 var config = require('./config/environment');
-var nodemailer = require('nodemailer');
 
-var smtpTransporter = nodemailer.createTransport("SMTP", {
-    service: "Gmail",
-    auth: {
-        user: "joetz.projecten3@gmail.com",
-        pass: "Joetzp3Groep9"
-    }
-});
 
 // Connect to database
 mongoose.connect(config.mongo.uri, config.mongo.options);
