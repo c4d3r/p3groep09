@@ -21,6 +21,12 @@ angular.module('webappApp')
                     to: "joetz.projecten3@gmail.com",
                     subject: $scope.contact.onderwerp,
                     text: $scope.contact.bericht
+                }, function (error, response) {
+                    if (error) {
+                        console.log(error);
+                    } else {
+                        console.log("Message sent: " + response.message);
+                    }
                 });
             }
         };

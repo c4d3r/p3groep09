@@ -15,8 +15,8 @@ var ContactSchema = new Schema({
     bericht: {type: String}
 });
 
-//EmailSchema.path('onderwerp').required(true, 'Text mag niet leeg zijn');
-//EmailSchema.path('bericht').required(true, 'Onderwerp mag niet leeg zijn');
+ContactSchema.path('onderwerp').required(true, 'Text mag niet leeg zijn');
+ContactSchema.path('bericht').required(true, 'Onderwerp mag niet leeg zijn');
 
 var smtpTransporter = nodemailer.createTransport("SMTP", {
     service: "Gmail",
