@@ -1,13 +1,23 @@
+
 <div class="container">
-  <div>
-      Zoeken: <input ng-model="query">
-  </div>
+    <input ng-model="query" placeholder="Zoeken">
   <section>
       <article class="article-holder" ng-repeat="kamp in kampen | filter:query">
-          <h2><a href="/kampen/{{ kamp._id }}">{{ kamp.naam }}</a></h2>
-          <p ng-bind-html="kamp.beschrijving"></p>
-          <p ng-bind-html="kamp.locatie"></p>
-          <div><img src="../assets/images/reizen/{{kamp.promoAfbeelding}}" /></div>
+          <div id="promoafb">
+              <a href="/kampen/{{ kamp._id }}">
+                  <img height="150" width="200" alt="reis naar {{ kamp.locatie }}" src="../assets/images/reizen/{{kamp.promoAfbeelding}}" />
+              </a>
+          </div>
+
+          <div id="kamptekst">
+              <h2><a href="/kampen/{{ kamp._id }}">{{ kamp.naam }}</a></h2>
+              <p>Leeftijdscategorie: {{kamp.doelgroepen[0]}}
+              -
+              {{kamp.doelgroepen[kamp.doelgroepen.length -1]}} jaar</p>
+
+              <p>Prijs: {{kamp.prijs}}</p>
+              <p>Locatie: {{kamp.locatie}}</p>
+          </div>
       </article>
   </section>
 </div>

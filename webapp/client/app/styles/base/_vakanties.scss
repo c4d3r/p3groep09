@@ -146,12 +146,35 @@
   padding:0;
 }
 
+#promoafb {
+  float: left;
+}
+#kamptekst {
+ margin-left: 225px;
+
+}
+input{
+ width:99%;
+ border-radius: 5px;
+ border: 1px;
+ border-style: solid;
+ border-color: #A8A8A8;
+ padding: 10px 0px 10px 10px;
+}
+
+::-webkit-input-placeholder {
+ font-family: "ansonregular", sans-serif;
+ font-size: 12pt;
+}
+
+
 section {
   position: relative;
   padding: 20px;
 
   .article-holder {
     margin: 0 15px;
+    margin-bottom: 15px;
   }
   h2 {
     font-family: "ansonregular", sans-serif;
@@ -196,12 +219,7 @@ section {
     margin-bottom: 20px;
   }
 }
-.zoeken {
-    font-family: "ansonregular", sans-serif;
-    font-size: 16pt;
 
-    float: right;
-}
 
 @media all and (min-width: $bp-large) {
   time.icon {
