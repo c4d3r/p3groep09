@@ -1,10 +1,66 @@
-#vakanties {
+.isotope {
+  -webkit-transition-property: height, width;
+  -moz-transition-property: height, width;
+  -ms-transition-property: height, width;
+  -o-transition-property: height, width;
+  transition-property: height, width;
+
+  .isotope-item {
+    -webkit-transition-duration: 0.8s;
+    -moz-transition-duration: 0.8s;
+    -ms-transition-duration: 0.8s;
+    -o-transition-duration: 0.8s;
+    transition-duration: 0.8s;
+
+    float: left;
+    //margin: 0 5px 10px;
+    max-height: 202px;
+    width: 33.3333333%;
+    box-sizing: border-box;
+    position: relative;
+    padding: 0 5px 10px;
+  }
+}
+.vakanties-seizoen-container {
+    box-sizing: border-box;
+    height:270px;
+
+  .vakanties-seizoen {
+    background:no-repeat;
+    background-size: cover;
+    background-position: center center;
+    position:relative;
+    transition: all .2s ease-in-out;
+    margin: 0;
+    width: 100%;
+    max-height:100%;
+    height: 100%;
+  }
+}
+
+.vakantie-big {
+  height:470px;
+  width:70%;
+  float:left;
+  padding: 5px;
+  margin-bottom:5px;
+}
+
+.vakantie-aside {
+  .vakanties-seizoen-container {
+    width:30%;
+    float:left;
+    height: 235px;
+    padding: 0px 6px 5px 6px;
+  }
+}
+
+/*#vakanties {
   width:$wrapper + 0.65;
   padding:0;
   margin-left: -0.3em;
 
   .vakanties-seizoen {
-    margin:5px;
     background:black;
     height:470px;
     background:no-repeat;
@@ -12,6 +68,7 @@
     background-position: center center;
     position:relative;
     transition: all .2s ease-in-out;
+    margin: 0;
 
     .doelgroep {
       position:absolute;
@@ -35,9 +92,10 @@
     width:70%;
     float:left;
   }
-  aside {
+  aside, #vakanties-lijst {
     .vakanties-seizoen {
-      height:230px;
+      height:100%;
+      width: 100%;
 
       h2 {
         text-align: center;
@@ -46,12 +104,18 @@
       }
     }
     .vakanties-seizoen-container{
-      width:30%;
+      width:33.333333%;
+      box-sizing: border-box;
+      height:270px;
     }
   }
   &:after {
     @include clearfix();
   }
+}*/
+
+#vakanties-lijst {
+  position: relative;
 }
 
 #vakanties-andere {

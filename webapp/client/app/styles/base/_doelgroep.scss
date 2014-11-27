@@ -14,19 +14,20 @@
     padding: 5px 7px;
     border-radius:20px;
     text-align:center;
+    min-width: 24px;
 
     & + li {
       margin-left:3px;
     }
   }
 
-  .doelgroep-3 {}
-  .doelgroep-4 {}
-  .doelgroep-5 {}
-  .doelgroep-6 {}
-  .doelgroep-7 {}
-  .doelgroep-8 {}
-  .doelgroep-9 {}
+  .doelgroep-3 { background-color: #791d7e; }
+  .doelgroep-4 { background-color: #b93092; }
+  .doelgroep-5 { background-color: #e20177; }
+  .doelgroep-6 { background-color: #ed174f; }
+  .doelgroep-7 { background-color: #ee3424; }
+  .doelgroep-8 { background-color: #f15d22; }
+  .doelgroep-9 { background-color: #f8981d; }
   .doelgroep-10 { background-color: rgb(255, 210, 0); }
   .doelgroep-11 { background-color: rgb(212, 209, 15); }
   .doelgroep-12 { background-color: rgb(120, 162, 47); }

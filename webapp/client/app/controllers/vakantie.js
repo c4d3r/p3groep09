@@ -34,7 +34,6 @@ angular.module('webappApp')
 
     $scope.kampen = Kampen.findBySeizoen({selectedSeizoen: seizoen}, function(kampen){
       $scope.eersteKamp = kampen[0];
-      $scope.displayKampen = kampen.splice(1, kampen.length);
     });
 
   });
