@@ -18,17 +18,9 @@ html, body {
 }
 body {
   border:none;
-  background:white;
+  background:#f3f3f3 url(/assets/images/patterns/geometry2.png) repeat;
   position: relative;
   height:auto;
-}
-@media all and (min-width: $bp-large) {
-    body {
-        background-color: #f3f3f3;
-        background-repeat: no-repeat,repeat;
-        background-position: center 60px,0 0;
-        min-height: 100%;
-    }
 }
 
 a {
@@ -58,33 +50,36 @@ header {
                 list-style:none;
 
                 & > a {
-                    color: rgb(36, 36, 36);
+                    color: rgb(229, 51, 65);
                     font-family: 'Oswald';
                     text-transform: uppercase;
                     font-weight:bold;
                     height:$nav-height;
                     width:100%;
                     box-sizing: border-content;
-                    font-size:10pt;
+                    font-size:12pt;
                     line-height: $nav-height;
                     display: block;
                     text-align:center;
+                    border-bottom:3px solid transparent;
+
 
                     &:hover {
-                        color:$red;
-                        -webkit-transition: color 250ms;
-                        -moz-transition: color 250ms;
-                        -ms-transition: color 250ms;
-                        -o-transition: color 250ms;
-                        transition: color 250ms;
+                        -webkit-transition: all 250ms;
+                        -moz-transition: all 250ms;
+                        -ms-transition: all 250ms;
+                        -o-transition: all 250ms;
+                        transition: all 250ms;
+                        border-color:rgb(229, 51, 65);
+                        text-shadow: 0 0 1px white;
                     }
                 }
 
                 &.logo {
                     height: $nav-height;
                     img {
-                        height:100px;
-                        margin-top: 6px;
+                        height:80px;
+                        margin-top: 12px;
                     }
                     display: none;
 
@@ -109,6 +104,7 @@ header {
 
 @media all and (min-width: $bp-large) {
     header {
+        background: rgb(229, 51, 65);
         nav {
             height: $nav-height + 10;
 
@@ -118,14 +114,19 @@ header {
                     display: inline-block;
 
                     & > a {
+                        color: #ECECEC;
                         padding:0 25px;
                         width: 100%;
                         display: table-cell;
                         vertical-align: middle;
+                        text-shadow: 0 0 1px rgb(145, 0, 22);
+
+                        &:hover {
+                          border-color:white;
+                        }
                     }
 
                     & + li {
-                        margin-left: 10px;
                         border-top:none;
                     }
 
@@ -136,6 +137,18 @@ header {
             }
         }
     }
+}
+
+.splash {
+  display: none;
+}
+
+[ng-cloak].splash {
+  background-color: #428bca;
+  width: 100%;
+  text-align: center;
+  color: white;
+  display: block !important;
 }
 
 .container {

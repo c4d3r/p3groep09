@@ -52,4 +52,16 @@ angular.module('webappApp', [
         }
       });
     });
+  })
+
+  //check doelgroep
+  .run(function($rootScope, $controller, $http, $templateCache){
+
+    var templateScope, templateCtrl;
+
+    $http.get('app/views/doelgroep/selectie.html', {cache: $templateCache})
+      .then(function(response){
+        templateScope = $rootScope.$new();
+        templateCtrl = $controller('DoelgroepCtrl', {templateUrl: 'app/views/doelgroep/selectie.html', $scope: $rootScope.$new()});
+      });
   });

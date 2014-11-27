@@ -1,14 +1,13 @@
 'use strict';
 
 angular.module('webappApp')
-  .config(function ($stateProvider) {
+  .config(function($stateProvider) {
   $stateProvider
     .state('home', {
-        url: '/',
-        templateUrl: 'app/views/vakanties/index.html',
-        controller: 'VakantieCtrl'
+      url: '/',
+      templateUrl: 'app/views/vakanties/index.html',
+      controller: 'VakantieCtrl'
     })
-
     /** NIEUWS **/
     .state('nieuws', {
         url: '/nieuws',
