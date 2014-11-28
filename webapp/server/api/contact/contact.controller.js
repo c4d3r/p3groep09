@@ -1,11 +1,11 @@
 /**
  * Created by Bram on 7/11/2014.
  */
-
 'use strict'
 
 var _ = require('lodash');
 var Contact = require('./contact.model');
+var nodemailer = require('nodemailer');
 
 // Get list of emails
 exports.index = function(req, res) {
@@ -57,6 +57,21 @@ exports.destroy = function(req, res) {
         });
     });
 };
+exports.transporter = function(){
+    var smtpTransporter = nodemailer.createTransport("SMTP", {
+        service: "Gmail",
+        auth: {
+            user: "joetz.projecten3@gmail.com",
+            pass: "Joetzp3Groep9"
+        }
+    });
+    return smtpTransporter;
+};
+
+exports.send = function(){
+
+}
+
 
 function handleError(res, err) {
     return res.send(500, err);

@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('webappApp')
-    .controller('AccountCtrl', function($scope, Inschrijven, Kampen, $location, Auth) {
+    .controller('AccountCtrl', function($scope, Inschrijven, Kampen, Contact,$location, Auth) {
         $scope.isLoggedIn = Auth.isLoggedIn;
         $scope.isAdmin = Auth.isAdmin;
         $scope.getCurrentUser = Auth.getCurrentUser;
@@ -14,11 +14,6 @@ angular.module('webappApp')
             //$scope.inschrijvingen.push(Inschrijven.show(inschrijving));
             $scope.kampen.push(Kampen.show(inschrijving.kamp));
         });
-
-
-
-
-
 
         $scope.logout = function() {
             Auth.logout();

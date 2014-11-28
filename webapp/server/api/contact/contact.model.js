@@ -4,8 +4,7 @@
 
 
 var mongoose = require('mongoose'),
-    Schema = mongoose.Schema,
-    nodemailer = require('nodemailer');
+    Schema = mongoose.Schema;
 
 
 var ContactSchema = new Schema({
@@ -18,12 +17,5 @@ var ContactSchema = new Schema({
 ContactSchema.path('onderwerp').required(true, 'Text mag niet leeg zijn');
 ContactSchema.path('bericht').required(true, 'Onderwerp mag niet leeg zijn');
 
-var smtpTransporter = nodemailer.createTransport("SMTP", {
-    service: "Gmail",
-    auth: {
-        user: "joetz.projecten3@gmail.com",
-        pass: "Joetzp3Groep9"
-    }
-});
 
 module.exports = mongoose.model('Contact', ContactSchema);

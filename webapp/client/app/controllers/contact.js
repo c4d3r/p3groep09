@@ -5,33 +5,25 @@
 
 angular.module('webappApp')
     .controller('ContactCtrl', function ($scope, Contact) {
+        var tran = Contact.transporter;
 
         $scope.contact = function (form) {
             $scope.submitted = true;
-            console.log();
+            console.log("topkek");
             if (form.$valid) {
                 Contact.create({
                     onderwerp: $scope.contact.onderwerp,
                     bericht: $scope.contact.bericht,
                     sendDate: Date.now()
-                    //sendBy: $scope.user
+                    //sendBy:
                 });
-                smtpTransporter.sendMail({
-                    from: "joetz.projecten3@gmail.com",
-                    to: "joetz.projecten3@gmail.com",
-                    subject: $scope.contact.onderwerp,
-                    text: $scope.contact.bericht
-                }, function (error, response) {
-                    if (error) {
-                        console.log(error);
-                    } else {
-                        console.log("Message sent: " + response.message);
-                    }
-                });
+
+                tran
             }
         };
 
     });
 
+/**
 
-
+**/
