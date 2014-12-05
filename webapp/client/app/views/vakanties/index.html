@@ -1,5 +1,22 @@
 <section id="vakanties" class="grid">
 
+  <aside id="vakanties-sort" class="container">
+    <form class="form-group">
+      <select id="vakanties-sort-seizoen" ng-model="filter.seizoen" ng-change="update()">
+        <option value="winter">Winter</option>
+        <option value="lente">Lente</option>
+        <option value="zomer">Zomer</option>
+        <option value="winter">Winter</option>
+      </select>
+
+      leeftijd:
+      <select id="vakanties-sort-leeftijd-start" ng-model="filter.leeftijd" ng-change="update()">
+        <option ng-repeat="i in [] | range:3:18">{{ i }}</option>
+      </select>
+
+    </form>
+  </aside>
+
   <div class="vakanties-seizoen-container vakantie-big">
     <figure class="vakanties-seizoen effect-julia">
       <img src="/assets/images/reizen/{{ eersteKamp.promoAfbeelding }}" alt="reis naar {{ eersteKamp.locatie }}"/>
@@ -20,7 +37,7 @@
     </figure>
   </div>
 
-  <aside class="vakantie-aside">
+  <div class="vakantie-aside">
 
     <div class="vakanties-seizoen-container" ng-repeat="kamp in kampen | slice:1:3">
 
@@ -37,7 +54,7 @@
 
     </div>
 
-  </aside>
+  </div>
 
   <div id="vakanties-lijst" class="isotope">
 
@@ -55,7 +72,10 @@
     </div>
 
   </div>
+
 </section>
+
+
 
 <!--<section id="vakanties-andere">-->
   <!--<div class="btn-group-justified">-->

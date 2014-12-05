@@ -101,6 +101,7 @@
       <script src="bower_components/isotope/js/layout-modes/fit-rows.js"></script>
       <script src="bower_components/isotope/js/layout-modes/masonry.js"></script>
       <script src="bower_components/angular-modal-service/dst/angular-modal-service.js"></script>
+      <script src="bower_components/moment/moment.js"></script>
       <!-- endbower -->
     <!-- endbuild -->
 
@@ -121,6 +122,7 @@
       <script src="app/controllers/nieuwsview.js"></script>
       <script src="app/controllers/signup.js"></script>
       <script src="app/controllers/vakantie.js"></script>
+      <script src="app/filters/range.filter.js"></script>
       <script src="app/filters/slice.filter.js"></script>
       <script src="app/routes.js"></script>
       <script src="app/services/contact.js"></script>
@@ -140,11 +142,11 @@
         var nav = responsiveNav(".nav-collapse");
     </script>
 
-    <script>
-      $('#vakanties-lijst').isotope({
-        animationEngine: 'best-available',
-        layoutMode : 'fitRows'
-      })
-    </script>
+    <!--<script>-->
+      <!--$('#vakanties-lijst').isotope({-->
+        <!--animationEngine: 'best-available',-->
+        <!--layoutMode : 'fitRows'-->
+      <!--})-->
+    <!--</script>-->
   </body>
 </html>

@@ -6,7 +6,8 @@ angular.module('webappApp', [
   'ngSanitize',
   'ui.router',
   'mgo-angular-wizard',
-  'joetzFilters'
+  'joetzFilterSlice',
+  'joetzFilterRange',
 ])
   .config(function ($stateProvider, $urlRouterProvider, $locationProvider, $httpProvider) {
     $urlRouterProvider

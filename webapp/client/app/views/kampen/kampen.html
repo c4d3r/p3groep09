@@ -1,6 +1,9 @@
-
 <div class="container">
-    <input ng-model="query" placeholder="Zoeken">
+
+  <form class="form-group">
+    <input type="text" ng-model="query" placeholder="zoeken"/>
+  </form>
+
   <section>
       <article class="article-holder" ng-repeat="kamp in kampen | filter:query">
           <div id="promoafb">

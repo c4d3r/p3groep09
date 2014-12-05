@@ -11,11 +11,15 @@
   & > li {
     list-style: none;
     display: inline-block;
-    padding: 2px 2px;
-    font-size: 12pt;
-    border-radius: 20px;
+    padding: 5px 2px;
+    font-size: 11pt;
+    border-radius: 30px;
     text-align: center;
     min-width: 24px;
+
+    &:after {
+      content: "j";
+    }
 
     & + li {
       margin-left:3px;
