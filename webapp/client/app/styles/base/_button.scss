@@ -51,6 +51,38 @@
     @include buttonColor($yellow, $yellow, $yellow);
 }
 
+.season {
+  width:32px;
+  height:32px;
+  background:url('/assets/images/icons/seasons/seasons-sprite.png');
+  background-size: 128px 64px;
+  text-indent: -99999px;
+  border:none;
+  outline:none;
+
+  &:focus {
+    outline:none;
+  }
+
+  &:hover, &.active {
+    background-position-y: 32px;
+    cursor:pointer;
+  }
+
+  &.season-winter {
+    background-position-x: 0px;
+  }
+  &.season-winter {
+    background-position-x: -32px;
+  }
+  &.season-lente {
+    background-position-x: -64px;
+  }
+  &.season-zomer {
+    background-position-x: -96px;
+  }
+}
+
 .btn-group-justified {
 
   ul {

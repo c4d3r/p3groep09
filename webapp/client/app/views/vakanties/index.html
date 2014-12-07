@@ -1,23 +1,23 @@
 <section id="vakanties" class="grid">
 
   <aside id="vakanties-sort" class="container">
-    <form class="form-group">
-      <select id="vakanties-sort-seizoen" ng-model="filter.seizoen" ng-change="update()">
-        <option value="winter">Winter</option>
-        <option value="lente">Lente</option>
-        <option value="zomer">Zomer</option>
-        <option value="winter">Winter</option>
-      </select>
+    <div class="container-filter">
 
-      leeftijd:
-      <select id="vakanties-sort-leeftijd-start" ng-model="filter.leeftijd" ng-change="update()">
-        <option ng-repeat="i in [] | range:3:18">{{ i }}</option>
-      </select>
+      <div id="filter-seizoen">
+        <button class="season season-winter" ng-click="setSeizoen('winter')" ng-class="{active: filter.seizoen == 'winter'}">Winter</button>
+        <button class="season season-lente" ng-click="setSeizoen('lente')" ng-class="{active: filter.seizoen == 'lente'}">Lente</button>
+        <button class="season season-zomer" ng-click="setSeizoen('zomer')" ng-class="{active: filter.seizoen == 'zomer'}">Zomer</button>
+        <button class="season season-herfst" ng-click="setSeizoen('herfst')" ng-class="{active: filter.seizoen == 'herfst'}">Herfst</button>
+      </div>
 
-    </form>
+      <ul class="doelgroepen filter">
+        <li ng-class="{'doelgroep-{{ i }}': filter.leeftijden.indexOf(i) > -1}" ng-click="toggleLeeftijd(i)" ng-repeat="i in [] | range:3:18">{{ i }}</li>
+      </ul>
+
+    </div>
   </aside>
 
-  <div class="vakanties-seizoen-container vakantie-big">
+  <div class="vakanties-seizoen-container vakantie-big" ng-show="eersteKamp != null">
     <figure class="vakanties-seizoen effect-julia">
       <img src="/assets/images/reizen/{{ eersteKamp.promoAfbeelding }}" alt="reis naar {{ eersteKamp.locatie }}"/>
       <figcaption>
