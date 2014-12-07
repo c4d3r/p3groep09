@@ -8,6 +8,11 @@ angular.module('webappApp')
       templateUrl: 'app/views/vakanties/index.html',
       controller: 'VakantieCtrl'
     })
+    .state('doelgroep', {
+      url: '/doelgroep',
+      templateUrl: 'app/views/doelgroep/selectie.html',
+      controller: 'DoelgroepCtrl'
+    })
     /** NIEUWS **/
     .state('nieuws', {
         url: '/nieuws',

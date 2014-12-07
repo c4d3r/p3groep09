@@ -181,3 +181,49 @@ header {
   margin-bottom: 10px;
   padding:0;
 }
+
+#doelgroep-splash {
+  li {
+    float:left;
+
+    &:first-child > button {
+      background:#53BB50;
+    }
+    &:nth-child(2) > button {
+      background:#BB5050;
+    }
+    &:nth-child(3) > button {
+      background:#50ABBB;
+    }
+    &:nth-child(4) > button {
+      background:#8C50BB;
+    }
+
+    button {
+      border:1px solid black;
+      border-radius:100px;
+      text-align:center;
+      width:200px;
+      height:200px;
+      color:white;
+      font-weight:bold;
+      font-size:24pt;
+      word-break: break-all;
+
+      &:hover {
+        background:white;
+        color:black;
+        cursor:pointer;
+      }
+
+      &:focus {
+        outline:none;
+      }
+
+    }
+
+    & + li {
+      margin-left:50px;
+    }
+  }
+}

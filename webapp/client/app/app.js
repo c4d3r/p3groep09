@@ -56,13 +56,14 @@ angular.module('webappApp', [
   })
 
   //check doelgroep
-  .run(function($rootScope, $controller, $http, $templateCache){
+  .run(function($rootScope, $location, $cookies){
 
-    var templateScope, templateCtrl;
+    $rootScope.$on("$locationChangeStart",function(event, next, current){
 
-    $http.get('app/views/doelgroep/selectie.html', {cache: $templateCache})
-      .then(function(response){
-        templateScope = $rootScope.$new();
-        templateCtrl = $controller('DoelgroepCtrl', {templateUrl: 'app/views/doelgroep/selectie.html', $scope: $rootScope.$new()});
-      });
+      var doelgroepCookie = $cookies.doelgroep;
+
+      if(typeof(doelgroepCookie) === "undefined") {
+        $location.path('/doelgroep');
+      }
+    });
   });
