@@ -5,8 +5,6 @@
 
 angular.module('webappApp')
     .controller('ContactCtrl', function ($scope, Contact) {
-        var tran = Contact.transporter;
-
         $scope.contact = function (form) {
             $scope.submitted = true;
             console.log("topkek");
@@ -18,7 +16,11 @@ angular.module('webappApp')
                     //sendBy:
                 });
 
-                tran
+                Contact.transporter($scope.model, function(props){
+                    console.log(props);
+                    console.log($scope.contact);
+                });
+
             }
         };
 
@@ -26,4 +28,4 @@ angular.module('webappApp')
 
 /**
 
-**/
+ **/
