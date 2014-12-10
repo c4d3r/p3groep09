@@ -32,17 +32,18 @@ exports.show = function(req, res) {
   .populate('kamp');
 };
 
-exports.findByUser = function(req, res) {
-
-  Inschrijving
-    .find({gebruiker: req.params.gebruikerId}, function(err, inschrijvingen) {
+exports.query = function(req, res) {
+  Inschrijving //wacht tis /api/inschrijvingen/gebruiker/:id dus ge kunt et nie op mijn manier doen xd
+    .find(req.params)
+    .populate('gebruiker')
+    .populate('kamp')
+    .exec(function(err, inschrijvingen) {
+        console.log(inschrijvingen); //WE LANDEN NOG SNELLER OP DE MAAN
       if(err) { return handleError(res, err); }
       if(!inschrijvingen) { return res.send(404); }
       return res.json(inschrijvingen);
-    })
-    .populate('gebruiker')
-    .populate('kamp');
-};
+    });
+}; //verkeerde url?
 
 // Creates a new inschrijving in the DB.
 exports.create = function(req, res) {

@@ -7,6 +7,6 @@ angular.module('webappApp')
         'show':          { method: 'GET', isArray: false},
         'index':         { method: 'GET', isArray: true},
         'findBySeizoen': { method: 'GET', params: {method: "seizoen", selectedSeizoen: "@selectedSeizoen"} ,isArray: true}
-      }
+      } //hier is findBySeizoen nie de functienaam in de backend, die ga gwn de method aanroepe
     )
   }]);

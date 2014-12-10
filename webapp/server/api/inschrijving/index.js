@@ -5,8 +5,8 @@ var controller = require('./inschrijving.controller');
 
 var router = express.Router();
 
-router.get('/', controller.index);
-router.get('/gebruiker/:gebruikerId', controller.findByUser);
+router.get('/', controller.query);
+//router.get('/gebruiker/:gebruikerId', controller.findByUser);
 router.get('/:id', controller.show);
 router.post('/', controller.create);
 router.put('/:id', controller.update);
