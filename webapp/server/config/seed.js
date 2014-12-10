@@ -138,7 +138,7 @@ function populateNieuws() {
 }
 function populateActiviteiten() {
     Activiteit.find({}).remove(function () {
-        Gebruiker.findOne({email: "Monitor@Joetz.com"}, function (err, gebruiker) {
+        Gebruiker.findOne({email: "monitor@joetz.com"}, function (err, gebruiker) {
             Comment.find(function (err, comments) {
                 Activiteit.create(
                     {
