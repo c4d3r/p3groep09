@@ -32,6 +32,18 @@ exports.show = function(req, res) {
   .populate('kamp');
 };
 
+exports.findByUser = function(req, res) {
+
+  Inschrijving
+    .find({gebruiker: req.params.gebruikerId}, function(err, inschrijvingen) {
+      if(err) { return handleError(res, err); }
+      if(!inschrijvingen) { return res.send(404); }
+      return res.json(inschrijvingen);
+    })
+    .populate('gebruiker')
+    .populate('kamp');
+};
+
 // Creates a new inschrijving in the DB.
 exports.create = function(req, res) {
   console.log(req.body);
