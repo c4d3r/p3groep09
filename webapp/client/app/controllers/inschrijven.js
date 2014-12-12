@@ -3,6 +3,7 @@
 angular.module('webappApp')
   .controller('InschrijvingCtrl', function ($scope, Inschrijven) {
 
+
     //TEST SCOPE WITH PRE-FILLED DETAILS
     $scope.model = {
       lidMutualiteit: false,
@@ -50,8 +51,9 @@ angular.module('webappApp')
       noodPersonen: [],
       extraInformatie: "",
       gebruiker: "",
-      activiteit: ""
+      kamp: ""
     };
+
 
     //ORIGINAL SCOPE
     /*$scope.model = {

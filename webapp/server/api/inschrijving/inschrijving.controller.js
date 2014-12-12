@@ -33,22 +33,23 @@ exports.show = function(req, res) {
 };
 
 exports.query = function(req, res) {
-  Inschrijving //wacht tis /api/inschrijvingen/gebruiker/:id dus ge kunt et nie op mijn manier doen xd
+  Inschrijving
     .find(req.params)
     .populate('gebruiker')
     .populate('kamp')
     .exec(function(err, inschrijvingen) {
-        console.log(inschrijvingen); //WE LANDEN NOG SNELLER OP DE MAAN
+        console.log(inschrijvingen);
       if(err) { return handleError(res, err); }
       if(!inschrijvingen) { return res.send(404); }
       return res.json(inschrijvingen);
     });
-}; //verkeerde url?
+};
 
 // Creates a new inschrijving in the DB.
 exports.create = function(req, res) {
   console.log(req.body);
-  Inschrijving.create(req.body, function(err, inschrijving) {
+  var newInschrijving = new Inschrijving(req.body);
+  newInschrijving.save(function(err, inschrijving) {
     if(err) { return handleError(res, err); }
     return res.json(201, inschrijving);
   });

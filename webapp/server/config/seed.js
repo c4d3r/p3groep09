@@ -77,7 +77,7 @@ Gebruiker.find({}).remove(function () {
             populateCategories();
             populateKampen();
             populateNieuws();
-            populateComments;
+            populateComments();
             populateActiviteiten();
             populateInschrijvingen();
             populateContacts();
@@ -140,15 +140,17 @@ function populateActiviteiten() {
     Activiteit.find({}).remove(function () {
         Gebruiker.findOne({email: "monitor@joetz.com"}, function (err, gebruiker) {
             Comment.find(function (err, comments) {
+            var _gebruiker = gebruiker;
+            var _comments = comments;
                 Activiteit.create(
                     {
                         beschrijving: "Test",
-                        contact: gebruiker,
+                        contact: _gebruiker,
                         eindDatum: new Date(2014, 12, 16),
                         locatie: "Dromenland",
                         naam: "Slapen",
                         startDatum: new Date(2014, 12, 15),
-                        comments: comments,
+                        comments: _comments,
                         createdOn: new Date(2014, 9, 5)
                     }
                     , function () {
@@ -163,16 +165,17 @@ function populateActiviteiten() {
 function populateComments() {
     Comment.find({}).remove(function () {
         Gebruiker.findOne({email: "Monitor@Joetz.com"}, function (err, gebruiker) {
+        var _gebruiker = gebruiker;
             Comment.create(
                 {
                     text: "Lekker slapen!",
                     createdOn: new Date(2014, 9, 5),
-                    createdBy: gebruiker
+                    createdBy: _gebruiker
                 },
                 {
                     text: "Snoezen!",
                     createdOn: new Date(2014, 9, 6),
-                    createdBy: gebruiker
+                    createdBy: _gebruiker
                 }
                 , function () {
                     console.log('populated comments')
@@ -461,6 +464,8 @@ function populateInschrijvingen() {
     Inschrijving.find({}).remove(function () {
         Gebruiker.findOne({email: "roy_9852@hotmail.com"}, function (err, gebruiker) {
             Kamp.findOne({naam: "Krk, here we come!"}, function (err, kamp) {
+            var _gebruiker = gebruiker;
+            var _kamp = kamp;
                 Inschrijving.create(
                     {
                         lidMutualiteit: false,
@@ -503,8 +508,8 @@ function populateInschrijvingen() {
                         ],
                         extraInformatie: "bla",
                         toevoeging: "Test",
-                        gebruiker: gebruiker,
-                        kamp: kamp
+                        gebruiker: _gebruiker,
+                        kamp: _kamp
                     }
                     , function () {
                         console.log('populated inschrijvingen')
@@ -518,8 +523,9 @@ function populateInschrijvingen() {
 function populateContacts() {
     Contact.find({}).remove(function () {
         Gebruiker.findOne({email: "test@test.com"}, function (err, gebruiker) {
+        var _gebruiker = gebruiker;
             Contact.create({
-                    sendBy: gebruiker,
+                    sendBy: _gebruiker,
                     sendDate: new Date(2014, 11, 22),
                     onderwerp: "Aanvraag voor meer kampen",
                     bericht: "Zou het mogelijk zijn om enventueel meer kampen toe te voegen aan uw selectie van kampen"

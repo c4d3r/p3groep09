@@ -65,7 +65,7 @@ var InschrijvingSchema = new Schema({
  InschrijvingSchema.path('activiteit').required(true, 'Activiteit mag niet null zijn');     */
 
 //post save hook
-InschrijvingSchema
+/*InschrijvingSchema
     .post('save', function(inschrijving){
         
         Kamp.findOne({_id: inschrijving.kamp}, function(err, kamp) {
@@ -81,6 +81,6 @@ InschrijvingSchema
                 if(err !== null) console.log(err);
             });
         });
-    });
+    });*/
 
 module.exports = mongoose.model('Inschrijving', InschrijvingSchema);

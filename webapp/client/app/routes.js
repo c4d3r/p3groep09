@@ -41,11 +41,16 @@ angular.module('webappApp')
       templateUrl: 'app/views/kampen/kamp.html',
       controller: 'KampDetailCtrl'
     })
-    .state('mijn_kampen', {
+    .state('mijn_kamp_detail', {
       url: '/mijn_kampen',
       templateUrl: 'app/views/kampen/ingeschrevenkampen.html',
       controller: 'AccountCtrl'
     })
+    .state('mijn_kampen', {
+          url: '/mijn_kampen/:id',
+          templateUrl: 'app/views/kampen/ingeschrevenkamp.html',
+          controller: 'AccountCtrl'
+        })
 
     /** INSCHRIJVINGEN **/
     .state('inschrijving', {
