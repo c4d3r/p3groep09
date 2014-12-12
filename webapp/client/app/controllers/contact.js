@@ -7,25 +7,21 @@ angular.module('webappApp')
     .controller('ContactCtrl', function ($scope, Contact) {
         $scope.contact = function (form) {
             $scope.submitted = true;
-            console.log("topkek");
+            console.log($scope.getCurrentUser()._id);
             if (form.$valid) {
                 Contact.create({
                     onderwerp: $scope.contact.onderwerp,
                     bericht: $scope.contact.bericht,
-                    sendDate: Date.now()
-                    //sendBy:
+                    sendDate: Date.now(),
+                    sendBy: $scope.getCurrentUser()._id
                 });
-
-                Contact.transporter($scope.model, function(props){
-                    console.log(props);
-                    console.log($scope.contact);
-                });
-
             }
         };
-
     });
 
 /**
-
+ Contact.transporter($scope.model, function(props){
+                    console.log(props);
+                    console.log($scope.contact);
+  });
  **/

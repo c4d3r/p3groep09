@@ -137,7 +137,7 @@ angular.module('webappApp')
       },
       createInschrijving: function() {
         Inschrijven.create($scope.model, function(props){
-          console.log(props);
+            console.log(props);
         });
       }
     }

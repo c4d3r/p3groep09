@@ -9,7 +9,7 @@ var mongoose = require('mongoose'),
 
 
 var ContactSchema = new Schema({
-    sendBy: {type: Schema.ObjectId, ref: 'Gebruiker'},
+    sendBy: {type: Schema.ObjectId, ref: "Gebruiker"},
     sendDate: {type: Date},
     onderwerp: {type: String},
     bericht: {type: String}
@@ -17,8 +17,6 @@ var ContactSchema = new Schema({
 
 ContactSchema.path('onderwerp').required(true, 'Text mag niet leeg zijn');
 ContactSchema.path('bericht').required(true, 'Onderwerp mag niet leeg zijn');
-
-
 
 ContactSchema.post('send', function(contact){
     var smtpTransporter = nodemailer.createTransport("SMTP", {
