@@ -5,7 +5,7 @@
 
 var _ = require('lodash');
 var Contact = require('./contact.model');
-
+var nodemailer = require('nodemailer');
 
 // Get list of emails
 exports.index = function (req, res) {
@@ -80,9 +80,21 @@ exports.destroy = function (req, res) {
     });
 };
 
-exports.send = function () {
-
-}
+exports.send = function (req, res) {
+    console.log(test);
+    var smtpTransporter = nodemailer.createTransport("SMTP", {
+        service: "Gmail",
+        auth: {
+            user: "joetz.projecten3@gmail.com",
+            pass: "Joetzp3Groep9"
+        }});
+        smtpTransporter.sendMail({
+        from: req.emailSender,
+        to: "joetz.projecten3@gmail.com",
+        subject: req.subject,
+        text: req.messageSender
+    });
+};
 
 
 function handleError(res, err) {

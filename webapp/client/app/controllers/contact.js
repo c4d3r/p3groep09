@@ -7,7 +7,6 @@ angular.module('webappApp')
     .controller('ContactCtrl', function ($scope, Contact) {
         $scope.contact = function (form) {
             $scope.submitted = true;
-            console.log($scope.getCurrentUser()._id);
             if (form.$valid) {
                 Contact.create({
                     onderwerp: $scope.contact.onderwerp,
@@ -15,6 +14,13 @@ angular.module('webappApp')
                     sendDate: Date.now(),
                     sendBy: $scope.getCurrentUser()._id
                 });
+
+                Contact.send({
+                    subject: $scope.contact.onderwerp,
+                    messageSender: $scope.contact.bericht,
+                    emailSender: $scope.getCurrentUser().email
+                });
+
             }
         };
     });
