@@ -7,14 +7,20 @@ angular.module('webappApp')
         $scope.getCurrentUser = Auth.getCurrentUser();
         $scope.kampen = [];
 
+        if(Auth.getCurrentUser()._id != null)
+        {
         var gebruikerId = $scope.getCurrentUser._id;
-        var i = Inschrijven.query({gebruikerId: gebruikerId}, function(inschrijvingen){
+                var i = Inschrijven.query({gebruikerId: gebruikerId}, function(inschrijvingen){
+                     i.forEach(function(inschrijving) {
+                        console.log(inschrijving);
+                        $scope.kampen.push(inschrijving.kamp);
+                    });
+                });
+        }
+        else{
+           $location.path('/login');
+        }
 
-             i.forEach(function(inschrijving) {
-                console.log(inschrijving);
-                $scope.kampen.push(inschrijving.kamp);
-            });
-        });
 
 
         $scope.logout = function() {

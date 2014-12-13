@@ -1,8 +1,10 @@
 'use strict';
 
 angular.module('webappApp')
-  .controller('InschrijvingCtrl', function ($scope, Inschrijven, Auth, $stateParams, Kampen, $location) {
+  .controller('InschrijvingCtrl', function ($scope, Inschrijven, Auth, $stateParams, $location) {
     //TEST SCOPE WITH PRE-FILLED DETAILS
+
+
     $scope.inschrijving = {
         lidMutualiteit: false,
         persoonTenLaste: {
@@ -101,6 +103,14 @@ angular.module('webappApp')
       activiteit: ""
     }; */
 
+     var init = function() {
+       if(Auth.getCurrentUser()._id != null){
+       }
+       else{
+          $location.path('/login');
+       }
+     }
+        init();
     $scope.methods = {
       addNoodPersoon: function(voornaam, naam, telefoonNummer) {
         $scope.model.noodPersonen.push({naam: naam, voornaam: voornaam, telefoonNummer: telefoonNummer});
@@ -136,10 +146,16 @@ angular.module('webappApp')
         }
       },
       createInschrijving: function() {
+      if(Auth.getCurrentUser()._id != null){
         Inschrijven.create($scope.inschrijving, function(props){
-            console.log(props);
-            $location.path('/');
-        });
+          console.log(props);
+          location.path('/');
+         });
       }
+      else{
+        $location.path('/login');
+      }
+      }
+
     }
   });
