@@ -1,21 +1,17 @@
 <div class="container">
-    <section>
-        <div id="leftside">
-
+    <article>
+        <div>
             <h2>
-                {{kamp.leeftijdsCatDoelgroep}} Jaar
+                {{kamp.doelgroepen[0]}} - {{kamp.doelgroepen[kamp.doelgroepen.length -1]}} jaar
             </h2>
-
         </div>
-        <div id="rightside">
+        <div>
             <h2>{{ kamp.naam }}</h2>
 
             <div>
-                {{kamp.startDatum | date : 'fullDate'}} - {{kamp.eindDatum | date : 'fullDate'}}
+                {{kamp.startDatum | date : 'dd-M-yyyy'}} - {{kamp.eindDatum | date : 'dd-M-yyyy'}}
             </div>
-
             <p ng-bind-html="kamp.beschrijving"></p>
-
 
             <h3>Extra informatie</h3>
             <ul>
@@ -25,12 +21,13 @@
                 <li>Korting: €{{kamp.korting}}</li>
                 <li>Contact: {{kamp.contact}}</li>
             </ul>
-
             <div>
                 <button id="inschrijven" ng-click="inschrijven(kamp.id)" class="btn btn-blue">Inschrijven</button>
             </div>
         </div>
-    </section>
+
+    </article>
 </div>
+
 
 

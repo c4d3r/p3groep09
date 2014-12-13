@@ -15,12 +15,14 @@ angular.module('webappApp')
                     sendBy: $scope.getCurrentUser()._id
                 });
 
+/*
                 Contact.send({
                     subject: $scope.contact.onderwerp,
-                    messageSender: $scope.contact.bericht,
-                    emailSender: $scope.getCurrentUser().email
+                    body: $scope.contact.bericht,
+                    senderEmail: $scope.getCurrentUser().email
                 });
-
+                console.log('send?')
+*/
             }
         };
     });

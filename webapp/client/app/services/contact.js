@@ -8,7 +8,7 @@ angular.module('webappApp')
                 'show': { method: 'GET', isArray: false},
                 'index': { method: 'GET', isArray: true},
                 'create': { method: 'POST'},
-                'send': {method: 'POST'}
+                'send': { method: 'POST'}
             }
         );
     });

@@ -6,6 +6,9 @@
 var _ = require('lodash');
 var Contact = require('./contact.model');
 var nodemailer = require('nodemailer');
+var smtpTransporter = require('nodemailer-smtp-transport');
+
+
 
 // Get list of emails
 exports.index = function (req, res) {
@@ -32,7 +35,38 @@ exports.show = function (req, res) {
 
 // Creates a new email in the DB.
 exports.create = function (req, res) {
-    Contact.create(req.body, function (err, contact) {
+
+    var newContact = new Contact(req.body);
+
+    newContact.save(function (err, contact) {
+        //console.log(req.body);
+
+
+
+        smtpTransporter = nodemailer.createTransport("SMTP", {
+            service: "Gmail",
+            auth: {
+                user: "joetz.projecten3@gmail.com",
+                pass: "Joetzp3Groep9"
+            }});
+
+        var mailOptions = {
+            from: "joetz.projecten3@gmail.com",
+            to: "joetz.projecten3@gmail.com",
+            subject: newContact.onderwerp,
+            text: newContact.bericht
+        }
+        console.log(smtpTransporter + 'test');
+
+        smtpTransporter.sendMail(mailOptions, function (error, info) {
+            console.log("test");
+            if (error) {
+                console.log(error);
+            } else {
+                console.log('Message sent:');
+            }
+        });
+
         if (err) {
             return handleError(res, err);
         }
@@ -81,19 +115,31 @@ exports.destroy = function (req, res) {
 };
 
 exports.send = function (req, res) {
-    console.log(test);
-    var smtpTransporter = nodemailer.createTransport("SMTP", {
+    console.log('tis is bait');
+    smtpTransporter = nodemailer.createTransport("SMTP", {
         service: "Gmail",
         auth: {
             user: "joetz.projecten3@gmail.com",
             pass: "Joetzp3Groep9"
         }});
-        smtpTransporter.sendMail({
-        from: req.emailSender,
+
+    var mailOptions = {
+        from: "joetz.projecten3@gmail.com",
         to: "joetz.projecten3@gmail.com",
         subject: req.subject,
-        text: req.messageSender
+        text: req.body
+    }
+    console.log(smtpTransporter + 'test');
+
+    smtpTransporter.sendMail(mailOptions, function (error, info) {
+        console.log("test");
+        if (error) {
+            console.log(error);
+        } else {
+            console.log('Message sent:');
+        }
     });
+    console.log("something?")
 };
 
 
