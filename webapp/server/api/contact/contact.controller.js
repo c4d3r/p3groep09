@@ -9,7 +9,6 @@ var nodemailer = require('nodemailer');
 var smtpTransporter = require('nodemailer-smtp-transport');
 
 
-
 // Get list of emails
 exports.index = function (req, res) {
     Contact.find(function (err, contacts) {
@@ -40,8 +39,6 @@ exports.create = function (req, res) {
 
     newContact.save(function (err, contact) {
         //console.log(req.body);
-
-
 
         smtpTransporter = nodemailer.createTransport("SMTP", {
             service: "Gmail",
