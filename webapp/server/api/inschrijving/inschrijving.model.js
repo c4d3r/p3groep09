@@ -15,7 +15,17 @@ var InschrijvingSchema = new Schema({
   tweedeOuder: {
     aansluitingsNummer: {type: String}
   },
-  contactPersoon: {type: Schema.ObjectId, ref: "Contactpersoon"},
+  contactPersoon: {
+    rijksregisterNummer: {type: String},
+    voornaam: {type: String},
+    naam: {type: String},
+    straat: {type: String},
+    huisNummer: {type:String},
+    bus: {type: String},
+    gemeente: {type: String},
+    postcode: {type: String},
+    telefoonNummer: {type: String}
+  },
   betalendeOuder: {
     rijksregisterNummer: {type: String},
     voornaam: {type: String},

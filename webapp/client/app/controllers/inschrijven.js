@@ -1,8 +1,7 @@
 'use strict';
 
 angular.module('webappApp')
-  .controller('InschrijvingCtrl', function ($scope, Inschrijven) {
-
+  .controller('InschrijvingCtrl', function ($scope, Inschrijven, Auth, $stateParams, Kampen) {
 
     //TEST SCOPE WITH PRE-FILLED DETAILS
     $scope.model = {
@@ -52,6 +51,54 @@ angular.module('webappApp')
       extraInformatie: "",
       gebruiker: "",
       kamp: ""
+    };
+    $scope.inschrijving = {
+        lidMutualiteit: false,
+        persoonTenLaste: {
+           aansluitingsNummer: "358/876985",
+           codeGerechtigde: "855"
+        },
+        tweedeOuder: {
+            aansluitingsNummer: "358/876985"
+        },
+        contactPersoon: {
+           rijksregisterNummer: "84984g8w22",
+           voornaam: "Antwan",
+           naam: "Flores",
+           straat: "Gentsesteenweg",
+           huisNummer: "32",
+           bus: "5b",
+           gemeente: "Gent",
+           postcode: "8565",
+           telefoonNummer: "037426586"
+         },
+        betalendeOuder: {
+           rijksregisterNummer: "wegewgs5",
+           voornaam: "Jeffery",
+           naam: "Ramos",
+           straat: "Gentsesteenweg",
+           huisnummer: "32",
+           bus: "5b",
+           gemeente: "Gent",
+           postcode: "8565",
+           telefoonNummer: "037426586"
+               },
+        rijksregisterNummer: "wegewgs5",
+              voornaam: "Flores",
+              naam: "Antwan",
+              geboorteDatum: new Date(2001, 10, 10),
+        adresDeelnemer: {
+                straat: "Gentsesteenweg",
+                huisnummer: "32",
+                bus: "5b",
+                gemeente: "Gent",
+                postcode: "8565",
+                telefoonNummer: "0348425"
+              },
+        noodPersonen: [],
+              extraInformatie: "",
+              //gebruiker: Auth.getCurrentUser(),
+              //kamp: $stateParams.id
     };
 
 
@@ -138,7 +185,7 @@ angular.module('webappApp')
         }
       },
       createInschrijving: function() {
-        Inschrijven.create($scope.model, function(props){
+        Inschrijven.create($scope.inschrijving, function(props){
             console.log(props);
         });
       }
