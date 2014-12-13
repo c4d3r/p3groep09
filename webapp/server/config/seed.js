@@ -140,8 +140,8 @@ function populateActiviteiten() {
     Activiteit.find({}).remove(function () {
         Gebruiker.findOne({email: "monitor@joetz.com"}, function (err, gebruiker) {
             Comment.find(function (err, comments) {
-            var _gebruiker = gebruiker;
-            var _comments = comments;
+                var _gebruiker = gebruiker;
+                var _comments = comments;
                 Activiteit.create(
                     {
                         beschrijving: "Test",
@@ -165,7 +165,7 @@ function populateActiviteiten() {
 function populateComments() {
     Comment.find({}).remove(function () {
         Gebruiker.findOne({email: "Monitor@Joetz.com"}, function (err, gebruiker) {
-        var _gebruiker = gebruiker;
+            var _gebruiker = gebruiker;
             Comment.create(
                 {
                     text: "Lekker slapen!",
@@ -191,46 +191,17 @@ function populateKampen() {
             Kamp.create(
                 //DATUM ATTENTION: ISODAte --> maand begint vanaf 0!
                 {
-                    naam: "Krk, here we come!",
-                    beschrijving: 'Wie droomt er nu niet van Kroatië? Geniet mee van een heerlijke vakantie op het zonnige eiland Krk!',
+                    naam: "Kerstvakantie aan zee",
+                    beschrijving: 'Flikkerende lichtjes en glinsterende slingers, een besneeuwd strand en vooral veel vrienden en plezier. Onze JOETZ monitoren zijn er weer helemaal klaar voor om met jou de laatste dagen van het jaar op een onvergetelijke manier te beleven. We voorzien een fantastisch avontuur in een besneeuwd winterlandschap. Ons monitorenteam ontwikkelende een supergezellig programma waar plezier en sfeer centraal staan. Neem dus je warmste muts en sjaal mee om samen met ons van deze prachtige vakantie te genieten! Wie weet krijgen we de kerstman op bezoek ... .!',
                     contact: "???",
-                    startDatum: new Date(2015, 6, 28, 0, 0, 0),
-                    eindDatum: new Date(2015, 7, 6, 0, 0, 0),
-                    leeftijdsCatDoelgroep: "15 - 18",
-                    doelgroepen: [15, 16, 17, 18],
-                    locatie: "Krk (Kroatië)",
-                    prijs: 535,
+                    startDatum: new Date(2014, 11, 26, 0, 0, 0),
+                    eindDatum: new Date(2014, 11, 31, 0, 0, 0),
+                    doelgroepen: [5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16],
+                    locatie: "Barkentijn te Nieuwpoort",
+                    prijs: 192,
                     vervoer: "Bus",
                     korting: 0,
                     promoAfbeelding: "zomer/kroatie.jpg"
-                },
-                {
-                    naam: "Sun & Fun Spanje",
-                    beschrijving: 'Zon, zee, strand en … actie. Is stilzitten niet jouw ding? Onze dagen onder de zon worden gevuld met geweldige activiteiten als watertrekking, laser-shooting, vlottentocht, een bootcruise, een dag in een waterpretpark, een uitstapje naar Barcelona en nog zoveel meer. Om dan van de leuke avondactiviteiten en een heuse poolparty nog maar te zwijgen.',
-                    contact: "???",
-                    startDatum: new Date(2015, 7, 16, 0, 0, 0),
-                    eindDatum: new Date(2015, 7, 27, 0, 0, 0),
-                    leeftijdsCatDoelgroep: "12 - 15",
-                    doelgroepen: [12, 13, 14, 15],
-                    locatie: "Empuriabrava, Spanje",
-                    prijs: 585,
-                    vervoer: "Bus",
-                    korting: 0,
-                    promoAfbeelding: "zomer/spanje.jpg"
-                },
-                {
-                    naam: "Balaton-fun",
-                    beschrijving: 'We verblijven in het dorpje Révfülöp, aan de noordelijke kust van het Ballatonmeer. We zullen tijdens onze vakantie niet alleen lekker badderen in deze ‘Hongaarse zee’, om en rond zijn nog ontelbare leuke activiteiten. Wat dacht je van een bezoekje aan het prachtige Boedapest? Of een fietstocht om de omgeving te verkennen? Wat we ook doen, de JOETZ-animatoren maken er een geweldig verblijf van!',
-                    contact: "???",
-                    startDatum: new Date(2015, 7, 17, 0, 0, 0),
-                    eindDatum: new Date(2015, 7, 28, 0, 0, 0),
-                    leeftijdsCatDoelgroep: "16 - 18",
-                    doelgroepen: [16, 17, 18],
-                    locatie: "Balatonmeer (Hongarije)",
-                    prijs: 475,
-                    vervoer: "Bus",
-                    korting: 0,
-                    promoAfbeelding: "zomer/hongarije.jpg"
                 },
                 {
                     naam: "Ski en fun",
@@ -238,9 +209,8 @@ function populateKampen() {
                     contact: "???",
                     startDatum: new Date(2014, 11, 19, 0, 0, 0),
                     eindDatum: new Date(2014, 11, 27, 0, 0, 0),
-                    leeftijdsCatDoelgroep: "10 - 14",
                     doelgroepen: [10, 11, 12, 13, 14],
-                    locatie: "Maria Alm, Oostenrijk",
+                    locatie: "Jeugdhotel Oberau te Maria Alm(Oostenrijk)",
                     prijs: 785,
                     vervoer: "Bus",
                     korting: 0,
@@ -252,9 +222,8 @@ function populateKampen() {
                     beschrijving: 'Wij vertrekken naar Oostenrijk voor een week ski- en snowboardfun. Lange pistes, leuk gezelschap en hopelijk wat zon. Wat wil je nog meer?  Oostenrijkse skimonitoren leren je vlekkeloos langs elk pisteobstakel laveren. De lunchpauzes nemen we in het hotel dat vlak bij de piste ligt: lekker en makkelijk! De JOETZ monitoren skiën een hele dag mee en garanderen geweldige après-ski en avondactiviteiten.',
                     contact: "???",
                     eindDatum: new Date(2015, 1, 21, 0, 0, 0),
-                    leeftijdsCatDoelgroep: "11 - 18",
                     doelgroepen: [11, 12, 13, 14, 15, 16, 17, 18],
-                    locatie: "Maria Alm, Oostenrijk",
+                    locatie: "Jugendgästehaus Oberau te Maria Alm(Oostenrijk)",
                     prijs: 640,
                     vervoer: "Bus",
                     korting: 0,
@@ -266,9 +235,8 @@ function populateKampen() {
                     beschrijving: 'Beleef de fun van onze verschillende JOETZ-activiteiten: de berg op in de gondellift, de berg af via de rodelbaan, een duik in het zwemparadijs of aan de waterval, bezoekjes aan grot en burcht, super animaties en nog zoveel meer. De pracht van de Oostenrijkse bergen, de alpenweiden en de kloven krijg je er gratis en voor niks bovenop!',
                     contact: "???",
                     eindDatum: new Date(2015, 6, 12, 0, 0, 0),
-                    leeftijdsCatDoelgroep: "12 - 16",
                     doelgroepen: [12, 13, 14, 15, 16],
-                    locatie: "Maria Alm, Oostenrijk",
+                    locatie: "Jugendgästehaus Oberau te Maria Alm(Oostenrijk)",
                     prijs: 382,
                     vervoer: "Bus",
                     korting: 0,
@@ -280,9 +248,8 @@ function populateKampen() {
                     beschrijving: 'Raften, klimmen of hoogteparcours, mountainbiken, oriëntatielopen, avonturentocht … rekening houdend met de (weers)omstandigheden beoefen je verschillende buitensporten. De climax van de vakantie is de Trophy-wedstrijd waarin je alleen of in team je grenzen verlegt.',
                     contact: "???",
                     eindDatum: new Date(2015, 6, 12, 0, 0, 0),
-                    leeftijdsCatDoelgroep: "13 - 16",
                     doelgroepen: [13, 14, 15, 16],
-                    locatie: "Maria Alm, Oostenrijk",
+                    locatie: "Jugendgästehaus Oberau te Maria Alm(Oostenrijk)",
                     prijs: 448,
                     vervoer: "Bus",
                     korting: 0,
@@ -294,13 +261,38 @@ function populateKampen() {
                     beschrijving: 'Laat onze JOETZ-animatoren je meenemen op ontdekking van het eiland Krk. Oude stadjes, leuke uitstapjes en activiteiten, een heerlijke BBQ op het einde van de dag en natuurlijk een azuurblauwe zee onder de Kroatische zon. Je verveelt je geen minuut… We verblijven in Hostel Krk, in het bovenste gedeelte van het historische, ommuurde stadje Krk.',
                     contact: "???",
                     eindDatum: new Date(2015, 6, 28, 0, 0, 0),
-                    leeftijdsCatDoelgroep: "13 - 15",
                     doelgroepen: [13, 14, 15],
-                    locatie: "Krk (Kroatië)",
+                    locatie: "Hostel Krk te Krk(Kroatië)",
                     prijs: 535,
                     vervoer: "Bus",
                     korting: 0,
                     promoAfbeelding: "zomer/kroatie.jpg"
+                },
+                {
+                    naam: "Krk, here we come!",
+                    beschrijving: 'Kom mee en ontdek het ‘gouden eiland’ Krk. Hostel Krk, onze uitvalsbasis voor 10 dagen ligt in het bovenste gedeelte van het historische, ommuurde stadje Krk. Maak je klaar voor een heerlijk zonnige vakantie, neem een duik in de azuurblauwe zee, lanterfant door oude kleine straatjes, laat de BBQ je smaken, geniet van leuke uitstapjes en activiteiten en laat je verrassen door ons top-animatieteam!',
+                    contact: "???",
+                    startDatum: new Date(2015, 6, 28, 0, 0, 0),
+                    eindDatum: new Date(2015, 7, 6, 0, 0, 0),
+                    doelgroepen: [15, 16, 17, 18],
+                    locatie: "Hostel Krk te Krk(Kroatië)",
+                    prijs: 535,
+                    vervoer: "Bus",
+                    korting: 0,
+                    promoAfbeelding: "zomer/kroatie.jpg"
+                },
+                {
+                    naam: "Sun & Fun Spanje",
+                    beschrijving: 'Zon, zee, strand en … actie. Is stilzitten niet jouw ding? Onze dagen onder de zon worden gevuld met geweldige activiteiten als watertrekking, laser-shooting, vlottentocht, een bootcruise, een dag in een waterpretpark, een uitstapje naar Barcelona en nog zoveel meer. Om dan van de leuke avondactiviteiten en een heuse poolparty nog maar te zwijgen.',
+                    contact: "???",
+                    startDatum: new Date(2015, 6, 6, 0, 0, 0),
+                    eindDatum: new Date(2015, 6, 28, 0, 0, 0),
+                    doelgroepen: [12, 13, 14, 15],
+                    locatie: "tentenkamp aan het strand te Empuriabrava, Spanje",
+                    prijs: 585,
+                    vervoer: "Bus",
+                    korting: 0,
+                    promoAfbeelding: "zomer/spanje.jpg"
                 },
                 {
                     naam: "Balaton-pret",
@@ -308,147 +300,24 @@ function populateKampen() {
                     beschrijving: 'Een plons hier en een duik daar: het Balatonmeer leent zich met zijn prachtige omgeving en zijn aangename temperaturen voor tonnen waterpret. Natuurlijk staat er nog veel meer op het programma: wat dacht je van een bezoekje aan het prachtige Boedapest? Of een fietstocht om de omgeving te verkennen? Wat we ook doen, de JOETZ-animatoren maken er een geweldig verblijf van!',
                     contact: "???",
                     eindDatum: new Date(2015, 7, 27, 0, 0, 0),
-                    leeftijdsCatDoelgroep: "13 - 15",
                     doelgroepen: [13, 14, 15],
-                    locatie: "Balatonmeer (Hongarije)",
+                    locatie: "Balaton Hostel bij het Balatonmeer(Hongarije)",
                     prijs: 475,
                     vervoer: "Bus",
                     korting: 0,
                     promoAfbeelding: "zomer/hongarije.jpg"
                 },
                 {
-                    naam: "Boekenwurmen & Speelvogels",
-                    startDatum: new Date(2015, 1, 16, 0, 0, 0),
-                    beschrijving: 'Boeken...Boeken? Boeken! BOEKEN! Als je nu denkt "saaie boel", dan ben je nog niet met JOETZ op kamp geweest. Wij spelen deze week de tofste spelletjes, knutselen de gekste dingen... en dit alles rond BOEKEN! Elke dag zetten we een ander boek centraal en starten we hieruit om een zotte dag te beleven. Zowel de grootste boekenwurmen als de wildste speelvogels kunnen hier hun HARTJE/BOEKJE ophalen!',
+                    naam: "Balaton-fun",
+                    beschrijving: 'We verblijven in het dorpje Révfülöp, aan de noordelijke kust van het Ballatonmeer. We zullen tijdens onze vakantie niet alleen lekker badderen in deze ‘Hongaarse zee’, om en rond zijn nog ontelbare leuke activiteiten. Wat dacht je van een bezoekje aan het prachtige Boedapest? Of een fietstocht om de omgeving te verkennen? Wat we ook doen, de JOETZ-animatoren maken er een geweldig verblijf van!',
                     contact: "???",
-                    eindDatum: new Date(2015, 1, 20, 0, 0, 0),
-                    leeftijdsCatDoelgroep: "6 - 12",
-                    doelgroepen: [6, 7, 8, 9, 10, 11, 12],
-                    locatie: "De Stobbe (Merelbeke)",
-                    prijs: 285,
-                    //prijsleden: 135
-                    vervoer: "Eigen vervoer",
+                    startDatum: new Date(2015, 7, 17, 0, 0, 0),
+                    eindDatum: new Date(2015, 7, 28, 0, 0, 0),
+                    doelgroepen: [16, 17, 18],
+                    locatie: "Balaton Hostel bij het Balatonmeer(Hongarije)",
+                    prijs: 475,
+                    vervoer: "Bus",
                     korting: 0,
-                    promoAfbeelding: "zomer/hongarije.jpg"
-                },
-                {
-                    naam: "Word je blaas de baas - i.s.m. UZ Gent",
-                    startDatum: new Date(2015, 3, 5, 0, 0, 0),
-                    beschrijving: 'Heb jij hulp nodig om je blaas de baas te worden? Dan kan jij bij ons terecht. Onze supermonitoren helpen je om je blaas te trainen door middel van een speciaal drink- en plasschema. Zij worden bijgestaan door een kinesist en dokter uit het PUNC-team van het UZ Gent, die de droogtraining deskundig zullen begeleiden. Om het beste resultaat te boeken is een bezoek aan het PUNC-team op voorhand noodzakelijk.',
-                    contact: "???",
-                    eindDatum: new Date(2015, 3, 11, 0, 0, 0),
-                    leeftijdsCatDoelgroep: "6 - 12",
-                    doelgroepen: [6, 7, 8, 9, 10, 11, 12],
-                    locatie: "De Ceder (Deinze)",
-                    prijs: 350,
-                    //prijsleden: 250
-                    vervoer: "Eigen vervoer",
-                    korting: 0,
-                    promoAfbeelding: "zomer/hongarije.jpg"
-                },
-                {
-                    naam: "Paasbe(e)st",
-                    startDatum: new Date(2015, 3, 12, 0, 0, 0),
-                    beschrijving: 'Tijdens deze paasvakantie mag je gerust op je paasbest het paasbeest komen uithangen... Onze monitoren zijn er helemaal klaar voor! Samen met jullie spelen ze de zotste spelletjes en maken jullie er een beestige vakantie van!',
-                    contact: "???",
-                    eindDatum: new Date(2015, 3, 11, 0, 0, 0),
-                    leeftijdsCatDoelgroep: "6 - 12",
-                    doelgroepen: [6, 7, 8, 9, 10, 11, 12],
-                    locatie: "Oud Klooster (Dikkele)",
-                    prijs: 350,
-                    //prijsleden: 250
-                    vervoer: "Eigen vervoer",
-                    korting: 0,
-                    promoAfbeelding: "zomer/hongarije.jpg"
-                },
-                {
-                    naam: "Van nix tot mix - i.s.m. Mix-IT",
-                    startDatum: new Date(2015, 3, 12, 0, 0, 0),
-                    beschrijving: 'Is beatmixen, cueing en scratching voor jou dagelijkse kost? Of heb je het zonet in Keulen horen donderen? Geen probleem... Mix-IT kijkt wat je al kan en gaat daarna met jou aan de slag om een échte MIX te maken. Zet die hoofdtelefoon maar al op 1 oor en schrijf je nu in!',
-                    contact: "???",
-                    eindDatum: new Date(2015, 3, 17, 0, 0, 0),
-                    leeftijdsCatDoelgroep: "12 - 16",
-                    doelgroepen: [12, 13, 14, 15, 16],
-                    locatie: "De Ceder(Deinze)",
-                    prijs: 400,
-                    //prijsleden: 200
-                    vervoer: "Eigen vervoer",
-                    korting: 10,
-                    promoAfbeelding: "zomer/hongarije.jpg"
-                },
-                {
-                    naam: "#welkombijJOETZ",
-                    startDatum: new Date(2015, 4, 14, 0, 0, 0),
-                    beschrijving: 'Ben je een JOETZ-habitué? Of een JOETZ-leek? Voor deze vakantie maakt dat niks uit. Onze monitoren zorgen voor een mooie mix van knutselen, koken, sport & spel... Hét moment dus om voor de eerste keer op kamp te vertrekken, of om nog eens met ons mee te gaan!',
-                    contact: "???",
-                    eindDatum: new Date(2015, 4, 16, 0, 0, 0),
-                    leeftijdsCatDoelgroep: "6 - 12",
-                    doelgroepen: [6, 7, 8, 9, 10, 11, 12],
-                    locatie: "Heywijck (Sint-Niklaas)",
-                    prijs: 150,
-                    //prijsleden: 50
-                    vervoer: "Eigen vervoer",
-                    korting: 10,
-                    promoAfbeelding: "zomer/hongarije.jpg"
-                },
-                {
-                    naam: "#JOETZiserookvoordekleinsten",
-                    startDatum: new Date(2015, 4, 14, 0, 0, 0),
-                    beschrijving: 'Je kleine spruit ergens achterlaten? Oei, dat is niet zo gemakkelijk... Zeker niet als ze nog nooit een paar dagen van huis zijn weggeweest. Om deze “grote stap” toch wat kleiner te maken, zorgen onze supermonitoren voor toffe spelletjes en knappe knutselwerkjes. Zo beleven de allerkleinsten een supervakantie en kunnen de mama’s en papa’s hen zaterdag met een grote glimlach komen ophalen.',
-                    contact: "???",
-                    eindDatum: new Date(2015, 4, 16, 0, 0, 0),
-                    leeftijdsCatDoelgroep: "3 - 5",
-                    doelgroepen: [3, 4, 5],
-                    locatie: "Heywijck (Sint-Niklaas)",
-                    prijs: 150,
-                    //prijsleden: 50
-                    vervoer: "Eigen vervoer",
-                    korting: 10,
-                    promoAfbeelding: "zomer/hongarije.jpg"
-                },
-                {
-                    naam: "Move 2 the beat",
-                    startDatum: new Date(2015, 6, 5, 0, 0, 0),
-                    beschrijving: 'Kan jij jouw dansbenen niet stil houden bij het minste vleugje muziek? Heb je de laatste shufflemoves reeds onder de knie? Twijfel dan niet langer en kom je volledig los shaken tijdens deze dansvakantie. Onze choreografen van dienst werken samen met jullie aan een spetterende show, die vrijdag in première gaat voor alle mama’s en papa’s, broers en zussen... En iedereen die jullie in actie wil zien.',
-                    contact: "???",
-                    eindDatum: new Date(2015, 6, 10, 0, 0, 0),
-                    leeftijdsCatDoelgroep: "7 - 14",
-                    doelgroepen: [7, 8, 9, 10, 11, 12, 13, 14],
-                    locatie: "Heywijck (Sint-Niklaas)",
-                    prijs: 290,
-                    //prijsleden: 140
-                    vervoer: "Eigen vervoer",
-                    korting: 35,
-                    promoAfbeelding: "zomer/hongarije.jpg"
-                },
-                {
-                    naam: "Sp(r)ookjes",
-                    startDatum: new Date(2015, 6, 12, 0, 0, 0),
-                    beschrijving: 'Er was eens... Is jouw klein spook ook zot van deze 3 woorden? En nog zotter van wat erachter komt? Dan is dit dé vakantie voor hem of haar! Samen met onze super-sp(r)ookjes-monitoren doorkruisen we het Grote Sprookjesboek, waarbij we ook tijdig het grote of kleine spook in ons naar buiten laten komen.',
-                    contact: "???",
-                    eindDatum: new Date(2015, 6, 17, 0, 0, 0),
-                    leeftijdsCatDoelgroep: "3 - 5",
-                    doelgroepen: [3, 4, 5],
-                    locatie: "Heywijck (Sint-Niklaas)",
-                    prijs: 285,
-                    //prijsleden: 135
-                    vervoer: "Eigen vervoer",
-                    korting: 30,
-                    promoAfbeelding: "zomer/hongarije.jpg"
-                },
-                {
-                    naam: "100% Content",
-                    startDatum: new Date(2015, 6, 12, 0, 0, 0),
-                    beschrijving: 'Perfectie bestaat niet, maar op dit kamp gaan we voor de volle 100% contentement!  Supermonitoren die de hele dag toffe spelletjes met jou spelen, samen mooie knutselwerkjes maken of lekkere dessertjes verslinden... Tijdens deze vakantie zet JOETZ alles op alles om iedereen met een grote glimlach terug naar huis te sturen. Of met traantjes van geluk... Het is maar hoe je het bekijkt!',
-                    contact: "???",
-                    eindDatum: new Date(2015, 6, 17, 0, 0, 0),
-                    leeftijdsCatDoelgroep: "6 - 8",
-                    doelgroepen: [6, 7, 8],
-                    locatie: "Heywijck (Sint-Niklaas)",
-                    prijs: 285,
-                    //prijsleden: 135
-                    vervoer: "Eigen vervoer",
-                    korting: 30,
                     promoAfbeelding: "zomer/hongarije.jpg"
                 },
                 function () {
@@ -456,16 +325,15 @@ function populateKampen() {
                 }
             )
         }
-    )
-    ;
+    );
 }
 
 function populateInschrijvingen() {
     Inschrijving.find({}).remove(function () {
         Gebruiker.findOne({email: "roy_9852@hotmail.com"}, function (err, gebruiker) {
             Kamp.findOne({naam: "Krk, here we come!"}, function (err, kamp) {
-            var _gebruiker = gebruiker;
-            var _kamp = kamp;
+                var _gebruiker = gebruiker;
+                var _kamp = kamp;
                 Inschrijving.create(
                     {
                         lidMutualiteit: false,
@@ -523,7 +391,7 @@ function populateInschrijvingen() {
 function populateContacts() {
     Contact.find({}).remove(function () {
         Gebruiker.findOne({email: "test@test.com"}, function (err, gebruiker) {
-        var _gebruiker = gebruiker;
+            var _gebruiker = gebruiker;
             Contact.create({
                     sendBy: _gebruiker,
                     sendDate: new Date(2014, 11, 22),
