@@ -4,7 +4,7 @@
 'use strict'
 
 angular.module('webappApp')
-    .controller('ContactCtrl', function ($scope, Contact) {
+    .controller('ContactCtrl', function ($scope, Contact, $location) {
         $scope.contact = function (form) {
             $scope.submitted = true;
             if (form.$valid) {
@@ -14,15 +14,7 @@ angular.module('webappApp')
                     sendDate: Date.now(),
                     sendBy: $scope.getCurrentUser()._id
                 });
-
-/*
-                Contact.send({
-                    subject: $scope.contact.onderwerp,
-                    body: $scope.contact.bericht,
-                    senderEmail: $scope.getCurrentUser().email
-                });
-                console.log('send?')
-*/
+                $location.path('/');
             }
         };
     });
