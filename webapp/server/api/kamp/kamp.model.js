@@ -3,7 +3,8 @@
  */
 var mongoose = require('mongoose')
     , Schema = mongoose.Schema
-    , Inschrijving = require('../inschrijving/inschrijving.model');
+    , Inschrijving = require('../inschrijving/inschrijving.model')
+    , Activiteit = require('../activiteit/activiteit.model');
 
 var KampSchema = new Schema({
     korting: {type: Number},

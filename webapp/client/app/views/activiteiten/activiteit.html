@@ -1,0 +1,30 @@
+<div class="container">
+    <section>
+        <div id="leftside">
+
+            <h2>
+                {{activiteit.naam}}
+            </h2>
+
+            <p ng-bind-html="activiteit.beschrijving"></p>
+
+
+            <h3>Extra informatie</h3>
+            <ul>
+                <li>Locatie: {{activiteit.locatie}}</li>
+                <li>Contact: {{activiteit.contact}}</li>
+            </ul>
+
+        </div>
+        <div id="rightside">
+
+
+            <div ng-show="isLoggedIn()">
+                <button id="inschrijven" ng-click="inschrijven()" class="btn btn-blue">Inschrijven</button>
+            </div>
+        </div>
+    </section>
+</div>
+
+
+

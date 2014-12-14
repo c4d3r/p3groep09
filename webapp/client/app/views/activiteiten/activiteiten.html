@@ -1,0 +1,18 @@
+<div class="container">
+
+    <form class="form-group">
+        <input type="text" ng-model="query" placeholder="zoeken"/>
+    </form>
+
+    <section>
+        <article class="article-holder" ng-repeat="activiteit in activiteiten | filter:query">
+
+            <div id="kamptekst">
+                <h2><a href="/activiteiten/{{ activiteit._id }}">{{ activiteit.naam }}</a></h2>
+                <p>
+                    {{activiteit.beschrijving}}
+                </p>
+            </div>
+        </article>
+    </section>
+</div>

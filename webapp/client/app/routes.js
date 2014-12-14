@@ -88,5 +88,16 @@ angular.module('webappApp')
       controller: 'ContactCtrl'
     })
 
+    /** ACTIVITEITEN **/
+     .state('activiteiten', {
+       url: '/activiteiten',
+       templateUrl: 'app/views/activiteiten/activiteiten.html',
+       controller: 'ActiviteitenCtrl'
+     })
+     .state('activiteit', {
+       url: '/activiteiten/:id',
+       templateUrl: 'app/views/activiteiten/activiteit.html',
+       controller: 'ActiviteitDetailCtrl'
+     })
     ;
   });

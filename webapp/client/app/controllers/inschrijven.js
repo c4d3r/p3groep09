@@ -149,7 +149,7 @@ angular.module('webappApp')
       if(Auth.getCurrentUser()._id != null){
         Inschrijven.create($scope.inschrijving, function(props){
           console.log(props);
-          location.path('/');
+          $location.path('/');
          });
       }
       else{

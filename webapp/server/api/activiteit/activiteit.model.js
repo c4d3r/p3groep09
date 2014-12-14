@@ -2,17 +2,20 @@
  * Created by Maxim on 27/10/2014.
  */
 var mongoose = require('mongoose')
-    , Schema = mongoose.Schema;
+    , Schema = mongoose.Schema
+    , Gebruiker = require('../gebruiker/gebruiker.model')
+    , Comment = require('../comment/comment.model');
 
 var ActiviteitSchema = new Schema({
     beschrijving: {type: String},
-    contact: {type: Schema.ObjectId, ref: "GebruikerSchema"},
+    contact: {type: Schema.ObjectId, ref: "Gebruiker"},
     eindDatum: {type: Date},
     locatie: {type: String},
     naam: {type: String},
     startDatum: {type: Date},
-    comments: [{type: Schema.ObjectId, ref: "CommentSchema"}],
-    createdOn: {type: Date, Default: Date.now}
+    comments: [{type: Schema.ObjectId, ref: "Comment"}],
+    createdOn: {type: Date, Default: Date.now},
+    inschrijvingen: [{type: Schema.ObjectId, ref: "Gebruiker"}]
 });
 
 ActiviteitSchema.path('beschrijving').required(true, 'Beschrijving mag niet null zijn');

@@ -151,7 +151,19 @@ function populateActiviteiten() {
                         naam: "Slapen",
                         startDatum: new Date(2014, 12, 15),
                         comments: _comments,
-                        createdOn: new Date(2014, 9, 5)
+                        createdOn: new Date(2014, 9, 5),
+                        inschrijvingen: _gebruiker
+                    },
+                    {
+                        beschrijving: "Kajjakken in Ardeche",
+                        contact: _gebruiker,
+                        eindDatum: new Date(2014, 12, 16),
+                        locatie: "Ardeche",
+                        naam: "Kajakken",
+                        startDatum: new Date(2014, 12, 15),
+                        comments: _comments,
+                        createdOn: new Date(2014, 9, 5),
+                        inschrijvingen: _gebruiker
                     }
                     , function () {
                         console.log('populated activiteiten')
