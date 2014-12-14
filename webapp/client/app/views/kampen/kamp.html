@@ -1,37 +1,36 @@
 <div class="container">
-    <section id="test">
+    <section>
+        <div id="leftside">
 
-        <div id="sidepanel">
             <h2>
-                {{kamp.doelgroepen[0]}} - {{kamp.doelgroepen[kamp.doelgroepen.length -1]}} jaar
+                {{kamp.doelgroepen[0]}} - {{kamp.doelgroepen[kamp.doelgroepen.length -1]}} Jaar
             </h2>
-        </div>
+            <h2>{{ kamp.naam }}</h2>
 
-        <div id="details">
             <div>
-                <h2>{{ kamp.naam }}</h2>
+                {{kamp.startDatum | date : 'fullDate'}} - {{kamp.eindDatum | date : 'fullDate'}}
+            </div>
 
-                <div>
-                    {{kamp.startDatum | date : 'dd-M-yyyy'}} - {{kamp.eindDatum | date : 'dd-M-yyyy'}}
-                </div>
+            <p ng-bind-html="kamp.beschrijving"></p>
 
 
-                <p ng-bind-html="kamp.beschrijving"></p>
+            <h3>Extra informatie</h3>
+            <ul>
+                <li>Locatie: {{kamp.locatie}}</li>
+                <li>Vervoer: {{kamp.vervoer}}</li>
+                <li>Prijs: €{{kamp.prijs}}</li>
+                <li>Korting: €{{kamp.korting}}</li>
+                <li>Contact: {{kamp.contact}}</li>
+            </ul>
 
-                <h3>Extra informatie</h3>
-                <ul>
-                    <li>Locatie: {{kamp.locatie}}</li>
-                    <li>Vervoer: {{kamp.vervoer}}</li>
-                    <li>Prijs: €{{kamp.prijs}}</li>
-                    <li>Korting: €{{kamp.korting}}</li>
-                    <li>Contact: {{kamp.contact}}</li>
-                </ul>
-                <div>
-                    <button id="inschrijven" ng-click="inschrijven(kamp.id)" class="btn btn-blue">Inschrijven</button>
-                </div>
+        </div>
+        <div id="rightside">
+
+
+            <div ng-hide="isLoggedIn() && ingeschreven">
+                <button id="inschrijven" ng-click="inschrijven(kamp.id)" class="btn btn-blue">Inschrijven</button>
             </div>
         </div>
-
     </section>
 </div>
 

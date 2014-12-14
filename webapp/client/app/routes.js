@@ -48,7 +48,7 @@ angular.module('webappApp')
     })
     .state('mijn_kampen', {
           url: '/mijn_kampen/:id',
-          templateUrl: 'app/views/kampen/ingeschrevenkamp.html',
+          templateUrl: 'app/views/kampen/kamp.html',
           controller: 'AccountCtrl'
         })
 
