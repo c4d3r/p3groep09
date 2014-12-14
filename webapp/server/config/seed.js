@@ -210,7 +210,7 @@ function populateKampen() {
                     eindDatum: new Date(2014, 11, 31, 0, 0, 0),
                     doelgroepen: [5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16],
                     promoAfbeelding: "zomer/kroatie.jpg",
-                    afbeeldingen:["vakantieAfbeeldingen/hotel1.jpg","vakantieAfbeeldingen/hotel2.jpg","vakantieAfbeeldingen/hotel3.jpg"],
+                    afbeeldingen:["hotel1.jpg","hotel2.jpg","hotel3.jpg"],
 
                     //Extra Info
                     locatie: "Barkentijn te Nieuwpoort",
