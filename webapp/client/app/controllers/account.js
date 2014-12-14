@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('webappApp')
-    .controller('AccountCtrl', function($scope, Inschrijven, Kampen, Contact,$location, Auth) {
+    .controller('AccountCtrl', function($scope, Inschrijven, Kampen,$location, Auth) {
         $scope.isLoggedIn = Auth.isLoggedIn;
         $scope.isAdmin = Auth.isAdmin;
         $scope.getCurrentUser = Auth.getCurrentUser();
@@ -10,10 +10,11 @@ angular.module('webappApp')
         if(Auth.getCurrentUser()._id != null)
         {
         var gebruikerId = $scope.getCurrentUser._id;
-                var i = Inschrijven.query({gebruikerId: gebruikerId}, function(inschrijvingen){
+                var i = Inschrijven.query({gebruiker:  Auth.getCurrentUser()}, function(inschrijvingen){
                      i.forEach(function(inschrijving) {
-                        console.log(inschrijving);
-                        $scope.kampen.push(inschrijving.kamp);
+                        if($scope.getCurrentUser._id === inschrijving.gebruiker._id){
+                            $scope.kampen.push(inschrijving.kamp);
+                        }
                     });
                 });
         }
