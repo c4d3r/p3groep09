@@ -1,36 +1,49 @@
 <div class="container">
-    <section>
-        <div id="leftside">
-
+    <section id="block">
+        <div id="sidepanel">
             <h2>
                 {{kamp.doelgroepen[0]}} - {{kamp.doelgroepen[kamp.doelgroepen.length -1]}} Jaar
             </h2>
+            <hr/>
+
+            <div id="images">
+                <img height="150px" width="200px" src="../assets/images/reizen/{{kamp.promoAfbeelding}}"/>
+                <span ng-repeat="afbeelding in kamp.afbeeldingen">
+                    <img height="50" width="100" src="../assets/images/{{afbeelding}}"/>
+                </span>
+            </div>
+        </div>
+
+        <div id="details">
             <h2>{{ kamp.naam }}</h2>
 
             <div>
-                {{kamp.startDatum | date : 'fullDate'}} - {{kamp.eindDatum | date : 'fullDate'}}
+                {{kamp.startDatum | date : 'dd-M-yyyy'}} - {{kamp.eindDatum | date : 'dd-M-yyyy'}}
             </div>
 
-            <p ng-bind-html="kamp.beschrijving"></p>
+            <p id="beschrijving" ng-bind-html="kamp.beschrijving"></p>
 
-
-            <h3>Extra informatie</h3>
+            <h4 class="titles">Informatie</h4>
             <ul>
-                <li>Locatie: {{kamp.locatie}}</li>
-                <li>Vervoer: {{kamp.vervoer}}</li>
-                <li>Prijs: €{{kamp.prijs}}</li>
-                <li>Korting: €{{kamp.korting}}</li>
-                <li>Contact: {{kamp.contact}}</li>
+                <li> De verplaatsing zal gebeuren via {{kamp.vervoer}}</li>
+                <li>Het kamp zal doorgaan in {{kamp.locatie}}</li>
+                <li>De prijs voor dit kamp zal {{kamp.prijs}} euro zijn</li>
+                <li>Er wordt een korting van {{kamp.korting}} euro worden gegeven voor leden van de Bond Moyson</li>
             </ul>
 
-        </div>
-        <div id="rightside">
-
+            <h4 class="titles">Inbegrepen in de prijs</h4>
+            <ul>
+                <span ng-repeat="item in kamp.inbegrepen">
+                    <li>{{item}}</li>
+                </span>
+            </ul>
 
             <div ng-hide="">
                 <button id="inschrijven" ng-click="inschrijven(kamp.id)" class="btn btn-blue">Inschrijven</button>
             </div>
         </div>
+
+
     </section>
 </div>
 

@@ -1,23 +1,35 @@
-#test{
+#block{
   display: block;
+  padding-bottom: 60%;
+  vertical-align: middle;
+  font-family: arial, sans-serif;
+}
+
+#beschrijving{
+  font-size: 12pt;
 }
 
 #sidepanel {
   float: left;
   width: 25%;
-  border: 1px solid;
+}
 
+.titles{
+  padding:0;
+  margin: 0;
+}
+
+#images{
+  text-align: center;
 }
 
 #details {
   float: right;
   width: 70%;
-  border: 1px solid;
-
 }
 
 ul{
-  list-style-type: none;
+  list-style-type: circle;
 }
 
 #inschrijven{

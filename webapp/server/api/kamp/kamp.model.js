@@ -7,20 +7,29 @@ var mongoose = require('mongoose')
     , Activiteit = require('../activiteit/activiteit.model');
 
 var KampSchema = new Schema({
-    korting: {type: Number},
+    naam: {type: String},
     beschrijving: {type: String},
     contact: {type: String},
     eindDatum: {type: Date},
     startDatum: {type: Date},
-    //leeftijdsCatDoelgroep: {type: String}, //TODO: te verwijderen doelgroep is beter
     doelgroepen: [{type: Number}],
-    locatie: {type: String},
-    naam: {type: String},
-    prijs: {type: Number},
-    vervoer: {type: String},
     promoAfbeelding: {type: String},
     afbeeldingen: [{type: String}],
-    inschrijvingen: [{type: Schema.ObjectId, ref: "Inschrijving"}]
+    inschrijvingen: [{type: Schema.ObjectId, ref: "Inschrijving"}],
+
+//Extra informatie over het kamp
+    prijs: {type: Number},
+    korting: {type: Number},
+    locatie: {type: String},
+    formule: {type:String},
+    inbegrepen:[{type:String}],
+    //busreis
+    vervoer: {type: String}
+
+
+
+
+
     //categorie: {type: Schema.ObjectId, ref: "Categorie"}
 });
 

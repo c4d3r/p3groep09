@@ -209,11 +209,22 @@ function populateKampen() {
                     startDatum: new Date(2014, 11, 26, 0, 0, 0),
                     eindDatum: new Date(2014, 11, 31, 0, 0, 0),
                     doelgroepen: [5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16],
+                    promoAfbeelding: "zomer/kroatie.jpg",
+                    afbeeldingen:["vakantieAfbeeldingen/hotel1.jpg","vakantieAfbeeldingen/hotel2.jpg","vakantieAfbeeldingen/hotel3.jpg"],
+
+                    //Extra Info
                     locatie: "Barkentijn te Nieuwpoort",
                     prijs: 192,
-                    vervoer: "Bus",
                     korting: 0,
-                    promoAfbeelding: "zomer/kroatie.jpg"
+                    formule: "Volpension",
+                    inbegrepen:["Heen- en terugreis per luxe autocar"," Verblijf in volpension", "Drank bij de maaltijden", "Dagelijks vieruurtje", "Begeleiding door ervaren, gebrevetteerde monitoren","Gevarieerd spelprogramma incl. aangeboden activiteiten","Ongevallenverzekering"],
+
+                    //Vervoer
+                    vervoer: "Bus"
+
+
+
+
                 },
                 {
                     naam: "Ski en fun",
