@@ -99,5 +99,13 @@ angular.module('webappApp')
        templateUrl: 'app/views/activiteiten/activiteit.html',
        controller: 'ActiviteitDetailCtrl'
      })
+
+     /** DASHBOARD **/
+      .state('dashboard', {
+      url: '/dashboard',
+      templateUrl: 'app/views/dashboard/dashboard.html',
+      controller: 'DashboardCtrl'
+      })
+
     ;
   });
