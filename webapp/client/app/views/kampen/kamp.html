@@ -22,9 +22,13 @@
             </div>
 
             <div id="images">
-                <img height="150px" width="200px" src="../assets/images/reizen/{{kamp.promoAfbeelding}}"/>
+                <a href="../assets/images/reizen/{{kamp.promoAfbeelding}}" data-lightbox="{{kamp.promoAfbeelding}}">
+                    <img src="../assets/images/reizen/{{kamp.promoAfbeelding}}" height="150px" width="200px"/>
+                </a>
           <span ng-repeat="afbeelding in kamp.afbeeldingen">
-              <img height="50" width="100" src="../assets/images/vakantieAfbeeldingen/{{afbeelding}}"/>
+              <a href="../assets/images/vakantieAfbeeldingen/{{afbeelding}}" data-lightbox="{{afbeelding}}">
+                <img height="50" width="100" src="../assets/images/vakantieAfbeeldingen/{{afbeelding}}"/>
+              </a>
           </span>
             </div>
         </aside>
