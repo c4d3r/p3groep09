@@ -11,6 +11,8 @@
 
 var _ = require('lodash');
 var Inschrijving = require('./inschrijving.model');
+var Gebruiker = require('../gebruiker/gebruiker.model');
+
 
 // Get list of inschrijvingen
 exports.index = function(req, res) {
@@ -47,11 +49,18 @@ exports.query = function(req, res) {
 
 // Creates a new inschrijving in the DB.
 exports.create = function(req, res) {
-  console.log(req.body);
   var newInschrijving = new Inschrijving(req.body);
   newInschrijving.save(function(err, inschrijving) {
-    if(err) { return handleError(res, err); }
-    return res.json(201, inschrijving);
+
+    var _inschrijving = inschrijving;
+
+    Gebruiker.findById(inschrijving.gebruiker, function(err, gebruiker) {
+      gebruiker.addInschrijving(_inschrijving);
+      gebruiker.save(function(err) {
+        if(err) { return handleError(res, err); }
+        return res.json(201, _inschrijving);
+      });
+    });
   });
 };
 
