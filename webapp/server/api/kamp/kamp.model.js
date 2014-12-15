@@ -11,8 +11,8 @@ var KampSchema = new Schema({
     beschrijving: {type: String},
     contact: {type: String},
     periodes: [{
-      startDatum: {type: String},
-      eindDatum: {type: String}
+      startDatum: {type: Date},
+      eindDatum: {type: Date}
     }],
     doelgroepen: [{type: Number}],
     promoAfbeelding: {type: String},

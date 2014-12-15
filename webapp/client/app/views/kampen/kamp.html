@@ -1,59 +1,64 @@
 <div class="container">
-  <section id="block" class="kamp">
-    <aside id="sidepanel">
-      <h2 class="kamp-doelgroep">
-          {{kamp.doelgroepen[0]}} - {{kamp.doelgroepen[kamp.doelgroepen.length -1]}} Jaar
-      </h2>
+    <section id="block" class="kamp">
+        <aside id="sidepanel">
+            <h2 class="kamp-doelgroep">
+                {{kamp.doelgroepen[0]}} - {{kamp.doelgroepen[kamp.doelgroepen.length -1]}} Jaar
+            </h2>
 
+            <hr/>
+            <div id="period">
+                <table class="kamp-periode">
+                    <tr>
+                        <th>Vertrek:</th>
+                        <th></th>
+                        <th>Aankomst:</th>
+                    </tr>
+                    <tr ng-repeat="periode in kamp.periodes">
+                        <td>{{periode.startDatum | date : 'dd-M-yyyy'}}</td>
+                        <td>-</td>
+                        <td>{{periode.eindDatum | date : 'dd-M-yyyy'}}</td>
+                    </tr>
+            </table>
+            </div>
 
-      <hr/>
-
-      <table class="kamp-periode">
-        <tr>
-          <th>Vertrek:</th>
-          <td>{{kamp.startDatum | date : 'dd-M-yyyy'}}</td>
-        </tr>
-        <tr>
-          <th>Aankomst:</th>
-          <td>{{kamp.eindDatum | date : 'dd-M-yyyy'}}</td>
-        </tr>
-      </table>
-
-      <div id="images">
-          <img height="150px" width="200px" src="../assets/images/reizen/{{kamp.promoAfbeelding}}"/>
+            <div id="images">
+                <img height="150px" width="200px" src="../assets/images/reizen/{{kamp.promoAfbeelding}}"/>
           <span ng-repeat="afbeelding in kamp.afbeeldingen">
               <img height="50" width="100" src="../assets/images/vakantieAfbeeldingen/{{afbeelding}}"/>
           </span>
-      </div>
-    </aside>
+            </div>
+        </aside>
 
-    <div id="details">
-        <h2 class="kamp-naam">{{ kamp.naam }}</h2>
+        <div id="details">
+            <h2 class="kamp-naam">{{ kamp.naam }}</h2>
 
-        <p id="beschrijving" ng-bind-html="kamp.beschrijving"></p>
+            <p id="beschrijving" ng-bind-html="kamp.beschrijving"></p>
 
-        <h4 class="titles">Informatie</h4>
-        <ul>
-            <li> De verplaatsing zal gebeuren via {{kamp.vervoer}}</li>
-            <li>Het kamp zal doorgaan in {{kamp.locatie}}</li>
-            <li>De prijs voor dit kamp zal {{kamp.prijs}} euro zijn</li>
-            <li>Er wordt een korting van {{kamp.korting}} euro worden gegeven voor leden van de Bond Moyson</li>
-        </ul>
+            <h4 class="titles">Informatie</h4>
+            <ul class="opsomming">
+                <li>Dit zal doorgaan in de {{kamp.vakantie}}</li>
+                <li> De heenreis zal gebeuren via {{kamp.vervoer.heen}} en de terugreis zal gebeuren via
+                    {{kamp.vervoer.terug}}
+                </li>
+                <li>Het kamp zal doorgaan in {{kamp.locatie}}</li>
+                <li>De prijs voor dit kamp zal {{kamp.prijs}} euro zijn</li>
+                <li>Er wordt een korting van {{kamp.korting}} euro worden gegeven voor leden van de Bond Moyson</li>
+            </ul>
 
-        <h4 class="titles">Inbegrepen in de prijs</h4>
-        <ul>
+            <h4 class="titles">Inbegrepen in de prijs</h4>
+            <ul class="opsomming">
             <span ng-repeat="item in kamp.inbegrepen">
                 <li>{{item}}</li>
             </span>
-        </ul>
+            </ul>
 
-        <div ng-hide="">
-            <button id="inschrijven" ng-click="inschrijven(kamp.id)" class="btn btn-blue">Inschrijven</button>
+            <div ng-hide="">
+                <button id="inschrijven" ng-click="inschrijven(kamp.id)" class="btn btn-blue">Inschrijven</button>
+            </div>
         </div>
-    </div>
 
 
-  </section>
+    </section>
 </div>
 
 
