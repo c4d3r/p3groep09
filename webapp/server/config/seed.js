@@ -16,28 +16,6 @@ var Gebruiker = require('../api/gebruiker/gebruiker.model')
     , Categorie = require('../api/categorie/categorie.model');
 
 
-/*Thing.find({}).remove(function() {
- Thing.create({
- name : 'Development Tools',
- info : 'Integration with popular tools such as Bower, Grunt, Karma, Mocha, JSHint, Node Inspector, Livereload, Protractor, Jade, Stylus, Sass, CoffeeScript, and Less.'
- }, {
- name : 'Server and Client integration',
- info : 'Built with a powerful and fun stack: MongoDB, Express, AngularJS, and Node.'
- }, {
- name : 'Smart Build System',
- info : 'Build system ignores `spec` files, allowing you to keep tests alongside code. Automatic injection of scripts and styles into your index.html'
- },  {
- name : 'Modular Structure',
- info : 'Best practice client and server structures allow for more code reusability and maximum scalability'
- },  {
- name : 'Optimized Build',
- info : 'Build process packs up your templates as a single JavaScript payload, minifies your scripts/css/images, and rewrites asset names for caching.'
- },{
- name : 'Deployment Ready',
- info : 'Easily deploy your app to Heroku or Openshift with the heroku and openshift subgenerators'
- });
- });*/
-
 Gebruiker.find({}).remove(function () {
     Gebruiker.create({
             provider: 'local',
@@ -200,7 +178,7 @@ function populateComments() {
 
 function populateKampen() {
     Kamp.find({}).remove(function () {
-            Kamp.create(
+            /*Kamp.create(
                 //DATUM ATTENTION: ISODAte --> maand begint vanaf 0!
                 {
                     naam: "Kerstvakantie aan zee",
@@ -221,10 +199,6 @@ function populateKampen() {
 
                     //Vervoer
                     vervoer: "Bus"
-
-
-
-
                 },
                 {
                     naam: "Ski en fun",
@@ -346,7 +320,341 @@ function populateKampen() {
                 function () {
                     console.log('populated kampen')
                 }
-            )
+            )    */
+          Kamp.create(
+            {
+              naam: "Krokusvakantie aan zee",
+              beschrijving: 'Verveling krijgt geen kans tijdens de krokusvakantie want op maandag 3 maart 2014 trekken we er met z’n allen op uit! We logeren in het vakantiecentrum ‘De Barkentijn’ te Nieuwpoort. Vijf dagen lang spelen we de leukste spelletjes, voor klein en groot. Samen met je vakantievriendjes beleef je het ene avontuur na het andere. Plezier gegarandeerd!',
+              contact: "???",
+              periodes: [
+                {
+                  startDatum: new Date(2014, 3, 3, 0, 0, 0),
+                  eindDatum: new Date(2014, 3, 7, 0, 0, 0)
+                }
+              ],
+              vakantie: "krokusvakantie",
+              doelgroepen: [5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16],
+              promoAfbeelding: "krokus/krokusvakantie_aan_zee.jpg",
+              afbeeldingen:[],
+
+              //Extra Info
+              locatie: "De Barkentijn, Nieuwpoort",
+              prijs: 165,
+              korting: 0,
+              formule: "Volpension",
+              inbegrepen:[
+                "Heenreis per autocar",
+                "Verblijf in volpension, drank bij de maaltijden",
+                "Dagelijks vieruurtje",
+                "Begeleiding door ervarenm gebrevetteerde monitoren",
+                "Volledig animatiepakket incl. spelmateriaal",
+                "Ongevallenverzekering"
+              ],
+
+              //Vervoer
+              vervoer: {
+                "heen": "Busvervoer",
+                "terug": "eigen vervoer"
+              }
+            },
+            {
+              naam: "Joetz aan zee - Lange periode",
+              beschrijving: 'Heb je zin om 12 dagen lang met vrienden te spelen onder een aangenaam lentezonnetje? Wij hebben alvast een superleuk monitorenteam en een tof vakantieverblijf voor je klaarstaan! Aarzel niet en kom de paassfeer opsnuiven in De Barkentijn!',
+              contact: "???",
+              periodes: [
+                {
+                  startDatum: new Date(2014, 4, 7, 0, 0, 0),
+                  eindDatum: new Date(2014, 4, 18, 0, 0, 0)
+                }
+              ],
+              vakantie: "paasvakantie",
+              doelgroepen: [5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16],
+              promoAfbeelding: "pasen/joetz_aan_zee_lange_periode.jpg",
+              afbeeldingen:[],
+
+              //Extra Info
+              locatie: "De Barkentijn, Nieuwpoort",
+              prijs: 324,
+              korting: 0,
+              formule: "Volpension",
+              inbegrepen:[
+                "Heenreis-en terugreis per autocar",
+                "Verblijf in volpension, drank bij de maaltijden",
+                "Dagelijks vieruurtje",
+                "Begeleiding door ervarenm gebrevetteerde monitoren",
+                "Volledig animatiepakket incl. spelmateriaal",
+                "Ongevallenverzekering"
+              ],
+
+              //Vervoer
+              vervoer: {
+                "heen": "Busvervoer of eigen vervoer",
+                "terug": "Busvervoer of eigen vervoer"
+              }
+            },
+            {
+              naam: "Joetz aan zee - Korte periode",
+              beschrijving: 'Ooit al een paashaas op een go-cart gezien? Of paaseieren gezocht in de duinen of op het strand? Waag je kans en kom naar De Barkentijn om 5 dagen te genieten van leuke spelletjes en lekker eten. Breng gerust ook wat vrienden mee, want iedereen is van harte welkom!',
+              contact: "???",
+              periodes: [
+                {
+                  startDatum: new Date(2014, 4, 7, 0, 0, 0),
+                  eindDatum: new Date(2014, 4, 11, 0, 0, 0)
+                },
+                {
+                  startDatum: new Date(2014, 4, 14, 0, 0, 0),
+                  eindDatum: new Date(2014, 4, 18, 0, 0, 0)
+                }
+              ],
+              vakantie: "paasvakantie",
+              doelgroepen: [5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16],
+              promoAfbeelding: "pasen/joetz_aan_zee_korte_periode.jpg",
+              afbeeldingen:[],
+
+              //Extra Info
+              locatie: "De Barkentijn, Nieuwpoort",
+              prijs: 165,
+              korting: 0,
+              formule: "Volpension",
+              inbegrepen:[
+                "Heenreis-en terugreis per autocar",
+                "Verblijf in volpension, drank bij de maaltijden",
+                "Dagelijks vieruurtje",
+                "Begeleiding door ervarenm gebrevetteerde monitoren",
+                "Volledig animatiepakket incl. spelmateriaal",
+                "Ongevallenverzekering"
+              ],
+
+              //Vervoer
+              vervoer: {
+                "heen": "Busvervoer of eigen vervoer",
+                "terug": "Busvervoer of eigen vervoer"
+              }
+            },
+            {
+              naam: "Joetz aan zee - danskamp",
+              beschrijving: 'Kan je ook niet blijven stilstaan als je muziek hoort? Muziek, maestro, please want bij JOETZ vliegen we er in! Onze professionele dansleraren leren je de leukste dansjes aan en zorgen voor de nodige afwisseling met toffe spelletjes. Danservaring is niet vereist, zolang je er maar zin in hebt!',
+              contact: "???",
+              periodes: [
+                {
+                  startDatum: new Date(2014, 4, 7, 0, 0, 0),
+                  eindDatum: new Date(2014, 4, 11, 0, 0, 0)
+                },
+              ],
+              vakantie: "paasvakantie",
+              doelgroepen: [6, 7, 8, 9, 10, 11, 12, 13, 14],
+              promoAfbeelding: "pasen/joetz_aan_zee_danskamp.jpg",
+              afbeeldingen:[],
+
+              //Extra Info
+              locatie: "De Barkentijn, Nieuwpoort",
+              prijs: 185,
+              korting: 0,
+              formule: "Volpension",
+              inbegrepen:[
+                "Heenreis-en terugreis per autocar",
+                "Verblijf in volpension, drank bij de maaltijden",
+                "Dagelijks vieruurtje",
+                "Begeleiding door ervarenm gebrevetteerde monitoren",
+                "Volledig animatiepakket incl. spelmateriaal",
+                "Ongevallenverzekering"
+              ],
+
+              //Vervoer
+              vervoer: {
+                "heen": "Busvervoer of eigen vervoer",
+                "terug": "Busvervoer of eigen vervoer"
+              }
+            },
+            {
+              naam: "Joetz aan zee - Welkom in het circus",
+              beschrijving: 'Gaat jouw kind de eerste keer op kamp? Dan is deze kleutervakantie zeker iets voor hem haar. Op deze superleuke themavakantie worden onze allerkleinsten volledig ondergedompeld in een wereld van dolle pret! Onze monitoren zorgen alvast voor een leuk programma waar je kind nog lang over zal napraten. Aarzel niet langer en schrijf je kind vlug in voor zijn/haar eerste kleutervakantie!',
+              contact: "???",
+              periodes: [
+                {
+                  startDatum: new Date(2014, 4, 7, 0, 0, 0),
+                  eindDatum: new Date(2014, 4, 11, 0, 0, 0)
+                },
+              ],
+              vakantie: "paasvakantie",
+              doelgroepen: [4, 5, 6],
+              promoAfbeelding: "pasen/joetz_aan_zee_circus.jpg",
+              afbeeldingen:[],
+
+              //Extra Info
+              locatie: "De Barkentijn, Nieuwpoort",
+              prijs: 185,
+              korting: 0,
+              formule: "Volpension",
+              inbegrepen:[
+                "Heenreis-en terugreis per autocar",
+                "Verblijf in volpension, drank bij de maaltijden",
+                "Dagelijks vieruurtje",
+                "Begeleiding door ervarenm gebrevetteerde monitoren",
+                "Volledig animatiepakket incl. spelmateriaal",
+                "Ongevallenverzekering"
+              ],
+
+              //Vervoer
+              vervoer: {
+                "heen": "Busvervoer of eigen vervoer",
+                "terug": "Busvervoer of eigen vervoer"
+              }
+            },
+            {
+              naam: "Joetz aan zee - Lange periode",
+              beschrijving: 'Recept voor een fantastische zomervakantie: toffe monitoren, leuke vrienden, een prachtig vakantiecentrum en véél fun en ambiance! De monitoren zorgen voor een afwisselend programma (strand- en duinspelen, daguitstappen, themaspelen, fuif …) maar willen jou er natuurlijk ook bij. Wacht niet te lang en plan je vakantie naar zee met JOETZ!',
+              contact: "???",
+              periodes: [
+                {
+                  startDatum: new Date(2014, 7, 5, 0, 0, 0),
+                  eindDatum: new Date(2014, 7, 19, 0, 0, 0)
+                },
+                {
+                  startDatum: new Date(2014, 7, 19, 0, 0, 0),
+                  eindDatum: new Date(2014, 8, 2, 0, 0, 0)
+                },
+                {
+                  startDatum: new Date(2014, 8, 2, 0, 0, 0),
+                  eindDatum: new Date(2014, 8, 16, 0, 0, 0)
+                },
+                {
+                  startDatum: new Date(2014, 8, 16, 0, 0, 0),
+                  eindDatum: new Date(2014, 8, 30, 0, 0, 0)
+                }
+              ],
+              vakantie: "zomervakantie",
+              doelgroepen: [5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16],
+              promoAfbeelding: "zomer/joetz_aan_zee_lange_periode.jpg",
+              afbeeldingen:[],
+
+              //Extra Info
+              locatie: "De Barkentijn, Nieuwpoort",
+              prijs: 400,
+              korting: 0,
+              formule: "Volpension",
+              inbegrepen:[
+                "Heenreis-en terugreis per autocar",
+                "Verblijf in volpension, drank bij de maaltijden",
+                "Dagelijks vieruurtje",
+                "Begeleiding door ervarenm gebrevetteerde monitoren",
+                "Volledig animatiepakket incl. spelmateriaal",
+                "Ongevallenverzekering"
+              ],
+
+              //Vervoer
+              vervoer: {
+                "heen": "Busvervoer of eigen vervoer",
+                "terug": "Busvervoer of eigen vervoer"
+              }
+            },
+            {
+              naam: "Joetz aan zee - Korte periode",
+              beschrijving: 'Zomervakantie aan zee: zes dagen vol spel en amusement maken van jouw verblijf een leuke vakantie. Een themanamiddag afgewisseld met leuke spelen en een ritje op de go-cart zorgen voor een korte maar krachtige vakantie. Wij zijn er helemaal klaar voor en kijken alvast uit naar jouw komst!',
+              contact: "???",
+              periodes: [
+                {
+                  startDatum: new Date(2014, 7, 7, 0, 0, 0),
+                  eindDatum: new Date(2014, 7, 12, 0, 0, 0)
+                },
+                {
+                  startDatum: new Date(2014, 7, 14, 0, 0, 0),
+                  eindDatum: new Date(2014, 7, 19, 0, 0, 0)
+                },
+                {
+                  startDatum: new Date(2014, 7, 21, 0, 0, 0),
+                  eindDatum: new Date(2014, 7, 26, 0, 0, 0)
+                },
+                {
+                  startDatum: new Date(2014, 7, 28, 0, 0, 0),
+                  eindDatum: new Date(2014, 8, 2, 0, 0, 0)
+                },
+                {
+                  startDatum: new Date(2014, 8, 4, 0, 0, 0),
+                  eindDatum: new Date(2014, 8, 9, 0, 0, 0)
+                },
+                {
+                  startDatum: new Date(2014, 8, 11, 0, 0, 0),
+                  eindDatum: new Date(2014, 8, 16, 0, 0, 0)
+                },
+                {
+                  startDatum: new Date(2014, 8, 18, 0, 0, 0),
+                  eindDatum: new Date(2014, 8, 23, 0, 0, 0)
+                },
+                {
+                  startDatum: new Date(2014, 8, 25, 0, 0, 0),
+                  eindDatum: new Date(2014, 8, 30, 0, 0, 0)
+                }
+              ],
+              vakantie: "zomervakantie",
+              doelgroepen: [5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16],
+              promoAfbeelding: "zomer/joetz_aan_zee_korte_periode.jpg",
+              afbeeldingen:[],
+
+              //Extra Info
+              locatie: "De Barkentijn, Nieuwpoort",
+              prijs: 192,
+              korting: 0,
+              formule: "Volpension",
+              inbegrepen:[
+                "Heenreis-en terugreis per autocar",
+                "Verblijf in volpension, drank bij de maaltijden",
+                "Dagelijks vieruurtje",
+                "Begeleiding door ervarenm gebrevetteerde monitoren",
+                "Volledig animatiepakket incl. spelmateriaal",
+                "Ongevallenverzekering"
+              ],
+
+              //Vervoer
+              vervoer: {
+                "heen": "Busvervoer of eigen vervoer",
+                "terug": "Busvervoer of eigen vervoer"
+              }
+            },
+            {
+              naam: "Joetz aan zee - Danskamp",
+              beschrijving: 'Kan je ook niet blijven stilstaan als je muziek hoort? Muziek, maestro, please want bij JOETZ vliegen we er in! Onze professionele dansleraren leren je de leukste dansjes aan en zorgen voor de nodige afwisseling met toffe spelletjes. Danservaring is niet vereist, zolang je er maar zin in hebt!',
+              contact: "???",
+              periodes: [
+                {
+                  startDatum: new Date(2014, 7, 28, 0, 0, 0),
+                  eindDatum: new Date(2014, 8, 2, 0, 0, 0)
+                },
+                {
+                  startDatum: new Date(2014, 8, 25, 0, 0, 0),
+                  eindDatum: new Date(2014, 8, 30, 0, 0, 0)
+                }
+              ],
+              vakantie: "zomervakantie",
+              doelgroepen: [4, 5, 6],
+              promoAfbeelding: "zomer/joetz_aan_zee_danskamp.jpg",
+              afbeeldingen:[],
+
+              //Extra Info
+              locatie: "De Barkentijn, Nieuwpoort",
+              prijs: 207,
+              korting: 0,
+              formule: "Volpension",
+              inbegrepen:[
+                "Heenreis-en terugreis per autocar",
+                "Verblijf in volpension, drank bij de maaltijden",
+                "Dagelijks vieruurtje",
+                "Begeleiding door ervarenm gebrevetteerde monitoren",
+                "Volledig animatiepakket incl. spelmateriaal",
+                "Ongevallenverzekering"
+              ],
+
+              //Vervoer
+              vervoer: {
+                "heen": "Busvervoer of eigen vervoer",
+                "terug": "Busvervoer of eigen vervoer"
+              }
+            },
+            function(err) {
+              if(err) console.log(err);
+              console.log("Populated vakanties!");
+            }
+          )
         }
     );
 }

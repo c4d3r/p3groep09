@@ -6,7 +6,7 @@ angular.module('webappApp')
       {
         'show':          { method: 'GET', isArray: false},
         'index':         { method: 'GET', isArray: true},
-        'findBySeizoen': { method: 'GET', params: {method: "seizoen", selectedSeizoen: "@selectedSeizoen"} ,isArray: true}
+        'findByVakantie': { method: 'GET', params: {method: "vakantie", vakantie: "@vakantie"} ,isArray: true}
       }
     )
   }]);

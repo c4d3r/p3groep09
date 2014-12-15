@@ -6,7 +6,7 @@ var controller = require('./kamp.controller');
 var router = express.Router();
 
 router.get('/', controller.index);
-router.get('/seizoen', controller.findBySeizoen);
+router.get('/vakantie', controller.findByVakantie);
 router.get('/:id', controller.show);
 router.post('/', controller.create);
 router.put('/:id', controller.update);

@@ -10,8 +10,10 @@ var KampSchema = new Schema({
     naam: {type: String},
     beschrijving: {type: String},
     contact: {type: String},
-    eindDatum: {type: Date},
-    startDatum: {type: Date},
+    periodes: [{
+      startDatum: {type: String},
+      eindDatum: {type: String}
+    }],
     doelgroepen: [{type: Number}],
     promoAfbeelding: {type: String},
     afbeeldingen: [{type: String}],
@@ -24,11 +26,11 @@ var KampSchema = new Schema({
     formule: {type:String},
     inbegrepen:[{type:String}],
     //busreis
-    vervoer: {type: String}
-
-
-
-
+    vervoer: {
+      heen: {type: String},
+      terug: {type: String}
+    },
+    vakantie: {type: String}
 
     //categorie: {type: Schema.ObjectId, ref: "Categorie"}
 });
@@ -41,7 +43,7 @@ KampSchema.path('contact').required(true, "Contact mag niet leeg zijn");
 KampSchema.path('locatie').required(true, "Locatie mag niet leeg zijn");
 KampSchema.path('naam').required(true, "Naam mag niet leeg zijn");
 KampSchema.path('prijs').required(true, "Prijs mag niet leeg zijn");
-KampSchema.path('vervoer').required(true, "Vervoer mag niet leeg zijn");
+//KampSchema.path('vervoer').required(true, "Vervoer mag niet leeg zijn");
 
 /*KampSchema.methods = {
     addInschrijving: function(inschrijving) {
