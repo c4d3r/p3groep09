@@ -2,6 +2,8 @@
 <div class="container">
     <section id="block" class="kamp">
         <aside id="sidepanel">
+            <h2 class="kamp-naam">€{{kamp.prijs}}</h2>
+
             <h2 class="kamp-doelgroep">
                 {{kamp.doelgroepen[0]}} - {{kamp.doelgroepen[kamp.doelgroepen.length -1]}} Jaar
             </h2>
@@ -46,7 +48,6 @@
                     {{kamp.vervoer.terug}}
                 </li>
                 <li>Het kamp zal doorgaan in {{kamp.locatie}}</li>
-                <li>De prijs voor dit kamp zal {{kamp.prijs}} euro zijn</li>
                 <li>Er wordt een korting van {{kamp.korting}} euro worden gegeven voor leden van de Bond Moyson</li>
             </ul>
 
