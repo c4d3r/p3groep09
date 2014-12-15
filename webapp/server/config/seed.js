@@ -439,7 +439,7 @@ function populateKampen() {
                 {
                   startDatum: new Date(2014, 4, 7, 0, 0, 0),
                   eindDatum: new Date(2014, 4, 11, 0, 0, 0)
-                },
+                }
               ],
               vakantie: "paasvakantie",
               doelgroepen: [6, 7, 8, 9, 10, 11, 12, 13, 14],
@@ -474,7 +474,7 @@ function populateKampen() {
                 {
                   startDatum: new Date(2014, 4, 7, 0, 0, 0),
                   eindDatum: new Date(2014, 4, 11, 0, 0, 0)
-                },
+                }
               ],
               vakantie: "paasvakantie",
               doelgroepen: [4, 5, 6],
