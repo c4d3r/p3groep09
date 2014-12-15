@@ -72,9 +72,6 @@ exports.findByVakantie = function(req, res) {
 
   //Mongodb werkt met ISODates
   Kamp.find({"vakantie": vakantie}, function(err, result){
-    console.log(err);
-    console.log(result);
-    console.log(vakantie);
     if(err){ return handleError(res, err); }
     return res.json(200, result);
   });

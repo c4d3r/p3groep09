@@ -1,14 +1,18 @@
 .wizard {
 
+  .next-step-button {
+    text-align:right;
+  }
+
   .steps-indicator {
     padding: 0;
+    text-align:center;
     li {
       display: inline-block;
       list-style: none;
 
       a {
         padding: 10px;
-        border: 1px solid $gray;
         border-radius: 5px;
         background: $gray;
         color: white;
@@ -23,7 +27,7 @@
 
       &.current {
         a {
-          background-color: $orange;
+          background-color: $red;
         }
       }
     }

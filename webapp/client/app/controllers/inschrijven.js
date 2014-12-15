@@ -5,58 +5,59 @@ angular.module('webappApp')
     //TEST SCOPE WITH PRE-FILLED DETAILS
 
 
-    $scope.inschrijving = {
+    $scope.fillDummyData = function() {
+      $scope.inschrijving = {
         lidMutualiteit: false,
         persoonTenLaste: {
-           aansluitingsNummer: "358/876985",
-           codeGerechtigde: "855"
+          aansluitingsNummer: "358/876985",
+          codeGerechtigde: "855"
         },
         tweedeOuder: {
-            aansluitingsNummer: "358/876985"
+          aansluitingsNummer: "358/876985"
         },
-        contactPersoon: {
-           rijksregisterNummer: "84984g8w22",
-           voornaam: "Antwan",
-           naam: "Flores",
-           straat: "Gentsesteenweg",
-           huisNummer: "32",
-           bus: "5b",
-           gemeente: "Gent",
-           postcode: "8565",
-           telefoonNummer: "037426586"
-         },
+        contactPersoon: [{
+          rijksregisterNummer: "84984g8w22",
+          voornaam: "Antwan",
+          naam: "Flores",
+          straat: "Gentsesteenweg",
+          huisNummer: "32",
+          bus: "5b",
+          gemeente: "Gent",
+          postcode: "8565",
+          telefoonNummer: "037426586"
+        }],
         betalendeOuder: {
-           rijksregisterNummer: "wegewgs5",
-           voornaam: "Jeffery",
-           naam: "Ramos",
-           straat: "Gentsesteenweg",
-           huisnummer: "32",
-           bus: "5b",
-           gemeente: "Gent",
-           postcode: "8565",
-           telefoonNummer: "037426586"
-               },
+          rijksregisterNummer: "wegewgs5",
+          voornaam: "Jeffery",
+          naam: "Ramos",
+          straat: "Gentsesteenweg",
+          huisnummer: "32",
+          bus: "5b",
+          gemeente: "Gent",
+          postcode: "8565",
+          telefoonNummer: "037426586"
+        },
         rijksregisterNummer: "wegewgs5",
-              voornaam: "Flores",
-              naam: "Antwan",
-              geboorteDatum: new Date(2001, 10, 10),
+        voornaam: "Flores",
+        naam: "Antwan",
+        geboorteDatum: new Date(2001, 10, 10),
         adresDeelnemer: {
-                straat: "Gentsesteenweg",
-                huisnummer: "32",
-                bus: "5b",
-                gemeente: "Gent",
-                postcode: "8565",
-                telefoonNummer: "0348425"
-              },
+          straat: "Gentsesteenweg",
+          huisnummer: "32",
+          bus: "5b",
+          gemeente: "Gent",
+          postcode: "8565",
+          telefoonNummer: "0348425"
+        },
         noodPersonen: [],
-              extraInformatie: "",
-              gebruiker: Auth.getCurrentUser()._id,
-              kamp: $stateParams.id
+        extraInformatie: "",
+        gebruiker: Auth.getCurrentUser()._id,
+        kamp: $stateParams.id
+      };
     };
 
-
     //ORIGINAL SCOPE
-    /*$scope.model = {
+    $scope.model = {
       lidMutualiteit: false,
       persoonTenLaste: {
         aansluitingsNummer: "",
@@ -65,7 +66,7 @@ angular.module('webappApp')
       tweedeOuder: {
         aansluitingsNummer: ""
       },
-      contactPersoon: {
+      contactPersoon: [{
         rijksregisterNummer: "",
         voornaam: "",
         naam: "",
@@ -75,7 +76,7 @@ angular.module('webappApp')
         gemeente: "",
         postcode: "",
         telefoonNummer: ""
-      },
+      }],
       betalendeOuder: {
         rijksregisterNummer: "",
         voornaam: "",
@@ -101,16 +102,8 @@ angular.module('webappApp')
       extraInformatie: "",
       gebruiker: "",
       activiteit: ""
-    }; */
+    };
 
-     var init = function() {
-       if(Auth.getCurrentUser()._id != null){
-       }
-       else{
-          $location.path('/login');
-       }
-     }
-        init();
     $scope.methods = {
       addNoodPersoon: function(voornaam, naam, telefoonNummer) {
         $scope.model.noodPersonen.push({naam: naam, voornaam: voornaam, telefoonNummer: telefoonNummer});

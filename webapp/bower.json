@@ -14,7 +14,6 @@
     "angular-socket-io": "~0.6.0",
     "angular-ui-router": "~0.2.10",
     "responsive-nav": "~1.0.32",
-    "angular-wizard": "~0.4.0",
     "isotope": "~2.1.0",
     "angular-modal-service": "~0.4.0",
     "moment": "~2.8.4",

@@ -56,7 +56,8 @@ angular.module('webappApp')
     .state('inschrijving', {
       url: "/kampen/:id/inschrijven",
       templateUrl: "app/views/inschrijven/inschrijven.html",
-      controller: "InschrijvingCtrl"
+      controller: "InschrijvingCtrl",
+      authenticate: true
     })
     /** SECURITY */
     .state('login', {
