@@ -5,7 +5,8 @@ angular.module('webappApp')
     return $resource('api/activiteiten/:method:id', {id: "@_id"},
       {
         'show':          { method: 'GET', isArray: false},
-        'index':         { method: 'GET', isArray: true}
+        'index':         { method: 'GET', isArray: true},
+        'update':        { method: 'POST'}
       }
     )
   }]);

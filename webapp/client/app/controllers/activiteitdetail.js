@@ -1,21 +1,23 @@
 'use strict';
 
 angular.module('webappApp')
-  .controller('ActiviteitDetailCtrl', function ($scope, $stateParams, Activiteiten, $location, Auth, User) {
+  .controller('ActiviteitDetailCtrl', function ($scope, $stateParams, Activiteiten, $location, Auth, $q) {
     $scope.activiteit = Activiteiten.show($stateParams);
 
-    var gebruikerId = Auth.getCurrentUser()._id;
+    console.log($scope.activiteit);
 
-    var i = User.query({_id: gebruikerId}, function(gebruiker){
-        console.log(gebruiker);
-        $scope.activiteit.contact = null;
+    $scope.inschrijven = function() {
 
-        console.log($scope.activiteit.contact);
-     });
+        var deferred = $q.defer();
+        var promise = deferred.promise;
 
-    console.log(i);
-    $scope.inschrijven = function () {
-        $scope.activiteit.inschrijvingen.push(Auth.getCurrentUser()._id);
-    }
+        promise.then(function(result){
+            Activiteiten.update($scope.activiteit);
+            $location.path('/activiteiten');
+        },function(reason){
+            console.log("error");
+        });
+        deferred.resolve($scope.activiteit.inschrijvingen.push(Auth.getCurrentUser()._id));
+     }
 
   });

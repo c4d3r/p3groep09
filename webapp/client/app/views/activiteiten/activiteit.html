@@ -12,14 +12,14 @@
             <h3>Extra informatie</h3>
             <ul>
                 <li>Locatie: {{activiteit.locatie}}</li>
-                <li>Contact: {{activiteit.contact}}</li>
+                <li>Contact: {{contact.voornaam}} {{contact.naam}}</li>
             </ul>
 
         </div>
         <div id="rightside">
 
 
-            <div ng-show="isLoggedIn()">
+            <div>
                 <button id="inschrijven" ng-click="inschrijven()" class="btn btn-blue">Inschrijven</button>
             </div>
         </div>

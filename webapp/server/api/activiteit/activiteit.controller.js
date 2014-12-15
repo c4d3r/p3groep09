@@ -22,7 +22,12 @@ exports.index = function(req, res) {
 
 // Get a single activiteit
 exports.show = function(req, res) {
-  Activiteit.findById(req.params.id, function (err, activiteit) {
+  Activiteit
+  .findById(req.params.id)
+  .populate('contact')
+  .populate('inschrijvingen')
+  .populate('comments')
+  .exec(function (err, activiteit) {
     if(err) { return handleError(res, err); }
     if(!activiteit) { return res.send(404); }
     return res.json(activiteit);
