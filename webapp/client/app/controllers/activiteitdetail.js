@@ -12,7 +12,7 @@ angular.module('webappApp')
         var promise = deferred.promise;
 
         promise.then(function(result){
-            Activiteiten.update($scope.activiteit);
+            Activiteiten.patch($scope.activiteit);
             $location.path('/activiteiten');
         },function(reason){
             console.log("error");

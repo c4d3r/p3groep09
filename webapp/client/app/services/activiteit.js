@@ -6,7 +6,7 @@ angular.module('webappApp')
       {
         'show':          { method: 'GET', isArray: false},
         'index':         { method: 'GET', isArray: true},
-        'update':        { method: 'POST'}
+        'patch':        { method: 'POST'}
       }
     )
   }]);
