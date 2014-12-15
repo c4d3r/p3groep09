@@ -28,8 +28,7 @@
 
         <!-- on hover -->
         <div>
-          <p><span>{{ eersteKamp.startDatum | date : "fullDate"}}</span></p>
-          <p><span>{{ eersteKamp.eindDatum | date : "fullDate" }}</span></p>
+          <p><span>€{{ eersteKamp.prijs}}</span></p>
           <p><span>{{ eersteKamp.locatie }}</span></p>
         </div>
         <a href="/kampen/{{ eersteKamp._id }}">Details</a>
