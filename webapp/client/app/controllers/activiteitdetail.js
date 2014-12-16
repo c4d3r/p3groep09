@@ -25,7 +25,7 @@ angular.module('webappApp')
                 console.log(status);
             });
 
-        //$location.path('/activiteiten');
+        $location.path('/activiteiten');
         /*var deferred = $q.defer();
         var promise = deferred.promise;
 

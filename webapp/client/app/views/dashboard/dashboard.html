@@ -2,7 +2,7 @@
     <div id="board">
         <div>Volledige naam: {{ getCurrentUser().voornaam }} {{ getCurrentUser().naam }}</div>
         <div>Email adres: {{ getCurrentUser().email }}</div>
-        <div>Aantal inschrijvingen: {{ getCurrentUser().inschrijvingen.length+1 }}</div>
+        <div>Aantal inschrijvingen: {{ getCurrentUser().inschrijvingen.length }}</div>
 
         <ul id="specialbuttons">
             <li><a href="/mijn_kampen">Ingeschreven kampen</a></li>
