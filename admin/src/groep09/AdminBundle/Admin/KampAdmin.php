@@ -21,8 +21,6 @@ class KampAdmin extends Admin
             ->addIdentifier('id')
             ->add('korting')
             ->add('locatie')
-            ->add('eindDatum')
-            ->add('startDatum')
             ->add('prijs')
         ;
     }
@@ -30,15 +28,14 @@ class KampAdmin extends Admin
     protected function configureFormFields(FormMapper $formMapper)
     {
         $formMapper
-            ->add('korting', 'decimal', array('required' => false))
+            ->add('korting', 'number', array('required' => false))
             ->add('contact', 'text', array('required' => false))
             ->add('beschrijving', 'text', array('required' => false))
-            ->add('eindDatum', 'date', array('required' => false))
-            ->add('startDatum', 'date', array('required' => false))
             ->add('leeftijdsCatDoelgroep', 'text', array('required' => false))
             ->add('locatie', 'text', array('required' => false))
-            ->add('prijs', 'decimal', array('required' => false))
-            ->add('vervoer', 'text', array('required' => false))
+            ->add('prijs', 'number', array('required' => false))
+            ->add('vervoer', 'sonata_type_model', array('required' => false))
+            ->add('periodes', 'sonata_type_model', array('required' => false))
         ;
     }
 
@@ -48,8 +45,6 @@ class KampAdmin extends Admin
             ->add('naam')
             ->add('prijs')
             ->add('korting')
-            ->add('eindDatum')
-            ->add('startDatum')
             ->add('locatie')
         ;
     }

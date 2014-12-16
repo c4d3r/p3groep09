@@ -58,9 +58,11 @@ class Inschrijving
     /** ODM\ReferenceOne(targetDocument="Gebruiker") */
     private $gebruiker;
 
-
     /** @ODM\ReferenceOne(targetDocument="Kamp") */
     private $kamp;
+
+    /** @ODM\ReferenceOne(targetDocument="InschrijvingPeriode") */
+    private $periode;
 
     /** @ODM\ReferenceOne(targetDocument="Activiteit") */
     private $activiteit;
@@ -143,4 +145,13 @@ class NoodPersoon{
 
     /** @ODM\String */
     private $telefoonNummer;
+}
+
+/** @ODM\EmbeddedDocument */
+class InschrijvingPeriode {
+    /** @ODM\Date */
+    private $startDatum;
+
+    /** @ODM\Date */
+    private $eindDatum;
 }

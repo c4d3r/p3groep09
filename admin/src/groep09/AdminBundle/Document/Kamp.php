@@ -25,12 +25,6 @@ class Kamp
     /** @ODM\String */
     private $contact;
 
-    /** @ODM\Date */
-    private $eindDatum;
-
-    /** @ODM\Date */
-    private $startDatum;
-
     /** @ODM\String */
     private $leeftijdsCatDoelgroep;
 
@@ -43,11 +37,14 @@ class Kamp
     /** @ODM\Float */
     private $prijs;
 
-    /** @ODM\String */
-    private $vervoer;
-
     /** @ODM\ReferenceMany(targetDocument="Inschrijving") */
     private $inschrijvingen;
+
+    /** @ODM\ReferenceMany(targetDocument="Inschrijving") */
+    private $periodes;
+
+    /** @ODM\ReferenceOne(targetDocument="Vervoer") */
+    private $vervoer;
 
     /**
      * @return mixed
@@ -111,38 +108,6 @@ class Kamp
     public function setContact($contact)
     {
         $this->contact = $contact;
-    }
-
-    /**
-     * @return mixed
-     */
-    public function getEindDatum()
-    {
-        return $this->eindDatum;
-    }
-
-    /**
-     * @param mixed $eindDatum
-     */
-    public function setEindDatum($eindDatum)
-    {
-        $this->eindDatum = $eindDatum;
-    }
-
-    /**
-     * @return mixed
-     */
-    public function getStartDatum()
-    {
-        return $this->startDatum;
-    }
-
-    /**
-     * @param mixed $startDatum
-     */
-    public function setStartDatum($startDatum)
-    {
-        $this->startDatum = $startDatum;
     }
 
     /**
@@ -241,5 +206,106 @@ class Kamp
         $this->inschrijvingen = $inschrijvingen;
     }
 
+    /**
+     * @return mixed
+     */
+    public function getPeriodes()
+    {
+        return $this->periodes;
+    }
 
-} 
+    /**
+     * @param mixed $periodes
+     */
+    public function setPeriodes($periodes)
+    {
+        $this->periodes = $periodes;
+    }
+
+}
+
+/** @ODM\EmbeddedDocument */
+class Periode {
+
+    /** @ODM\Date */
+    private $eindDatum;
+
+    /** @ODM\Date */
+    private $startDatum;
+
+    /**
+     * @return mixed
+     */
+    public function getEindDatum()
+    {
+        return $this->eindDatum;
+    }
+
+    /**
+     * @param mixed $eindDatum
+     */
+    public function setEindDatum($eindDatum)
+    {
+        $this->eindDatum = $eindDatum;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getStartDatum()
+    {
+        return $this->startDatum;
+    }
+
+    /**
+     * @param mixed $startDatum
+     */
+    public function setStartDatum($startDatum)
+    {
+        $this->startDatum = $startDatum;
+    }
+
+}
+
+/** @ODM\EmbeddedDocument */
+class Vervoer {
+
+    /** @ODM\String */
+    private $heen;
+
+    /** @ODM\String */
+    private $terug;
+
+    /**
+     * @return mixed
+     */
+    public function getHeen()
+    {
+        return $this->heen;
+    }
+
+    /**
+     * @param mixed $heen
+     */
+    public function setHeen($heen)
+    {
+        $this->heen = $heen;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getTerug()
+    {
+        return $this->terug;
+    }
+
+    /**
+     * @param mixed $terug
+     */
+    public function setTerug($terug)
+    {
+        $this->terug = $terug;
+    }
+
+}
