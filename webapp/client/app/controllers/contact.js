@@ -4,19 +4,23 @@
 'use strict'
 
 angular.module('webappApp')
-    .controller('ContactCtrl', function ($scope, Contact, $location) {
-        $scope.contact = function (form) {
-            $scope.submitted = true;
-            if (form.$valid) {
-                Contact.create({
-                    onderwerp: $scope.contact.onderwerp,
-                    bericht: $scope.contact.bericht,
-                    sendDate: Date.now(),
-                    sendBy: $scope.getCurrentUser()._id
-                });
-                $location.path('/');
-            }
-        };
+    .controller('ContactCtrl', function ($scope, Auth,Contact, $location) {
+        if (Auth.getCurrentUser()._id != null) {
+            $scope.contact = function (form) {
+                $scope.submitted = true;
+                if (form.$valid) {
+                    Contact.create({
+                        onderwerp: $scope.contact.onderwerp,
+                        bericht: $scope.contact.bericht,
+                        sendDate: Date.now(),
+                        sendBy: $scope.getCurrentUser()._id
+                    });
+                    $location.path('/');
+                }
+            };
+        }else{
+            $location.path('/login');
+        }
     });
 
 /**
