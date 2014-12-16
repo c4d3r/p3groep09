@@ -3,6 +3,11 @@
         display:none;
     }
 }
+
+.lb-container {
+  padding:0 !important;
+}
+
 @media all and (min-width: $bp-large) {
     .nav-collapse {
         ul {

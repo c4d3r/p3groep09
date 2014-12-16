@@ -8,16 +8,13 @@
   }
 
   .kamp-periode {
+    margin: 0 auto;
     th {
       text-align: left;
       text-transform: uppercase;
       font-size: 10pt;
       color: rgb(69, 69, 69);
     }
-  }
-
-  #period{
-    margin-left: 15%;
   }
 
   .kamp-doelgroep {
@@ -27,26 +24,20 @@
 
 #block{
   display: block;
-  padding-bottom: 65%;
   vertical-align: middle;
+
+  &:after {
+    @include clearfix();
+  }
 }
+
 
 #beschrijving{
   font-size: 12pt;
 }
 
-#sidepanel {
-  float: left;
-  width: 25%;
-}
-
 #images{
   text-align: center;
-}
-
-#details {
-  float: right;
-  width: 70%;
 }
 
 .opsomming{
@@ -55,4 +46,17 @@
 
 #inschrijven{
   float: right;
+}
+
+
+@media all and (min-width: $bp-large) {
+  #sidepanel {
+    float: left;
+    width: 25%;
+  }
+
+  #details {
+    float: right;
+    width: 70%;
+  }
 }

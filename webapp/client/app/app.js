@@ -66,5 +66,5 @@ angular.module('webappApp', [
         $location.path('/doelgroep');
       }
     });
-  });
+  })
 
