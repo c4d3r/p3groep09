@@ -9,12 +9,10 @@
 
             <div id="kamptekst">
                 <h2><a href="/kampen/{{ kamp._id }}">{{ kamp.naam }}</a></h2>
-                <p>Leeftijdscategorie: {{kamp.doelgroepen[0]}}
-                    -
-                    {{kamp.doelgroepen[kamp.doelgroepen.length -1]}} jaar</p>
-
-                <p>Prijs: €{{kamp.prijs}}</p>
-                <p>Locatie: {{kamp.locatie}}</p>
+                <div>Leeftijdscategorie: {{kamp.doelgroepen[0]}} - {{kamp.doelgroepen[kamp.doelgroepen.length -1]}} jaar</div>
+                <div>Prijs: €{{kamp.prijs}}</div>
+                <div>Locatie: {{kamp.locatie}}</div>
+                <div>{{kamp.inschrijving}}</div>
             </div>
         </article>
     </section>

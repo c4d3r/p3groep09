@@ -5,6 +5,7 @@
 
 var _ = require('lodash');
 var Contact = require('./contact.model');
+var Gebruiker = require('../gebruiker/gebruiker.model');
 var nodemailer = require('nodemailer');
 var smtpTransporter = require('nodemailer-smtp-transport');
 
@@ -36,33 +37,42 @@ exports.show = function (req, res) {
 exports.create = function (req, res) {
 
     var newContact = new Contact(req.body);
+    var i = Gebruiker.findOne({});
 
     newContact.save(function (err, contact) {
-        //console.log(req.body);
+        Gebruiker.findOne({_id: newContact.sendBy}, function (err, gebruiker) {
+            var _gebruiker = gebruiker;
 
-        smtpTransporter = nodemailer.createTransport("SMTP", {
-            service: "Gmail",
-            auth: {
-                user: "joetz.projecten3@gmail.com",
-                pass: "Joetzp3Groep9"
-            }});
+            console.log(_gebruiker);
 
-        var mailOptions = {
-            from: "joetz.projecten3@gmail.com",
-            to: "joetz.projecten3@gmail.com",
-            subject: newContact.onderwerp,
-            text: newContact.bericht
-        }
-        console.log(smtpTransporter + 'test');
+            smtpTransporter = nodemailer.createTransport("SMTP", {
+                service: "Gmail",
+                auth: {
+                    user: "joetz.projecten3@gmail.com",
+                    pass: "Joetzp3Groep9"
+                }});
 
-        smtpTransporter.sendMail(mailOptions, function (error, info) {
-            console.log("test");
-            if (error) {
-                console.log(error);
-            } else {
-                console.log('Message sent:');
+            var mailOptions = {
+                from: "joetz.projecten3@gmail.com",
+                to: "joetz.projecten3@gmail.com",
+                subject: newContact.onderwerp,
+                text: newContact.bericht + "\nAfzender: " +  _gebruiker.email
             }
+            console.log(smtpTransporter + 'test');
+
+            smtpTransporter.sendMail(mailOptions, function (error, info) {
+                console.log("test");
+                if (error) {
+                    console.log(error);
+                } else {
+                    console.log('Message sent:');
+                }
+            });
         });
+        console.log(Gebruiker.findOne({_id: newContact.sendBy}));
+
+
+
 
         if (err) {
             return handleError(res, err);
