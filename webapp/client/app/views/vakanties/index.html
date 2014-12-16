@@ -4,10 +4,11 @@
     <div class="container-filter">
 
       <div id="filter-seizoen">
-        <button class="season season-winter" ng-click="setVakantie('wintervakantie')" ng-class="{active: filter.vakantie == 'wintervakantie'}">Winter vakantie</button>
-        <button class="season season-lente" ng-click="setVakantie('krokusvakantie')" ng-class="{active: filter.vakantie == 'krokusvakantie'}">Krokus vakantie</button>
-        <button class="season season-zomer" ng-click="setVakantie('zomervakantie')" ng-class="{active: filter.vakantie == 'zomervakantie'}">Zomer vakantie</button>
-        <button class="season season-herfst" ng-click="setVakantie('herfstvakantie')" ng-class="{active: filter.vakantie == 'herfstvakantie'}">Herfst vakantie</button>
+        <button class="season vakantie-kerst" ng-click="setVakantie('wintervakantie')" ng-class="{active: filter.vakantie == 'wintervakantie'}">Kerstvakantie</button>
+        <button class="season vakantie-lente" ng-click="setVakantie('krokusvakantie')" ng-class="{active: filter.vakantie == 'krokusvakantie'}">Krokusvakantie</button>
+        <button class="season vakantie-pasen" ng-click="setVakantie('paasvakantie')" ng-class="{active: filter.vakantie == 'paasvakantie'}">Paasvakantie</button>
+        <button class="season vakantie-zomer" ng-click="setVakantie('zomervakantie')" ng-class="{active: filter.vakantie == 'zomervakantie'}">Zomervakantie</button>
+        <button class="season vakantie-herfst" ng-click="setVakantie('herfstvakantie')" ng-class="{active: filter.vakantie == 'herfstvakantie'}">Herfstvakantie</button>
       </div>
 
       <ul class="doelgroepen filter">
@@ -22,9 +23,8 @@
       <img src="/assets/images/reizen/{{ eersteKamp.promoAfbeelding }}" alt="reis naar {{ eersteKamp.locatie }}"/>
       <figcaption>
         <h2>{{ eersteKamp.naam }}</h2>
-        <ul class="doelgroepen">
-          <li class="doelgroep-{{ doelgroep }}" ng-repeat="doelgroep in eersteKamp.doelgroepen">{{ doelgroep }}</li>
-        </ul>
+
+        <h4 class="doelgroep">{{ eersteKamp.doelgroepen[0]}} - {{eersteKamp.doelgroepen[eersteKamp.doelgroepen.length - 1]}} jaar</h4>
 
         <!-- on hover -->
         <div>
@@ -44,9 +44,7 @@
         <img src="/assets/images/reizen/{{ kamp.promoAfbeelding }}" alt="reis naar {{ kamp.locatie }}"/>
         <figcaption>
           <h2>{{ kamp.naam }}</h2>
-          <ul class="doelgroepen">
-            <li class="doelgroep-{{ doelgroep }}" ng-repeat="doelgroep in kamp.doelgroepen">{{ doelgroep }}</li>
-          </ul>
+          <h4 class="doelgroep">{{ eersteKamp.doelgroepen[0]}} - {{eersteKamp.doelgroepen[eersteKamp.doelgroepen.length - 1]}} jaar</h4>
           <a href="/kampen/{{ kamp._id }}">Details</a>
         </figcaption>
       </figure>
@@ -62,9 +60,7 @@
         <img src="/assets/images/reizen/{{ kamp.promoAfbeelding }}" alt="reis naar {{ kamp.locatie }}"/>
         <figcaption>
           <h2>{{ kamp.naam }}</h2>
-          <ul class="doelgroepen">
-            <li class="doelgroep-{{ doelgroep }}" ng-repeat="doelgroep in kamp.doelgroepen">{{ doelgroep }}</li>
-          </ul>
+          <h4 class="doelgroep">{{ eersteKamp.doelgroepen[0]}} - {{eersteKamp.doelgroepen[eersteKamp.doelgroepen.length - 1]}} jaar</h4>
           <a href="/kampen/{{ kamp._id }}">Details</a>
         </figcaption>
       </figure>

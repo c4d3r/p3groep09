@@ -34,10 +34,15 @@
     height: 100%;
   }
 
-  .doelgroepen {
+  .doelgroep {
     position:absolute;
     bottom:10px;
     right:10px;
+    margin: 0;
+    background:$blue;
+    padding: 2px 10px;
+    border-radius: 10px;
+    text-transform: lowercase;
   }
 }
 

@@ -55,7 +55,7 @@
   width:32px;
   height:32px;
   background:url('/assets/images/icons/seasons/seasons-sprite.png');
-  background-size: 128px 64px;
+  background-size: 160px 64px;
   text-indent: -99999px;
   border:none;
   outline:none;
@@ -69,17 +69,20 @@
     cursor:pointer;
   }
 
-  &.season-winter {
+  &.vakantie-herfst {
     background-position-x: 0px;
   }
-  &.season-winter {
+  &.vakantie-kerst {
     background-position-x: -32px;
   }
-  &.season-lente {
+  &.vakantie-lente {
     background-position-x: -64px;
   }
-  &.season-zomer {
-    background-position-x: -96px;
+  &.vakantie-zomer {
+     background-position-x: -96px;
+  }
+  &.vakantie-pasen {
+    background-position-x: -128px;
   }
 }
 
