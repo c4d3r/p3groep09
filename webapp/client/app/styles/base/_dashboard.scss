@@ -2,8 +2,33 @@
   height: 200px;
 }
 
-.specialbutton{
-  bottom: 0;
+#specialbuttons{
+  width: 180px;
+}
+
+#specialbuttons{
+  margin:0;
+  padding:0;
+}
+
+#specialbuttons li{
+  list-style: none;
+  display:inline-block;
+}
+
+#specialbuttons li a:link, #specialbuttons li a:visited{
+  display:inline-block;
+  height:100px;
+  width:100px;
+  background: rgb(248, 248, 248);
+  display:table-cell;
+  vertical-align:middle;
+  text-align:center;
+  border-radius: 5px;
   border: 1px solid;
-  padding: 10px;
+}
+
+#specialbuttons li a:hover{
+  background-color: #033CC2;
+  color: #FFFFFF;
 }
