@@ -1,14 +1,11 @@
 #board{
-  height: 200px;
-}
-
-#specialbuttons{
-  width: 180px;
+  height: 100%;
 }
 
 #specialbuttons{
   margin:0;
   padding:0;
+  padding-top: 20px;
 }
 
 #specialbuttons li{
@@ -17,18 +14,19 @@
 }
 
 #specialbuttons li a:link, #specialbuttons li a:visited{
-  display:inline-block;
   height:100px;
   width:100px;
-  background: rgb(248, 248, 248);
   display:table-cell;
   vertical-align:middle;
   text-align:center;
   border-radius: 5px;
-  border: 1px solid;
+  border: 3px solid $red;
+  border-radius: 5px;
+  color: $red;
+  padding: 10px;
 }
 
 #specialbuttons li a:hover{
-  background-color: #033CC2;
-  color: #FFFFFF;
+  background:$red;
+  color:white;
 }
