@@ -4,7 +4,12 @@ angular.module('webappApp')
   .controller('ActiviteitDetailCtrl', function ($scope, $stateParams, Activiteiten, $location, Auth, $http) {
 
     if(Auth.getCurrentUser()._id != null){
-            $scope.activiteit = Activiteiten.show($stateParams);
+            if(Auth.getCurrentUser().role === "ROLE_MONITOR"){
+                     $scope.activiteit = Activiteiten.show($stateParams);
+            }
+            else{
+              $location.path('/');
+            }
         }
         else{
             $location.path('/login');
