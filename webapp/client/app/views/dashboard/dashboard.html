@@ -1,8 +1,9 @@
+<div class="container">
+    <div id="board">
+        <div>Volledige naam: {{ getCurrentUser().voornaam }} {{ getCurrentUser().naam }}</div>
+        <div>Email adres: {{ getCurrentUser().email }}</div>
+        <div>Aantal inschrijvingen: {{ getCurrentUser().inschrijvingen.length }}</div>
 
-
-    <div class="container">
-        <ul>
-            <li><a href="/mijn_kampen">Ingeschreven kampen</a></li>
-
-        </ul>
+        <a class="specialbutton" href="/mijn_kampen">Ingeschreven kampen</a>
     </div>
+</div>

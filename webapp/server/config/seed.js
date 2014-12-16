@@ -661,8 +661,8 @@ function populateKampen() {
 
 function populateInschrijvingen() {
     Inschrijving.find({}).remove(function () {
-        Gebruiker.findOne({email: "roy_9852@hotmail.com"}, function (err, gebruiker) {
-            Kamp.findOne({naam: "Krk, here we come!"}, function (err, kamp) {
+        Gebruiker.findOne({email: "test@test.com"}, function (err, gebruiker) {
+            Kamp.findOne({naam: "Krokusvakantie aan zee"}, function (err, kamp) {
                 var _gebruiker = gebruiker;
                 var _kamp = kamp;
                 Inschrijving.create(
