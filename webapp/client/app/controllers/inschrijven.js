@@ -1,9 +1,10 @@
 'use strict';
 
 angular.module('webappApp')
-  .controller('InschrijvingCtrl', function ($scope, Inschrijven, Auth, $stateParams, $location) {
+  .controller('InschrijvingCtrl', function ($scope, Inschrijven, Auth, Kampen, $stateParams, $location) {
     //TEST SCOPE WITH PRE-FILLED DETAILS
 
+    $scope.kamp = Kampen.show($stateParams);
 
     $scope.fillDummyData = function() {
       $scope.inschrijving = {
@@ -52,12 +53,16 @@ angular.module('webappApp')
         noodPersonen: [],
         extraInformatie: "",
         gebruiker: Auth.getCurrentUser()._id,
+        periode: {
+          startDatum: new Date(2015, 1, 12),
+          eindDatum: new Date(2015, 1, 17)
+        },
         kamp: $stateParams.id
       };
     };
 
     //ORIGINAL SCOPE
-    $scope.model = {
+    $scope.inschrijving = {
       lidMutualiteit: false,
       persoonTenLaste: {
         aansluitingsNummer: "",
@@ -101,8 +106,22 @@ angular.module('webappApp')
       noodPersonen: [],
       extraInformatie: "",
       gebruiker: "",
-      activiteit: ""
+      activiteit: "",
+      periode: {
+        startDatum: new Date(),
+        eindDatum: new Date()
+      },
+      kamp: $stateParams.id
     };
+
+
+    $scope.setPeriode = function() {
+      var periodes = $scope.inschrijving.periode.split("|");
+      $scope.inschrijving.periode.eindDatum = periodes[1];
+      $scope.inschrijving.periode.startDatum = periodes[0];
+      console.log($scope.inschrijving);
+    };
+
 
     $scope.methods = {
       addNoodPersoon: function(voornaam, naam, telefoonNummer) {

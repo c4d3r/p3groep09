@@ -58,7 +58,11 @@ var InschrijvingSchema = new Schema({
   extraInformatie: {type: String},
   toevoeging: {type: String},
   gebruiker: {type: Schema.ObjectId, ref: "Gebruiker"},
-  kamp: {type: Schema.ObjectId, ref: "Kamp"}
+  kamp: {type: Schema.ObjectId, ref: "Kamp"},
+  periode: {
+    startDatum: {type: Date},
+    eindDatum: {type: Date}
+  }
 });
 
 //TODO: Aanmaken virtual voor als adres deelnemer = adres contactpersoon
@@ -77,7 +81,7 @@ var InschrijvingSchema = new Schema({
 //post save hook
 /*InschrijvingSchema
     .post('save', function(inschrijving){
-        
+
         Kamp.findOne({_id: inschrijving.kamp}, function(err, kamp) {
             kamp.addInschrijving(inschrijving);
             kamp.save(function(err){
