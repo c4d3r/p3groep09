@@ -1,30 +1,42 @@
 <div class="container">
-    <section>
-        <div id="leftside">
+    <section id="block" class="kamp">
 
-            <h2>
-                {{activiteit.naam}}
-            </h2>
+            <aside id="sidepanel">
+                <h2 class="kamp-naam">€{{activiteit.prijs}}</h2>
+                <table class="kamp-periode">
+                    <tr>
+                        <th>Vertrek:</th>
+                        <th></th>
+                        <th>Aankomst:</th>
+                    </tr>
+                    <tr>
+                        <td>{{activiteit.startDatum | date : 'dd-M-yyyy'}}</td>
+                        <td>-</td>
+                        <td>{{activiteit.eindDatum | date : 'dd-M-yyyy'}}</td>
+                    </tr>
+                </table>
 
-            <p ng-bind-html="activiteit.beschrijving"></p>
 
 
-            <h3>Extra informatie</h3>
-            <ul>
-                <li>Locatie: {{activiteit.locatie}}</li>
-                <li>Contact: {{activiteit.contact.voornaam}} {{activiteit.contact.naam}}</li>
-                <div ng-repeat="inschrijving in activiteit.inschrijvingen">
-                    {{inschrijving.naam}}
+            </aside>
+            <div id="details">
+                <h2 class="kamp-naam">
+                    {{activiteit.naam}}
+                </h2>
+                    <p id="beschrijving" ng-bind-html="activiteit.beschrijving"></p>
+
+
+                <h4 class="titles">Informatie</h4>
+                <ul>
+                    <li>Locatie: {{activiteit.locatie}}</li>
+                    <li>Contact: {{activiteit.contact.voornaam}} {{activiteit.contact.naam}}</li>
+                </ul>
+                <div>
+                    <button id="inschrijven" ng-click="inschrijven()" class="btn btn-blue">Inschrijven</button>
                 </div>
-            </ul>
-
-        </div>
-        <div id="rightside">
-
-
-            <div>
-                <button id="inschrijven" ng-click="inschrijven()" class="btn btn-blue">Inschrijven</button>
             </div>
+
+
         </div>
     </section>
 </div>

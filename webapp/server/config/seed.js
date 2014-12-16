@@ -42,8 +42,8 @@ Gebruiker.find({}).remove(function () {
         },
         {
             provider: 'local',
-            naam: 'Moni',
-            voornaam: 'Tor',
+            naam: 'Doe',
+            voornaam: 'Jane',
             role: 'ROLE_MONITOR',
             email: 'monitor@joetz.com',
             wachtwoord: 'monitor1'
@@ -122,26 +122,28 @@ function populateActiviteiten() {
                 var _comments = comments;
                 Activiteit.create(
                     {
-                        beschrijving: "Test",
+                        beschrijving: "Monitor vorming te Spa, voor alle monitors!",
                         contact: _gebruiker,
                         eindDatum: new Date(2014, 12, 16),
-                        locatie: "Dromenland",
-                        naam: "Slapen",
+                        locatie: "Spa",
+                        naam: "Monitor vorming",
                         startDatum: new Date(2014, 12, 15),
                         comments: _comments,
                         createdOn: new Date(2014, 9, 5),
-                        inschrijvingen: _gebruiker
+                        inschrijvingen: _gebruiker,
+                        prijs: 100
                     },
                     {
-                        beschrijving: "Kajjakken in Ardeche",
+                        beschrijving: "Algemene info sessie voor alle monitors!",
                         contact: _gebruiker,
                         eindDatum: new Date(2014, 12, 16),
-                        locatie: "Ardeche",
-                        naam: "Kajakken",
+                        locatie: "Kortrijk",
+                        naam: "Algemene info sessie",
                         startDatum: new Date(2014, 12, 15),
                         comments: _comments,
                         createdOn: new Date(2014, 9, 5),
-                        inschrijvingen: _gebruiker
+                        inschrijvingen: _gebruiker,
+                        prijs: 100
                     }
                     , function () {
                         console.log('populated activiteiten')

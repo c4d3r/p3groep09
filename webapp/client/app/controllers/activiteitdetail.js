@@ -2,8 +2,13 @@
 
 angular.module('webappApp')
   .controller('ActiviteitDetailCtrl', function ($scope, $stateParams, Activiteiten, $location, Auth, $http) {
-    $scope.activiteit = Activiteiten.show($stateParams);
 
+    if(Auth.getCurrentUser()._id != null){
+            $scope.activiteit = Activiteiten.show($stateParams);
+        }
+        else{
+            $location.path('/login');
+        }
     console.log($scope.activiteit);
 
     $scope.inschrijven = function() {
@@ -15,6 +20,7 @@ angular.module('webappApp')
                 console.log(status);
             });
 
+        //$location.path('/activiteiten');
         /*var deferred = $q.defer();
         var promise = deferred.promise;
 

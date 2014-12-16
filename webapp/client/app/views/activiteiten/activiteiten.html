@@ -5,9 +5,9 @@
     </form>
 
     <section>
-        <article class="article-holder" ng-repeat="activiteit in activiteiten | filter:query">
+        <article ng-repeat="activiteit in activiteiten | filter:query">
 
-            <div id="kamptekst">
+            <div >
                 <h2><a href="/activiteiten/{{ activiteit._id }}">{{ activiteit.naam }}</a></h2>
                 <p>
                     {{activiteit.beschrijving}}

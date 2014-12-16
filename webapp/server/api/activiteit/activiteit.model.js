@@ -13,6 +13,7 @@ var ActiviteitSchema = new Schema({
     locatie: {type: String},
     naam: {type: String},
     startDatum: {type: Date},
+    prijs: {type: Number},
     comments: [{type: Schema.ObjectId, ref: "Comment"}],
     createdOn: {type: Date, Default: Date.now},
     inschrijvingen: [{type: Schema.ObjectId, ref: "Gebruiker"}]
