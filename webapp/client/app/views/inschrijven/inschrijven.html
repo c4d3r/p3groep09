@@ -6,20 +6,20 @@
 
       <div class="form-group">
         <label for="periode">Periode</label>
-          <select id="periode" ng-model="inschrijving.periode" ng-options="periode as ((periode.startDatum | date:'dd-MM-yyyy') + ' - ' + (periode.eindDatum | date:'dd-MM-yyyy')) for periode in kamp.periodes">>
+          <select id="periode" ng-model="inschrijving.periode" ng-options="periode as ((periode.startDatum | date:'dd-MM-yyyy') + ' - ' + (periode.eindDatum | date:'dd-MM-yyyy')) for periode in kamp.periodes" ng-required>
         </select>
       </div>
       <div class="form-group">
         <label for="aansluitingsnummer">Aansluitingsnummer</label>
-        <input type="text" id="aansluitingsnummer" name="aansluitingsnummer" ng-model="inschrijving.persoonTenLaste.aansluitingsNummer"/>
+        <input type="text" id="aansluitingsnummer" name="aansluitingsnummer" ng-model="inschrijving.persoonTenLaste.aansluitingsNummer" required/>
       </div>
       <div class="form-group">
         <label for="code_gerechtigde">Code gerechtigde</label>
-        <input type="text" id="code_gerechtigde" name="code_gerechtigde" ng-model="inschrijving.persoonTenLaste.codeGerechtigde"/>
+        <input type="text" id="code_gerechtigde" name="code_gerechtigde" ng-model="inschrijving.persoonTenLaste.codeGerechtigde" required/>
       </div>
       <div class="form-group">
         <label for="aansluitingsnummer2">Aansluitingsnummer 2e ouder</label>
-        <input type="text" id="aansluitingsnummer2" name="aansluitingsnummer2" ng-model="inschrijving.tweedeOuder.aansluitingsNummer"/>
+        <input type="text" id="aansluitingsnummer2" name="aansluitingsnummer2" ng-model="inschrijving.tweedeOuder.aansluitingsNummer" required/>
       </div>
 
       <div class="form-group next-step-button">
@@ -33,39 +33,39 @@
 
       <div class="form-group">
         <label for="ouder_rijksregisternummer">Rijksregisternummer</label>
-        <input type="text" id="ouder_rijksregisternummer" name="ouder_rijksregisternummer" ng-model="inschrijving.betalendeOuder.rijksregisterNummer"/>
+        <input type="text" id="ouder_rijksregisternummer" name="ouder_rijksregisternummer" ng-model="inschrijving.betalendeOuder.rijksregisterNummer" required/>
       </div>
       <div class="form-group">
         <label for="ouder_voornaam">Voornaam</label>
-        <input type="text" id="ouder_voornaam" name="ouder_voornaam" ng-model="inschrijving.betalendeOuder.voornaam"/>
+        <input type="text" id="ouder_voornaam" name="ouder_voornaam" ng-model="inschrijving.betalendeOuder.voornaam" required/>
       </div>
       <div class="form-group">
         <label for="ouder_naam">Naam</label>
-        <input type="text" id="ouder_naam" name="ouder_naam" ng-model="inschrijving.betalendeOuder.naam"/>
+        <input type="text" id="ouder_naam" name="ouder_naam" ng-model="inschrijving.betalendeOuder.naam" required/>
       </div>
       <div class="form-group">
         <label for="ouder_straat">Straat</label>
-        <input type="text" id="ouder_straat" name="ouder_straat" ng-model="inschrijving.betalendeOuder.straat"/>
+        <input type="text" id="ouder_straat" name="ouder_straat" ng-model="inschrijving.betalendeOuder.straat" required/>
       </div>
       <div class="form-group">
         <label for="ouder_huisnummer">Huisnummer</label>
-        <input type="text" id="ouder_huisnummer" name="ouder_huisnummer" ng-model="inschrijving.betalendeOuder.huisnummer"/>
+        <input type="text" id="ouder_huisnummer" name="ouder_huisnummer" ng-model="inschrijving.betalendeOuder.huisnummer" required/>
       </div>
       <div class="form-group">
         <label for="ouder_bus">Bus</label>
-        <input type="text" id="ouder_bus" name="ouder_bus" ng-model="inschrijving.betalendeOuder.bus"/>
+        <input type="text" id="ouder_bus" name="ouder_bus" ng-model="inschrijving.betalendeOuder.bus" required/>
       </div>
       <div class="form-group">
         <label for="ouder_gemeente">Gemeente</label>
-        <input type="text" id="ouder_gemeente" name="ouder_gemeente" ng-model="inschrijving.betalendeOuder.gemeente"/>
+        <input type="text" id="ouder_gemeente" name="ouder_gemeente" ng-model="inschrijving.betalendeOuder.gemeente" required/>
       </div>
       <div class="form-group">
         <label for="ouder_postcode">Postcode</label>
-        <input type="text" id="ouder_postcode" name="ouder_postcode" ng-model="inschrijving.betalendeOuder.postcode"/>
+        <input type="text" id="ouder_postcode" name="ouder_postcode" ng-model="inschrijving.betalendeOuder.postcode" required/>
       </div>
       <div class="form-group">
         <label for="ouder_telefoon">Telefoon of GSM nummer</label>
-        <input type="text" id="ouder_telefoon" name="ouder_telefoon" ng-model="inschrijving.betalendeOuder.telefoonNummer"/>
+        <input type="text" id="ouder_telefoon" name="ouder_telefoon" ng-model="inschrijving.betalendeOuder.telefoonNummer" required/>
       </div>
 
       <div class="form-group next-step-button">
@@ -78,19 +78,19 @@
 
       <div class="form-group">
         <label for="rijksregisternummer">Rijksregisternummer</label>
-        <input type="text" id="rijksregisternummer" name="rijksregisternummer" ng-model="inschrijving.rijksregisterNummer"/>
+        <input type="text" id="rijksregisternummer" name="rijksregisternummer" ng-model="inschrijving.rijksregisterNummer" required/>
       </div>
       <div class="form-group">
         <label for="voornaam">Voornaam</label>
-        <input type="text" id="voornaam" name="voornaam" ng-model="inschrijving.voornaam"/>
+        <input type="text" id="voornaam" name="voornaam" ng-model="inschrijving.voornaam" required/>
       </div>
       <div class="form-group">
         <label for="naam">Naam</label>
-        <input type="text" id="naam" name="naam" ng-model="inschrijving.naam"/>
+        <input type="text" id="naam" name="naam" ng-model="inschrijving.naam" required/>
       </div>
       <div class="form-group">
         <label for="geboortedatum">Geboortedatum</label>
-        <input type="date" id="geboortedatum" name="geboortedatum" ng-model="inschrijving.geboorteDatum"/>
+        <input type="date" id="geboortedatum" name="geboortedatum" ng-model="inschrijving.geboorteDatum" required/>
       </div>
 
       <h3>Adres</h3>
@@ -101,27 +101,27 @@
       <div ng-hide="adres_zelfde">
         <div class="form-group">
           <label for="straat">Straat</label>
-          <input type="text" id="straat" name="straat" ng-model="inschrijving.adresDeelnemer.straat"/>
+          <input type="text" id="straat" name="straat" ng-model="inschrijving.adresDeelnemer.straat" required/>
         </div>
         <div class="form-group">
           <label for="huisnummer">Huisnummer</label>
-          <input type="text" id="huisnummer" name="huisnummer" ng-model="inschrijving.adresDeelnemer.huisnummer"/>
+          <input type="text" id="huisnummer" name="huisnummer" ng-model="inschrijving.adresDeelnemer.huisnummer" required/>
         </div>
         <div class="form-group">
           <label for="bus">Bus</label>
-          <input type="text" id="bus" name="bus" ng-model="inschrijving.adresDeelnemer.bus"/>
+          <input type="text" id="bus" name="bus" ng-model="inschrijving.adresDeelnemer.bus" required/>
         </div>
         <div class="form-group">
           <label for="gemeente">Gemeente</label>
-          <input type="text" id="gemeente" name="gemeente" ng-model="inschrijving.adresDeelnemer.gemeente"/>
+          <input type="text" id="gemeente" name="gemeente" ng-model="inschrijving.adresDeelnemer.gemeente" required/>
         </div>
         <div class="form-group">
           <label for="postcode">Postcode</label>
-          <input type="text" id="postcode" name="postcode" ng-model="inschrijving.adresDeelnemer.postcode"/>
+          <input type="text" id="postcode" name="postcode" ng-model="inschrijving.adresDeelnemer.postcode" required/>
         </div>
         <div class="form-group">
           <label for="telefoon">Telefoon of GSM nummer</label>
-          <input type="text" id="telefoon" name="telefoon" ng-model="inschrijving.adresDeelnemer.telefoonNummer"/>
+          <input type="text" id="telefoon" name="telefoon" ng-model="inschrijving.adresDeelnemer.telefoonNummer" required/>
         </div>
         <div class="form-group next-step-button">
           <input type="submit" wz-next value="Volgende" class="btn btn-blue"/>
@@ -138,39 +138,39 @@
       <div ng-hide="contactpersoon_zelfde" class="animate-hide" style="margin-bottom:10px;">
        <div class="form-group">
           <label for="contactpersoon_rijksregisternummer">Rijksregisternummer</label>
-          <input type="text" id="contactpersoon_rijksregisternummer" name="contactpersoon_rijksregisternummer" ng-model="inschrijving.contactPersoon[0].rijksregisterNummer"/>
+          <input type="text" id="contactpersoon_rijksregisternummer" name="contactpersoon_rijksregisternummer" ng-model="inschrijving.contactPersoon[0].rijksregisterNummer" required/>
         </div>
         <div class="form-group">
           <label for="contactpersoon_voornaam">Voornaam</label>
-          <input type="text" id="contactpersoon_voornaam" name="contactpersoon_voornaam" ng-model="inschrijving.contactPersoon[0].voornaam"/>
+          <input type="text" id="contactpersoon_voornaam" name="contactpersoon_voornaam" ng-model="inschrijving.contactPersoon[0].voornaam" required/>
         </div>
         <div class="form-group">
           <label for="contactpersoon_naam">Naam</label>
-          <input type="text" id="contactpersoon_naam" name="contactpersoon_naam" ng-model="inschrijving.contactPersoon[0].naam"/>
+          <input type="text" id="contactpersoon_naam" name="contactpersoon_naam" ng-model="inschrijving.contactPersoon[0].naam" required/>
         </div>
         <div class="form-group">
           <label for="contactpersoon_straat">Straat</label>
-          <input type="text" id="contactpersoon_straat" name="contactpersoon_straat" ng-model="inschrijving.contactPersoon[0].straat"/>
+          <input type="text" id="contactpersoon_straat" name="contactpersoon_straat" ng-model="inschrijving.contactPersoon[0].straat" required/>
         </div>
         <div class="form-group">
           <label for="contactpersoon_huisnummer">Huisnummer</label>
-          <input type="text" id="contactpersoon_huisnummer" name="contactpersoon_huisnummer" ng-model="inschrijving.contactPersoon[0].huisnummer">
+          <input type="text" id="contactpersoon_huisnummer" name="contactpersoon_huisnummer" ng-model="inschrijving.contactPersoon[0].huisnummer" required>
         </div>
         <div class="form-group">
           <label for="contactpersoon_bus">Bus</label>
-          <input type="text" id="contactpersoon_bus" name="contactpersoon_bus" ng-model="inschrijving.contactPersoon[0].bus"/>
+          <input type="text" id="contactpersoon_bus" name="contactpersoon_bus" ng-model="inschrijving.contactPersoon[0].bus" required/>
         </div>
         <div class="form-group">
           <label for="contactpersoon_gemeente">Gemeente</label>
-          <input type="text" id="contactpersoon_gemeente" name="contactpersoon_gemeente" ng-model="inschrijving.contactPersoon[0].gemeente"/>
+          <input type="text" id="contactpersoon_gemeente" name="contactpersoon_gemeente" ng-model="inschrijving.contactPersoon[0].gemeente" required/>
         </div>
         <div class="form-group">
           <label for="contactpersoon_postcode">Postcode</label>
-          <input type="text" id="contactpersoon_postcode" name="contactpersoon_postcode" ng-model="inschrijving.contactPersoon[0].postcode"/>
+          <input type="text" id="contactpersoon_postcode" name="contactpersoon_postcode" ng-model="inschrijving.contactPersoon[0].postcode" required/>
         </div>
         <div class="form-group">
           <label for="contactpersoon_telefoon">Telefoon of GSM nummer</label>
-          <input type="text" id="contactpersoon_telefoon" name="contactpersoon_telefoon" ng-model="inschrijving.contactPersoon[0].telefoonNummer"/>
+          <input type="text" id="contactpersoon_telefoon" name="contactpersoon_telefoon" ng-model="inschrijving.contactPersoon[0].telefoonNummer" required/>
         </div>
       </div>
 
@@ -185,33 +185,33 @@
 
       <div class="form-group">
         <label for="noodpersoon_voornaam">Voornaam</label>
-        <input type="text" id="noodpersoon_voornaam" name="noodpersoon_voornaam"/>
+        <input type="text" id="noodpersoon_voornaam" name="noodpersoon_voornaam" required/>
       </div>
       <div class="form-group">
         <label for="noodpersoon_naam">Naam</label>
-        <input type="text" id="noodpersoon_naam" name="noodpersoon_naam"/>
+        <input type="text" id="noodpersoon_naam" name="noodpersoon_naam" required/>
       </div>
       <div class="form-group">
         <label for="noodpersoon_telefoon">Telefoon of GSM nummer</label>
-        <input type="text" id="noodpersoon_telefoon" name="noodpersoon_telefoon"/>
+        <input type="text" id="noodpersoon_telefoon" name="noodpersoon_telefoon" required/>
       </div>
 
       <h3>Eventueel 2e persoon</h3>
       <div class="form-group">
         <label for="noodpersoon2_voornaam">Voornaam</label>
-        <input type="text" id="noodpersoon2_voornaam" name="noodpersoon2_voornaam"/>
+        <input type="text" id="noodpersoon2_voornaam" name="noodpersoon2_voornaam" required/>
       </div>
       <div class="form-group">
         <label for="noodpersoon2_naam">Naam</label>
-        <input type="text" id="noodpersoon2_naam" name="noodpersoon2_naam"/>
+        <input type="text" id="noodpersoon2_naam" name="noodpersoon2_naam" required/>
       </div>
       <div class="form-group">
         <label for="noodpersoon_telefoon">Telefoon of GSM nummer</label>
-        <input type="text" id="noodpersoon2_telefoon" name="noodpersoon2_telefoon"/>
+        <input type="text" id="noodpersoon2_telefoon" name="noodpersoon2_telefoon" required/>
       </div>
 
       <div class="form-group next-step-button">
-        <input type="submit" wz-next value="Volgende" class="btn btn-blue"/>
+        <input type="submit" wz-next value="Volgende" class="btn btn-blue" required/>
       </div>
     </wz-step>
 

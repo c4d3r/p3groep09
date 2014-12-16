@@ -125,48 +125,48 @@ angular.module('webappApp')
 
     $scope.methods = {
       addNoodPersoon: function(voornaam, naam, telefoonNummer) {
-        $scope.model.noodPersonen.push({naam: naam, voornaam: voornaam, telefoonNummer: telefoonNummer});
+        $scope.inschrijving.noodPersonen.push({naam: naam, voornaam: voornaam, telefoonNummer: telefoonNummer});
       },
       adresZelfdeAlsOuder: function(yes) {
         if(yes) {
-          $scope.model.adresDeelnemer.straat      = $scope.model.betalendeOuder.straat;
-          $scope.model.adresDeelnemer.huisnummer  = $scope.model.betalendeOuder.huisnummer;
-          $scope.model.adresDeelnemer.bus         = $scope.model.betalendeOuder.bus;
-          $scope.model.adresDeelnemer.gemeente    = $scope.model.betalendeOuder.gemeente;
-          $scope.model.adresDeelnemer.postcode    = $scope.model.betalendeOuder.postcode;
+          $scope.inschrijving.adresDeelnemer.straat      = $scope.inschrijving.betalendeOuder.straat;
+          $scope.inschrijving.adresDeelnemer.huisnummer  = $scope.inschrijving.betalendeOuder.huisnummer;
+          $scope.inschrijving.adresDeelnemer.bus         = $scope.inschrijving.betalendeOuder.bus;
+          $scope.inschrijving.adresDeelnemer.gemeente    = $scope.inschrijving.betalendeOuder.gemeente;
+          $scope.inschrijving.adresDeelnemer.postcode    = $scope.inschrijving.betalendeOuder.postcode;
         } else {
-          $scope.model.adresDeelnemer.straat      = "";
-          $scope.model.adresDeelnemer.huisnummer  = "";
-          $scope.model.adresDeelnemer.bus         = "";
-          $scope.model.adresDeelnemer.gemeente    = "";
-          $scope.model.adresDeelnemer.postcode    = "";
+          $scope.inschrijving.adresDeelnemer.straat      = "";
+          $scope.inschrijving.adresDeelnemer.huisnummer  = "";
+          $scope.inschrijving.adresDeelnemer.bus         = "";
+          $scope.inschrijving.adresDeelnemer.gemeente    = "";
+          $scope.inschrijving.adresDeelnemer.postcode    = "";
         }
       },
       contactpersoonZelfdeOuder: function(yes) {
         if(yes) {
-          $scope.model.contactPersoon = $scope.model.betalendeOuder;
+          $scope.inschrijving.contactPersoon = $scope.inschrijving.betalendeOuder;
         } else {
-          $scope.model.contactPersoon.rijksregisterNummer = "";
-          $scope.model.contactPersoon.voornaam = "";
-          $scope.model.contactPersoon.naam = "";
-          $scope.model.contactPersoon.straat = "";
-          $scope.model.contactPersoon.huisnummer = "";
-          $scope.model.contactPersoon.bus = "";
-          $scope.model.contactPersoon.gemeente = "";
-          $scope.model.contactPersoon.postcode = "";
-          $scope.model.contactPersoon.telefoonNummer = "";
+          $scope.inschrijving.contactPersoon.rijksregisterNummer = "";
+          $scope.inschrijving.contactPersoon.voornaam = "";
+          $scope.inschrijving.contactPersoon.naam = "";
+          $scope.inschrijving.contactPersoon.straat = "";
+          $scope.inschrijving.contactPersoon.huisnummer = "";
+          $scope.inschrijving.contactPersoon.bus = "";
+          $scope.inschrijving.contactPersoon.gemeente = "";
+          $scope.inschrijving.contactPersoon.postcode = "";
+          $scope.inschrijving.contactPersoon.telefoonNummer = "";
         }
       },
       createInschrijving: function() {
-      if(Auth.getCurrentUser()._id != null){
-        Inschrijven.create($scope.inschrijving, function(props){
-          console.log(props);
-          $location.path('/');
-         });
-      }
-      else{
-        $location.path('/login');
-      }
+        if(Auth.getCurrentUser()._id != null){
+          Inschrijven.create($scope.inschrijving, function(props){
+            console.log(props);
+            $location.path('/');
+          });
+        }
+        else{
+          $location.path('/login');
+        }
       }
 
     }
