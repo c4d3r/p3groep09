@@ -135,9 +135,26 @@
   padding:0;
 }
 
-#promoafb {
-  float: left;
+#promoafbeelding{
+  border-radius: 5px;
+  border: 2px solid $blue;
 }
+
+#imagebuttons{
+  margin:0;
+  padding:0;
+
+}
+
+#imagebuttons li{
+  text-align: center;
+  list-style: none;
+  display:inline-block;
+}
+#fototitle{
+}
+
+
 #kamptekst {
  margin-left: 225px;
 }

@@ -1,19 +1,25 @@
 <div class="container">
-    <section>
-        <article class="article-holder" ng-repeat="kamp in kampen | filter:query">
+
+    <h1>Ingeschreven kampen</h1>
+    <ul id="imagebuttons" class="article-holder" ng-repeat="kamp in kampen | filter:query">
+        <li>
+            <div id="fototitle">{{ kamp.naam }}</div>
             <div id="promoafb">
                 <a href="/kampen/{{ kamp._id }}">
-                    <img height="150" width="200" alt="reis naar {{ kamp.locatie }}" src="../assets/images/reizen/{{kamp.promoAfbeelding}}" />
+                    <img id="promoafbeelding" height="200" width="250" alt="reis naar {{ kamp.locatie }}"
+                         src="../assets/images/reizen/{{kamp.promoAfbeelding}}"/>
                 </a>
             </div>
+        </li>
 
-            <div id="kamptekst">
-                <h2><a href="/kampen/{{ kamp._id }}">{{ kamp.naam }}</a></h2>
-                <div>Leeftijdscategorie: {{kamp.doelgroepen[0]}} - {{kamp.doelgroepen[kamp.doelgroepen.length -1]}} jaar</div>
-                <div>Prijs: €{{kamp.prijs}}</div>
-                <div>Locatie: {{kamp.locatie}}</div>
-                <div>{{kamp.inschrijving}}</div>
+
+        <!--<div id="kamptekst">
+            <h2><a href="/kampen/{{ kamp._id }}">{{ kamp.naam }}</a></h2>
+
+            <div>Leeftijdscategorie: {{kamp.doelgroepen[0]}} - {{kamp.doelgroepen[kamp.doelgroepen.length -1]}} jaar
             </div>
-        </article>
-    </section>
+            <div>Prijs: €{{kamp.prijs}}</div>
+            <div>Locatie: {{kamp.locatie}}</div>
+        </div>-->
+    </ul>
 </div>

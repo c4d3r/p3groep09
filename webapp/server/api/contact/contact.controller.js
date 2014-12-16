@@ -33,7 +33,7 @@ exports.show = function (req, res) {
     });
 };
 
-// Creates a new email in the DB.
+// Creates a new email in the DB and send the mail to the joetz email adress.
 exports.create = function (req, res) {
 
     var newContact = new Contact(req.body);
@@ -58,7 +58,7 @@ exports.create = function (req, res) {
                 subject: newContact.onderwerp,
                 text: newContact.bericht + "\nAfzender: " +  _gebruiker.email
             }
-            console.log(smtpTransporter + 'test');
+            //console.log(smtpTransporter + 'test');
 
             smtpTransporter.sendMail(mailOptions, function (error, info) {
                 console.log("test");
