@@ -10,7 +10,8 @@
 'use strict';
 
 var _ = require('lodash');
-var Activiteit = require('./activiteit.model');
+var Activiteit = require('./activiteit.model')
+var Gebruiker = require('../gebruiker/gebruiker.model');
 
 // Get list of activiteiten
 exports.index = function(req, res) {
@@ -25,8 +26,6 @@ exports.show = function(req, res) {
   Activiteit
   .findById(req.params.id)
   .populate('contact')
-  .populate('inschrijvingen')
-  .populate('comments')
   .exec(function (err, activiteit) {
     if(err) { return handleError(res, err); }
     if(!activiteit) { return res.send(404); }
@@ -49,12 +48,28 @@ exports.update = function(req, res) {
     if (err) { return handleError(res, err); }
     if(!activiteit) { return res.send(404); }
     var updated = _.merge(activiteit, req.body);
+    console.log(updated);
     updated.save(function (err) {
-      if (err) { return handleError(res, err); }
+      if(err) { console.log(err); }
       return res.json(200, activiteit);
+      console.log("werkt");
     });
   });
 };
+
+exports.inschrijven = function(req, res) {
+
+    Activiteit.findById(req.params.id, function(err, activiteit) {
+
+        var _activiteit = activiteit;
+
+        Gebruiker.findById(req.body.user._id, function(err, user) {
+            _activiteit.addInschrijving(user);
+            _activiteit.save();
+        });
+
+    });
+}
 
 // Deletes a activiteit from the DB.
 exports.destroy = function(req, res) {

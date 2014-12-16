@@ -7,7 +7,7 @@ angular.module('webappApp')
         'show':     { method: 'GET', isArray: false},
         'index':    { method: 'GET', isArray: true},
         'create':   { method: 'POST'},
-        'query':    { method: 'GET', params: {gebruikerId: "gebruikerId"}, isArray: true} //no idea
+        'query':    { method: 'GET', params: {gebruikerId: "gebruikerId"}, isArray: true}
       }
     );
   });

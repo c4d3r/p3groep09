@@ -96,8 +96,8 @@ GebruikerSchema.methods = {
         return this.encryptPassword(plainText) === this.hashedWachtwoord;
     },
 
-    addInschrijving: function(inschrijving) {
-        this.inschrijvingen.push(inschrijving);
+    addInschrijving: function(user) {
+        this.inschrijvingen.push(user);
     },
 
     /**

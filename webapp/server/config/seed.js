@@ -117,7 +117,7 @@ function populateNieuws() {
 function populateActiviteiten() {
     Activiteit.find({}).remove(function () {
         Gebruiker.findOne({email: "monitor@joetz.com"}, function (err, gebruiker) {
-            Comment.find(function (err, comments) {
+            Comment.find({}, function (err, comments) {
                 var _gebruiker = gebruiker;
                 var _comments = comments;
                 Activiteit.create(

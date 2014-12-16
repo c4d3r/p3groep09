@@ -12,7 +12,10 @@
             <h3>Extra informatie</h3>
             <ul>
                 <li>Locatie: {{activiteit.locatie}}</li>
-                <li>Contact: {{contact.voornaam}} {{contact.naam}}</li>
+                <li>Contact: {{activiteit.contact.voornaam}} {{activiteit.contact.naam}}</li>
+                <div ng-repeat="inschrijving in activiteit.inschrijvingen">
+                    {{inschrijving.naam}}
+                </div>
             </ul>
 
         </div>

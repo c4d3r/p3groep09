@@ -26,4 +26,12 @@ ActiviteitSchema.path('naam').required(true, 'Naam mag niet leeg zijn');
 ActiviteitSchema.path('startDatum').required(true, 'Startdatum mag niet leeg zijn');
 ActiviteitSchema.path('createdOn').required(true, 'CreateOn mag niet leeg zijn');
 
+ActiviteitSchema.methods = {
+
+    addInschrijving: function(inschrijving) {
+        this.inschrijvingen.push(inschrijving);
+    }
+
+}
+
 module.exports = mongoose.model('Activiteit', ActiviteitSchema);
