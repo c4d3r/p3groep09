@@ -65,7 +65,7 @@ swiftmailer:
 # app/config/config.yml
 sonata_admin:
     title: Joetz Admin Panel
-    title_logo: bundles/groep09admin/img/joetz.png
+    title_logo: bundles/groep09admin/img/joetz_logo.png
 
 sonata_block:
     default_contexts: [cms]
