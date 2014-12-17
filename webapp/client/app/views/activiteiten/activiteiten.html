@@ -5,9 +5,14 @@
     </form>
 
     <section>
-        <article ng-repeat="activiteit in activiteiten | filter:query">
 
-            <div >
+        <div class="alert" ng-show="flash.getMessage()">
+            <b>Alert!</b>
+            <p>{{flash.getMessage()}}</p>
+        </div>
+
+        <article ng-repeat="activiteit in activiteiten | filter:query">
+            <div>
                 <h2><a href="/activiteiten/{{ activiteit._id }}">{{ activiteit.naam }}</a></h2>
                 <p>
                     {{activiteit.beschrijving}}

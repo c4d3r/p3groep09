@@ -1,7 +1,9 @@
 'use strict';
 
 angular.module('webappApp')
-  .controller('ActiviteitDetailCtrl', function ($scope, $stateParams, Activiteiten, $location, Auth, $http) {
+  .controller('ActiviteitDetailCtrl', function ($scope, $stateParams, Activiteiten, $location, Auth, $http, flash) {
+
+    $scope.flash = flash;
 
     if(Auth.getCurrentUser()._id != null){
             if(Auth.getCurrentUser().role === "ROLE_MONITOR"){
@@ -25,6 +27,7 @@ angular.module('webappApp')
                 console.log(status);
             });
 
+        $scope.flash.setMessage("U bent ingeschreven.");
         $location.path('/activiteiten');
         /*var deferred = $q.defer();
         var promise = deferred.promise;

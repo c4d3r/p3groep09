@@ -1,9 +1,9 @@
 'use strict';
 
 angular.module('webappApp')
-  .controller('InschrijvingCtrl', function ($scope, Inschrijven, Auth, Kampen, $stateParams, $location) {
+  .controller('InschrijvingCtrl', function ($scope, Inschrijven, Auth, Kampen, $stateParams, $location, flash) {
     //TEST SCOPE WITH PRE-FILLED DETAILS
-
+    $scope.flash = flash;
     $scope.kamp = Kampen.show($stateParams);
 
     $scope.fillDummyData = function() {
@@ -161,6 +161,10 @@ angular.module('webappApp')
         if(Auth.getCurrentUser()._id != null){
           Inschrijven.create($scope.inschrijving, function(props){
             console.log(props);
+            var message = "U bent ingeschreven.";
+            $scope.flash.setMessage(message);
+            console.log($scope.flash.getMessage());
+            console.log($scope.flash);
             $location.path('/');
           });
         }

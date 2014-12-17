@@ -42,6 +42,11 @@
             <a id="dashboardlink" href="/dashboard" style="float:right;"><i class="fa fa-sign-out"></i> Dashboard</a>
         </div>
 
+        <div class="alert" ng-show="flash.getMessage()">
+            <b>Alert!</b>
+            <p>{{flash.getMessage()}}</p>
+        </div>
+
         <div id="content">
           <section id="main">
               <div ui-view=""></div>
@@ -144,6 +149,7 @@
       <script src="app/routes.js"></script>
       <script src="app/services/activiteit.js"></script>
       <script src="app/services/contact.js"></script>
+      <script src="app/services/flash.js"></script>
       <script src="app/services/inschrijven.js"></script>
       <script src="app/services/kampservice.js"></script>
       <script src="app/services/nieuwsitems.js"></script>
