@@ -133,7 +133,7 @@ angular.module('webappApp')
        * @return {Boolean}
        */
       isAdmin: function() {
-        return currentUser.role === 'ROLE_ADMIN';
+        return currentUser.role === 'ROLE_MONITOR';
       },
 
       /**
@@ -141,6 +141,12 @@ angular.module('webappApp')
        */
       getToken: function() {
         return $cookieStore.get('token');
+      },
+
+      isMonitor: function() {
+        return currentUser.role === 'ROLE_MONITOR';
+
       }
+
     };
   });

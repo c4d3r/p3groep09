@@ -40,6 +40,7 @@
             <span ng-show="isLoggedIn()">Welkom terug, {{ getCurrentUser().voornaam }}</span>
             <a href="/" ng-click="logout()" style="float:right;"><i class="fa fa-sign-out"></i> Afmelden</a>
             <a id="dashboardlink" href="/dashboard" style="float:right;"><i class="fa fa-sign-out"></i> Dashboard</a>
+            <a id="dashboardlink" href="/activiteiten" ng-show="isAdmin()" style="float:right;"><i class="fa fa-sign-out"></i> Activiteiten</a>
         </div>
 
         <div class="alert" ng-show="flash.getMessage()">

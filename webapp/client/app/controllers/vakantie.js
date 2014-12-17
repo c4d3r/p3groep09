@@ -3,6 +3,7 @@
 angular.module('webappApp')
   .controller('VakantieCtrl', function ($scope, Kampen, $stateParams, $filter) {
 
+
     var defaultVakantie = "zomervakantie";
 
     $scope.kampen = Kampen.findByVakantie({vakantie: defaultVakantie}, function(kampen){

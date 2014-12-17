@@ -7,6 +7,7 @@ angular.module('webappApp')
         $scope.getCurrentUser = Auth.getCurrentUser();
         $scope.kampen = [];
 
+
         if (Auth.getCurrentUser()._id != null) {
             var gebruikerId = $scope.getCurrentUser._id;
             var i = Inschrijven.query({gebruiker: Auth.getCurrentUser()}, function (inschrijvingen) {
