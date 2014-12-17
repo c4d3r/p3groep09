@@ -83,6 +83,10 @@ swiftmailer:
     spool:     { type: memory }
 
 # app/config/config.yml
+sonata_admin:
+    title: Joetz Admin Panel
+    title_logo: bundles/groep09admin/img/joetz.png
+
 sonata_block:
     default_contexts: [cms]
     blocks:

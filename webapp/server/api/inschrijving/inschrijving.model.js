@@ -6,6 +6,10 @@ var mongoose = require('mongoose')
   , Kamp = require('../kamp/kamp.model')
   , Gebruiker = require('../gebruiker/gebruiker.model');
 
+/**
+ * Schema dat inschrijvingen bijhoudt
+ * @type {Schema}
+ */
 var InschrijvingSchema = new Schema({
   lidMutualiteit: {type: Boolean, default: false},
   persoonTenLaste: {
